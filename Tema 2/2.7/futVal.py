@@ -14,4 +14,5 @@ def futVal():
         print("Year", str(i + 1) + ":", "Actual ammount: " + str(actualVal))
 
 
+
 futVal()
