@@ -1,4 +1,4 @@
-
+__author__ = "Sergio Garrido Domínguez"
 
 def main():
     print("Testing the chaotic behaviour")
@@ -13,4 +13,4 @@ def main():
 
 
 #Note: Leave to blank lines between the end function and the next instruction
-main()
+#main()

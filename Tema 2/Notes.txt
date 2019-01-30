@@ -1,0 +1,2 @@
+Al concatenar strings, la "," añade un espacio pero el "+" no
+name = input("Enter your name: ") es la forma más sencilla de guardar en una variable una entrada por la consola

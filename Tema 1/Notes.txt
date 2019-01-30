@@ -1,0 +1,4 @@
+__author__ = "Sergio Garrido Domínguez"
+
+Los comentarios se hacen con #
+2 ** 3 es hace lo mismo que 2^3 y 2**3*2 es 2^3 * 2

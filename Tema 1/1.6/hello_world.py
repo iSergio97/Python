@@ -1,3 +1,5 @@
+__author__ = "Sergio Garrido Domínguez"
+
 #print("Hello World!")
 #print(2 + 3)
 #print("2 + 3 =", 2 + 3)
@@ -8,5 +10,6 @@
 def myFirstFunction():
     print("My first function")
 
+myFirstFunction()
 
 
