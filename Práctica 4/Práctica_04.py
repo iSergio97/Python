@@ -188,12 +188,12 @@ coste_bloque = probpl.CosteEsquema(lambda b: {'A': 1, 'B': 2, 'C': 3}[b])
 
 # Colocar un bloque sobre otro
 apilar = probpl.EsquemaPlanificación('apilar({x},{y})',
-    precondicionesP = [despejado('{y}'),agarrado('{x}')],
-    efectosN = [despejado('{y}'),agarrado('{x}')],
-    efectosP = [despejado('{x}'),brazolibre(),sobre('{x}','{y}')],
-    coste = coste_bloque('{x}'),
-    dominio = {('A','B'),('A','C'),('B','A'),('B','C'),('C','A'),('C','B')},
-    variables = {'x':bloques,'y':bloques})
+    precondicionesP=[despejado('{y}'), agarrado('{x}')],
+    efectosN=[despejado('{y}'), agarrado('{x}')],
+    efectosP=[despejado('{x}'), brazolibre(), sobre('{x}', '{y}')],
+    coste=coste_bloque('{x}'),
+    dominio={('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')},
+    variables={'x': bloques, 'y': bloques})
 
 # Quitar un bloque que estaba sobre otro
 desapilar = probpl.EsquemaPlanificación('desapilar({x},{y})',
@@ -225,14 +225,16 @@ bajar = probpl.EsquemaPlanificación('bajar({x})',
 # In[ ]:
 
 
+print("\nagarrar")
 print(agarrar)
+print("\n")
 
 
 # In[ ]:
 
-
+print("apilar")
 print(apilar)
-
+print("\n")
 
 # Finalmente, para representar el problema de planificación se pasa la lista de esquemas de acción a la clase `ProblemaPlanificación` (en general, se pueden proporcionar tanto acciones como operadores, incluso mezclados). 
 
@@ -250,6 +252,7 @@ problema_mundo_bloques = probpl.ProblemaPlanificación(
 # In[ ]:
 
 
+print("búsqueda_profundidad.buscar(problema_mundo_bloques)\n")
 búsqueda_profundidad.buscar(problema_mundo_bloques)
 
 
@@ -305,9 +308,21 @@ conexiones = [('C0', 'C1'),
 # * `con_foto_de`: para cada lugar de la cueva indica si se le ha realizado o no una fotografía.
 
 # In[ ]:
+posicion_buceador = probpl.Predicado(buceadores, cuevas | {'superficie'})
+disponible = probpl.Predicado(buceadores)
+trabajando = probpl.Predicado(buceadores)
+descompresion = probpl.Predicado(buceadores)
+tanques_llenos = probpl.Predicado(buceadores | cuevas, cantidades)
+# Se podría definir dos predicados diferentes, uno para los buceadores con tanques llenos y otro con cuevas con tanques llenos
+con_foto_de = probpl.Predicado(buceadores, cuevas)
 
-
-
+estado = probpl.Estado(disponible('B0'),
+                       disponible('B0'),
+                       tanques_llenos('C0','0'),
+                       tanques_llenos('C1','0'),
+                       tanques_llenos('C2','0'),
+                       tanques_llenos('C3','0'),
+                       tanques_llenos('C4','0'))
 
 
 # __Ejercicio 2__: implementar las siguientes acciones:
@@ -316,7 +331,12 @@ conexiones = [('C0', 'C1'),
 
 # In[ ]:
 
-
+contratarB0 = probpl.AcciónPlanificación(nombre='contratar(B0)',
+                                         precondicionesP=[disponible('B0')],
+                                         precondicionesN=[trabajando('B0'), trabajando('B1')],
+                                         efectosP=[trabajando('B0'), tanques_llenos('B0', '4')],
+                                         efectosN=[disponible('B0'), disponible('B1')],
+                                         coste=10)
 
 
 
@@ -329,9 +349,39 @@ conexiones = [('C0', 'C1'),
 # * `salir_del_agua`: un buceador sale a superficie y pasa al proceso de descompresión.
 
 # In[ ]:
+bucear2 = probpl.EsquemaPlanificación(nombre='bucear({b}, {t1}, {t2} {c1}, {c2})',
+                                     precondicionesP=[tanques_llenos('{b}', '{t1}'),
+                                                      trabajando('{b}'),
+                                                      posicion_buceador('{b}', '{c1}')],
+                                     efectosP=[posicion_buceador('{b}', '{c2}')],
+                                     efectosN=[tanques_llenos('{b}', '{t1}'),
+                                               posicion_buceador('{b}', '{c1}'),
+                                               tanques_llenos('{b}', '{t2}')],
+                                     dominio={(b, t1, t2, c1, c2)
+                                              for b in buceadores
+                                              for (t1, t2) in {('1', '0'),
+                                                               ('2', '1'),
+                                                               ('3', '2'),
+                                                               ('4', '3')}
+                                              for c1 in cuevas
+                                              for c2 in cuevas
+                                              if (c1, c2) in conexiones})
 
 
+bucear = probpl.EsquemaPlanificación(
+    nombre = 'bucear({b}, {t}, {t1}, {c}, {c1})',
+    precondicionesP = [tanques_llenos('{b}', '{t}'), trabajando('{b}'), posicion_buceador('{b}', '{c}')],
+    efectosP = [posicion_buceador('{b}', '{c1}'), tanques_llenos('{b}', '{t1}')],
+    efectosN = [tanques_llenos('{b}', '{t}'), posicion_buceador('{b}', '{c}')],
+    dominio={(b, t, t1,  c, c1) for b in buceadores
+                           for (t, t1) in [('1', '0'), ('2', '1'), ('3', '2'), ('4', '3')]
+                           for c in cuevas
+                           for c1 in cuevas if (c, c1) in conexiones}
+)
 
+
+print(("Bucear: \n"))
+print(bucear)
 
 
 # __Ejercicio 4__: implementar la instancia del problema de tal manera que inicialmente los dos buceadores estén en la superficie, disponibles para ser contratados; no haya tanques llenos en las cuevas; y no se haya hecho todavía ninguna foto. El objetivo será fotografiar la cueva `C4` y que los dos buceadores estén en la superficie.
