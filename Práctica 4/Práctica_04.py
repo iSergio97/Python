@@ -49,8 +49,8 @@ print(estado_inicial_rueda)
 
 # Sacar la rueda de repuesto del maletero
 sacar = probpl.AcciónPlanificación(
-    nombre = 'sacar_repuesto',
-    precondicionesP = en('rueda-repuesto', 'maletero'),
+    nombre='sacar_repuesto',
+    precondicionesP=en('rueda-repuesto', 'maletero'),
     efectosP=en('rueda-repuesto', 'suelo'),
     efectosN=en('rueda-repuesto', 'maletero'))
 
@@ -114,8 +114,6 @@ problema_rueda_pinchada = probpl.ProblemaPlanificación(
 # Una vez implementado el problema de planificación, para buscar un plan solución basta aplicar algún algoritmo de búsqueda en espacio de estados.
 
 # In[ ]:
-
-
 import búsqueda_espacio_estados as búsqee
 
 
