@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="28" column="567" selection-start-line="28" selection-start-column="567" selection-end-line="28" selection-end-column="567" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>b'cars</find>
+      <find>in</find>
+      <find>In 13</find>
+      <find>clasif</find>
+      <find>codificado</find>
+      <find>codificado[</find>
+      <find>C</find>
+      <find>Datos de entrna</find>
+      <find>nurse_entrenamiento[</find>
+      <find>es_apli</find>
+      <find>es_ap</find>
+      <find>fin bucle for</find>
+      <find>TODO</find>
+      <find>coste_bloque</find>
+      <find>print</find>
+      <find>asld</find>
+      <find>\n</find>
+      <find>agarrar</find>
+      <find>dominio</find>
+      <find>problema_mundo</find>
+      <find>esquemaPla</find>
+      <find>Ejercicio 2</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="iSergio97 &lt;sergiotb15@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Tema 1/1.6/Chaotic behaviour.py" />
+        <option value="$PROJECT_DIR$/Tema 1/Tests.py" />
+        <option value="$PROJECT_DIR$/Tema 1/1.6/Notes.txt" />
+        <option value="$PROJECT_DIR$/Tema 2/2.1/converter.py" />
+        <option value="$PROJECT_DIR$/Tema 1/Notes.txt" />
+        <option value="$PROJECT_DIR$/Tema 1/1.6/chaotic.py" />
+        <option value="$PROJECT_DIR$/Tema 1/1.6/hello_world.py" />
+        <option value="$PROJECT_DIR$/Tema 2/2.1/converterToCelsius.py" />
+        <option value="$PROJECT_DIR$/Tema 2/2.1/converterToFahrenheit.py" />
+        <option value="$PROJECT_DIR$/Tema 2/Notes.txt" />
+        <option value="$PROJECT_DIR$/Tutorial para subir archivos desde IntellIj" />
+        <option value="$PROJECT_DIR$/Tema 2/2.7/futVal.py" />
+        <option value="$PROJECT_DIR$/Tema 3/change.py" />
+        <option value="$PROJECT_DIR$/Tema 3/3.1/change.py" />
+        <option value="$PROJECT_DIR$/Tema 3/3.2/quadratic.py" />
+        <option value="$PROJECT_DIR$/Tema 3/3.3/factorial.py" />
+        <option value="$PROJECT_DIR$/Tema 3/Test.py" />
+        <option value="$PROJECT_DIR$/Tema 3/test.py" />
+        <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py" />
+        <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/Imports importantes para IA" />
+        <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" />
+        <option value="$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" />
+        <option value="$PROJECT_DIR$/Práctica 1/Practica 1.py" />
+        <option value="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" />
+        <option value="$PROJECT_DIR$/Práctica 3/MoverDisco.py" />
+        <option value="$PROJECT_DIR$/Práctica 3/Practica 3.py" />
+        <option value="$PROJECT_DIR$/Práctica 3/Practica 3(1).py" />
+        <option value="$PROJECT_DIR$/Práctica 3/Práctica_03.ipynb" />
+        <option value="$PROJECT_DIR$/Práctica 3/Práctica 3.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Práctica 4/Práctica_04.py" />
+        <option value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
+        <option value="$PROJECT_DIR$/Práctica 5/test.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Práctica 5" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Práctica 4" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/Práctica 4" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 5" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 1" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 3\Tests\Theory test" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 3\3.1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 1" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 2\2.1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Práctica_05">
+    <configuration name="Python" type="JupiterNotebook" factoryName="Jupyter Notebook">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="additionalOptions" value="" />
+      <option name="ipnbHost" value="127.0.0.1" />
+      <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Practica 1 - nurse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Práctica 3" type="PythonConfigurationType" factoryName="Python">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 3/Práctica 3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Práctica_03" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 3/Práctica_03.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Práctica_04" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 4/Práctica_04.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Práctica_05" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\venv\Acceso_Restringido.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="búsqueda_espacio_estados" type="PythonConfigurationType" factoryName="Python">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 3/búsqueda_espacio_estados.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="problema_espacio_estados" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 3/problema_espacio_estados.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Práctica 3" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.búsqueda_espacio_estados" />
+      <item itemvalue="Python.Practica 1 - nurse" />
+      <item itemvalue="Python.Práctica_03" />
+      <item itemvalue="Python.Práctica_04" />
+      <item itemvalue="Python.problema_espacio_estados" />
+      <item itemvalue="Python.Práctica_05" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Práctica_05" />
+        <item itemvalue="Python.Práctica_04" />
+        <item itemvalue="Python.Práctica_03" />
+        <item itemvalue="Python.problema_espacio_estados" />
+        <item itemvalue="Python.Practica 1 - nurse" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="" />
+      <created>1533897952248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533897952248</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
+      <created>1548867626399</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548867626399</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
+      <created>1548867799957</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548867799957</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
+      <created>1548867918400</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548867918400</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Añadido .txt con info para subir cosas desde intelIj">
+      <created>1548868360201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1548868360201</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Añadido .txt con info para subir cosas desde intelIj">
+      <created>1549130134004</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549130134004</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Añadido .txt con info para subir cosas desde intelIj">
+      <created>1549130345001</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549130345001</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ejercicios y ejemplos del tema 3">
+      <created>1549134869290</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549134869291</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Nuevos paquetes instalados para IA">
+      <created>1550225812867</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1550225812867</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Primera práctica IA (una mierda)">
+      <created>1551274329582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551274329582</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Primera práctica IA (una mierda)">
+      <created>1551274352865</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551274352865</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Primera práctica IA (una mierda)">
+      <created>1553687793002</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1553687793002</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tercera práctica de IA">
+      <created>1553687872060</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1553687872060</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tercera práctica de IA">
+      <created>1553687995991</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1553687995991</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tercera práctica de IA&#10;Corrección">
+      <created>1553688489788</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1553688489788</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tercera práctica de IA">
+      <created>1553693769842</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1553693769842</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Cuarta práctica de IA">
+      <created>1554893776382</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554893776382</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Cuarta práctica de IA">
+      <created>1554894993348</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554894993348</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Corrección README">
+      <created>1554895027589</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554895027589</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Corrección README">
+      <created>1554895080205</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554895080205</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Cuarta práctica IA">
+      <created>1554900128444</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554900128444</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Cuarta práctica IA">
+      <created>1556536189889</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556536189889</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Quinta práctica IA">
+      <created>1556536349256</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556536349256</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Archivos para la quinta práctica de IA">
+      <created>1556537179546</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556537179546</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Archivos para la quinta práctica de IA">
+      <created>1556537489152</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556537489152</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.2487725" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32569557" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5014881" side_tool="true" weight="0.32569557" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32569557" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;" />
+    <MESSAGE value="Añadido .txt con info para subir cosas desde intelIj" />
+    <MESSAGE value="Ejercicios y ejemplos del tema 3" />
+    <MESSAGE value="Nuevos paquetes instalados para IA" />
+    <MESSAGE value="Primera práctica IA (una mierda)" />
+    <MESSAGE value="Tercera práctica de IA&#10;Corrección" />
+    <MESSAGE value="Tercera práctica de IA" />
+    <MESSAGE value="Cuarta práctica de IA" />
+    <MESSAGE value="Corrección README" />
+    <MESSAGE value="Cuarta práctica IA" />
+    <MESSAGE value="Quinta práctica IA" />
+    <MESSAGE value="Archivos para la quinta práctica de IA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Archivos para la quinta práctica de IA" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/venv/Acceso_Restringido.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Modulo Math.py" />
+    <entry file="file://$PROJECT_DIR$/venv/saluda.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Papeleta.py" />
+    <entry file="file://$PROJECT_DIR$/venv/prueba.txt" />
+    <entry file="file://$PROJECT_DIR$/1/6/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/1/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Tema 1/Tests.py" />
+    <entry file="file://$PROJECT_DIR$/Tema 1/1.6/chaotic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 2/2.1/converterToCelsius.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 2/2.1/converterToFahrenheit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 2/2.7/futVal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <marker date="1549130126173" expanded="true" signature="215:220" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 1/1.6/hello_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 2/Notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 1/Notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_spyder-master.zip/spyder-master/setup.py" />
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Theory test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/3.3/factorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/3.1/change.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/3.2/quadratic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/jupyter/runtime/nbserver-14688-open.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 1/.ipynb_checkpoints/Práctica_01-checkpoint.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Práctica 1/nursery.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="75" lean-forward="true" selection-end-column="75" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 1/cars.csv">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/problema_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imports importantes para IA">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 1/Practica 1 - cars.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2404">
+          <caret line="165" column="63" selection-start-line="165" selection-start-column="63" selection-end-line="165" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/MoverDisco.py" />
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Practica 3.py" />
+    <entry file="file://$PROJECT_DIR$/Tutorial para subir archivos desde IntellIj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica_03.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica_03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/mapa.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/búsqueda_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 4/problema_planificación_pddl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/jinja2/sandbox.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="85">
+            <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 4/Práctica_04.ipynb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 4/Práctica_04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="401" selection-start-line="401" selection-end-line="401" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 5/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="28" column="567" selection-start-line="28" selection-start-column="567" selection-end-line="28" selection-end-column="567" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
