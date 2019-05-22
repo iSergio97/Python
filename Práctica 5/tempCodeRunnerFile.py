@@ -17,10 +17,7 @@
 
 # En primer lugar, importamos los módulos necesarios:
 
-# In[ ]:
-
-
-import random
+ import random
 from deap import base, creator, tools, algorithms
 import numpy
 
@@ -35,84 +32,54 @@ import numpy
 
 # Podemos entonces declarar la clase `Fitness` en el módulo `creator` con la siguiente expresión
 
-# In[ ]:
-
-
-creator.create('Fitness', base.Fitness, weights=(-1.0,))
+ creator.create('Fitness', base.Fitness, weights=(-1.0,))
 
 
 # La clase `Individuo` la declaramos en el módulo `creator` con la expresión
 
-# In[ ]:
-
-
-creator.create('Individuo', list, fitness = creator.Fitness)
+ creator.create('Individuo', list, fitness = creator.Fitness)
 
 
 # Ahora debemos crear una _caja de herramientas_ (_toolbox_) en la que registremos todos los elementos necesarios para poder aplicar un algoritmo genético.
 
-# In[ ]:
-
-
-caja_de_herramientas = base.Toolbox()
+ caja_de_herramientas = base.Toolbox()
 
 
 # El método `register` de la caja de herramientas permite registrar funciones, dándole un nombre y estableciendo unos valores por defecto de los argumentos.
 
 # En primer lugar registramos una función `gen` que devuelve un 0 o un 1 de manera aleatoria.
 
-# In[ ]:
+ caja_de_herramientas.register('gen', random.randint, 0, 1)
 
 
-caja_de_herramientas.register('gen', random.randint, 0, 1)
-
-
-# In[ ]:
-
-
-random.seed(12345)  # Semilla para el mecanismo de generación de números aleatorios
+ random.seed(12345)  # Semilla para el mecanismo de generación de números aleatorios
 for _ in range(5):
     print(caja_de_herramientas.gen())
 
 
 # Para generar un individuo debemos generar 10 genes de manera aleatoria. La función `initRepeat` del módulo `tools` aplicada a los argumentos `container`, `func` y `n` guarda en el contenedor `container` los resultados obtenidos al aplicar `n` veces la función `func`. Podemos entonces registrar de la siguiente manera en la caja de herramientas una función `individuo` que devuelve un individuo aleatorio.
 
-# In[ ]:
-
-
-caja_de_herramientas.register('individuo', tools.initRepeat,
+ caja_de_herramientas.register('individuo', tools.initRepeat,
                               container=creator.Individuo, func=caja_de_herramientas.gen, n=10)
 
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 caja_de_herramientas.individuo()
 
 
 # Consideraremos una población como una lista de 10 individuos. Haciendo uso de nuevo de la función `initRepeat` podemos registrar en la caja de herramientas una función `población` que devuelve una población aleatoria.
 
-# In[ ]:
-
-
-caja_de_herramientas.register('población', tools.initRepeat,
+ caja_de_herramientas.register('población', tools.initRepeat,
                               container=list, func=caja_de_herramientas.individuo, n=10)
 
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 caja_de_herramientas.población()
 
 
 # A continuación registramos la función que permite evaluar el fenotipo de cada individuo. __La función debe devolver una tupla y los algoritmos genéticos implementados en el paquete DEAP esperan que esté registrada con el nombre__ `evaluate`.
 
-# In[ ]:
-
-
-def fenotipo(individuo):
+ def fenotipo(individuo):
     P1 = []
     P2 = []
     for i in range(10):
@@ -129,40 +96,25 @@ def evaluar_individuo(individuo):
 caja_de_herramientas.register('evaluate', evaluar_individuo)
 
 
-# In[ ]:
+ fenotipo([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
 
 
-fenotipo([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
-
-
-# In[ ]:
-
-
-caja_de_herramientas.evaluate([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
+ caja_de_herramientas.evaluate([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
 
 
 # Una vez registradas todas las funciones relativas a los individuos, pasamos a registrar los operadores que utilizaremos en el algoritmo genético. El paquete DEAP proporciona implementaciones de muchos operadores habituales (véase http://deap.readthedocs.org/en/1.0.x/api/tools.html#operators), entre ellos el cruce en un punto (función `cxOnePoint` del módulo `tools`) y la mutación de cadenas de bits (función `mutFlipBit` del módulo `tools`). __Los algoritmos genéticos implementados en el paquete DEAP esperan que el operador de cruce esté registrado con el nombre__ `mate` __y el operador de mutación con el nombre__ `mutate`.
 
-# In[ ]:
-
-
-caja_de_herramientas.register('mate', tools.cxOnePoint)
+ caja_de_herramientas.register('mate', tools.cxOnePoint)
 caja_de_herramientas.register('mutate', tools.mutFlipBit, indpb=0.1)
 # indpb es la probabilidad de mutación de cada gen del cromosoma
 
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 caja_de_herramientas.mate([1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
                           [0, 0, 0, 0, 0, 1, 1, 1, 1, 1])
 
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 caja_de_herramientas.mutate([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 
@@ -170,16 +122,10 @@ caja_de_herramientas.mutate([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 # 
 # __Nota__: la función _fitness_ que hemos definido es no negativa y, para transformar este problema de minimización en un problema de maximización, sus valores se ven luego multiplicados por el peso `-1.0` que establecimos en la clase `Fitness`. Por lo tanto, no es posible usar por esta vía el método de selección por ruleta aleatoria, ya que todos los valores con los que se trabaja finalmente son negativos. En caso de querer usar este método, habría que modificar la función _fitness_ como se explicó en el tema y usar `1.0` como peso.
 
-# In[ ]:
+ caja_de_herramientas.register('select', tools.selTournament, tournsize=3)
 
 
-caja_de_herramientas.register('select', tools.selTournament, tournsize=3)
-
-
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 P = caja_de_herramientas.población()
 caja_de_herramientas.select(P, 5)
 
@@ -196,10 +142,7 @@ caja_de_herramientas.select(P, 5)
 # 
 # __Nota de implementación__: el _fitness_ de los individuos que permanecen de una generación a la siguiente no se reevalúa. El resultado devuelto por el algoritmo es una tupla con la población final y un registro indicando para cada generación a cuántos individuos nuevos ha debido calcularse su _fitness_.
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 población_inicial = caja_de_herramientas.población()
 población_final, registro = algorithms.eaSimple(población_inicial,
                                                 caja_de_herramientas,
@@ -216,10 +159,7 @@ print(registro)
 
 # Todas las funciones del paquete DEAP que implementan algoritmos genéticos admiten el cálculo de estadísticas y un _salón de la fama_ con los mejores individuos que hayan aparecido a lo largo de la evolución de la población.
 
-# In[ ]:
-
-
-# Estadísticas sobre el fitness de los individuos: mínimo, media y máximo
+ # Estadísticas sobre el fitness de los individuos: mínimo, media y máximo
 # Nota: usamos para ello las funciones correspondientes de numpy, porque los
 # valores de fitness están guardados en tuplas
 estadísticas = tools.Statistics(lambda ind: ind.fitness.values)
@@ -231,10 +171,7 @@ estadísticas.register("máximo", numpy.max)
 salón_fama = tools.HallOfFame(3)
 
 
-# In[ ]:
-
-
-random.seed(12345)
+ random.seed(12345)
 población_inicial = caja_de_herramientas.población()
 población, registro = algorithms.eaSimple(población_inicial,
                                           caja_de_herramientas,
@@ -245,10 +182,7 @@ población, registro = algorithms.eaSimple(población_inicial,
                                           halloffame=salón_fama)
 
 
-# In[ ]:
-
-
-print('Las tres mejores soluciones encontradas han sido:')
+ print('Las tres mejores soluciones encontradas han sido:')
 for individuo in salón_fama:
     print('Individuo: P1={1}, P2={2}; Fitness: {0}'.format(
         individuo.fitness.values[0], *fenotipo(individuo)))
@@ -263,10 +197,7 @@ for individuo in salón_fama:
 
 # Los pesos y los valores de los elementos de la instancia se pueden leer del fichero evaluando las siguientes expresiones:
 
-# In[ ]:
-
-
-PESOS = []
+ PESOS = []
 VALORES = []
 with open('instancia_knapsack.txt', 'r') as fichero:
     for línea in fichero:
@@ -285,10 +216,7 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
-
-
-# import random
+ # import random
 # from deap import base, creator, tools, algorithms
 # import numpy
 # import math
@@ -340,13 +268,7 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
-
-
-
-
-
-# __Ejercicio 3__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
+ # __Ejercicio 3__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
 # * Los genes son 0 y 1.
 # * Los individuos son cromosomas de longitud la cantidad de elementos disponibles.
 # * Cada individuo representa la solución en la que se van considerando en orden los elementos, de tal forma que el elemento $i$-ésimo se incluye en la colección si y solo si el gen $i$-esimo es 1 y no se supera el peso límite.
@@ -354,13 +276,7 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
-
-
-
-
-
-# __Ejercicio 4__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
+ # __Ejercicio 4__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
 # * Los genes son los elementos disponibles.
 # * Los individuos son permutaciones de los genes.
 # * Cada individuo representa la solución en la que se van considerando en orden los genes, de tal forma que el elemento representado por el gen se incluye en la colección si no se supera el peso límite.
@@ -368,18 +284,6 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
+ # __Ejercicio 5__: realizar pruebas experimentales en las que se intente resolver la instancia del problema de la mochila 0-1 proporcionada mediante los algoritmos genéticos implementados en el paquete DEAP, usando las representaciones de los ejercicios 1 a 4, y considerando distintos valores para los parámetros de los algoritmos.
 
-
-
-
-
-# __Ejercicio 5__: realizar pruebas experimentales en las que se intente resolver la instancia del problema de la mochila 0-1 proporcionada mediante los algoritmos genéticos implementados en el paquete DEAP, usando las representaciones de los ejercicios 1 a 4, y considerando distintos valores para los parámetros de los algoritmos.
-
-# In[ ]:
-
-
-
-
-
-# ¿Con cuál de las cuatro representaciones has obtenido mejores resultados? ¿Puedes razonar alguna explicación para ello?
+ # ¿Con cuál de las cuatro representaciones has obtenido mejores resultados? ¿Puedes razonar alguna explicación para ello?

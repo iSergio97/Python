@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="" />
+    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Python" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="28" column="567" selection-start-line="28" selection-start-column="567" selection-end-line="28" selection-end-column="567" />
+            <state relative-caret-position="208">
+              <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+              <folding>
+                <element signature="e#1309#1322#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,7 +65,14 @@
       <find>problema_mundo</find>
       <find>esquemaPla</find>
       <find>Ejercicio 2</find>
+      <find />
+      <find>tools.hallOfFame</find>
+      <find>hallo</find>
+      <find>fitn</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -96,8 +116,8 @@
         <option value="$PROJECT_DIR$/Práctica 3/Práctica 3.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Práctica 4/Práctica_04.py" />
-        <option value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
         <option value="$PROJECT_DIR$/Práctica 5/test.py" />
+        <option value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
       </list>
     </option>
   </component>
@@ -115,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -131,7 +152,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -565,13 +585,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.2487725" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.44189852" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
@@ -760,8 +780,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/cars.csv">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
@@ -863,13 +883,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Práctica 5/test.py">
+    <entry file="file://$PROJECT_DIR$/Práctica 5/test.py" />
+    <entry file="file://$PROJECT_DIR$/Práctica 5/instancia_knapsack.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.ipynb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/deap/algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="28" column="567" selection-start-line="28" selection-start-column="567" selection-end-line="28" selection-end-column="567" />
+        <state relative-caret-position="208">
+          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+          <folding>
+            <element signature="e#1309#1322#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

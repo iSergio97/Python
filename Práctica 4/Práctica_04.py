@@ -3,10 +3,7 @@
 
 # Para implementar un problema de planificación se puede hacer uso de las clases de objetos proporcionadas por el módulo `problema_planificación` (**Nota**: es importante tener en cuenta que este módulo asume que todos los símbolos de objetos son cadenas).
 
-# In[ ]:
-
-
-import problema_planificación_pddl as probpl
+ import problema_planificación_pddl as probpl
 
 
 # En la primera parte de la práctica se mostrará cómo implementar unas instancias de los problemas de la rueda pinchada y del mundo de los bloques cuyo planteamiento general se puede encontrar en las transparencias del tema.
@@ -17,18 +14,12 @@ import problema_planificación_pddl as probpl
 
 # En primer lugar declaramos los predicados que vamos a utilizar para representar el problema, indicando los conjuntos sobre los cuales se van a construir dichos predicados.
 
-# In[ ]:
-
-
-en = probpl.Predicado({'rueda-pinchada', 'rueda-repuesto'}, {'eje', 'maletero', 'suelo'})
+ en = probpl.Predicado({'rueda-pinchada', 'rueda-repuesto'}, {'eje', 'maletero', 'suelo'})
 
 
 # Un estado es una instancia de la clase `Estado`, creada a partir de una serie de instancias de los predicados declarados previamente.
 
-# In[ ]:
-
-
-estado_inicial_rueda = probpl.Estado(en('rueda-pinchada', 'eje'), en('rueda-repuesto', 'maletero'))
+ estado_inicial_rueda = probpl.Estado(en('rueda-pinchada', 'eje'), en('rueda-repuesto', 'maletero'))
 print("estado_inicial_rueda")
 print(estado_inicial_rueda)
 
@@ -44,10 +35,7 @@ print(estado_inicial_rueda)
 # 
 # En el caso de una sola precondición o efecto no es necesario proporcionarlos en una lista.
 
-# In[ ]:
-
-
-# Sacar la rueda de repuesto del maletero
+ # Sacar la rueda de repuesto del maletero
 sacar = probpl.AcciónPlanificación(
     nombre='sacar_repuesto',
     precondicionesP=en('rueda-repuesto', 'maletero'),
@@ -80,16 +68,10 @@ guardar = probpl.AcciónPlanificación(
 
 # Una vez creadas las acciones, la función `print` nos muestra su estructura.
 
-# In[ ]:
+ print(quitar)
 
 
-print(quitar)
-
-
-# In[ ]:
-
-
-print(guardar)
+ print(guardar)
 
 
 # Finalmente, un problema de planificación será una instancia de la clase `ProblemaPlanificación` construida a partir de los siguientes argumentos:
@@ -100,10 +82,7 @@ print(guardar)
 # 
 # En el caso de un solo operador, un solo objetivo positivo o un solo objetivo negativo, no es necesario proporcionarlos en una lista.
 
-# In[ ]:
-
-
-problema_rueda_pinchada = probpl.ProblemaPlanificación(
+ problema_rueda_pinchada = probpl.ProblemaPlanificación(
     operadores=[quitar, guardar, sacar, poner],
     estado_inicial=probpl.Estado(en('rueda-pinchada','eje'),
                                  en('rueda-repuesto','maletero')),
@@ -113,22 +92,15 @@ problema_rueda_pinchada = probpl.ProblemaPlanificación(
 
 # Una vez implementado el problema de planificación, para buscar un plan solución basta aplicar algún algoritmo de búsqueda en espacio de estados.
 
-# In[ ]:
-import búsqueda_espacio_estados as búsqee
+ import búsqueda_espacio_estados as búsqee
 
 
-# In[ ]:
-
-
-búsqueda_profundidad = búsqee.BúsquedaEnProfundidad()
+ búsqueda_profundidad = búsqee.BúsquedaEnProfundidad()
 
 búsqueda_profundidad.buscar(problema_rueda_pinchada)
 
 
-# In[ ]:
-
-
-búsqueda_anchura = búsqee.BúsquedaEnAnchura()
+ búsqueda_anchura = búsqee.BúsquedaEnAnchura()
 
 búsqueda_anchura.buscar(problema_rueda_pinchada)
 
@@ -139,10 +111,7 @@ búsqueda_anchura.buscar(problema_rueda_pinchada)
 
 # En primer lugar declaramos los predicados que vamos a utilizar para representar el problema, indicando los conjuntos sobre los cuales se van a construir dichos predicados. Si un predicado no va a tener argumentos, entonces se debe indicar que se va a construir sobre el conjunto vacío.
 
-# In[ ]:
-
-
-bloques = {'A','B','C'}
+ bloques = {'A','B','C'}
 despejado = probpl.Predicado(bloques)
 brazolibre = probpl.Predicado({})
 sobrelamesa = probpl.Predicado(bloques)
@@ -152,10 +121,7 @@ agarrado = probpl.Predicado(bloques)
 
 # Definimos un estado inicial para el problema de los bloques en el que el bloque $A$ está situado sobre la mesa y no tiene nada encima; el bloque $B$ está situado sobre la mesa y tiene encima el bloque $C$, que no tiene nada más encima; y el brazo robótico está libre.
 
-# In[ ]:
-
-
-estado_inicial_bloques = probpl.Estado(
+ estado_inicial_bloques = probpl.Estado(
     sobrelamesa('A'),despejado('A'),
     sobrelamesa('B'),sobre('C','B'),despejado('C'),
     brazolibre())
@@ -163,10 +129,7 @@ estado_inicial_bloques = probpl.Estado(
 
 # Se pueden establecer costes distintos para las acciones obtenidas a partir de un mismo esquema. Para ello basta crear una instancia de la clase `CosteEsquema` a partir de una función que establezca ese coste en función de ciertos parámetros. Por ejemplo, supongamos que el coste de mover cada uno de los tres bloques es distinto, ya que tienen pesos distintos.
 
-# In[ ]:
-
-
-coste_bloque = probpl.CosteEsquema(lambda b: {'A': 1, 'B': 2, 'C': 3}[b])
+ coste_bloque = probpl.CosteEsquema(lambda b: {'A': 1, 'B': 2, 'C': 3}[b])
 
 
 # Los esquemas de acciones se implementan como instancias de la clase `EsquemaPlanificación`. Los posibles argumentos que se pueden proporcionar son los siguientes:
@@ -183,10 +146,7 @@ coste_bloque = probpl.CosteEsquema(lambda b: {'A': 1, 'B': 2, 'C': 3}[b])
 # 
 # Las instancias de los predicados en `precondicionesP`, `precondicionesN`, `efectosP` y `efectosN`, pueden hacer referencia a las variables $z_i$, que deben escribirse entre llaves. En el caso de una sola precondición positiva o negativa, o un solo efecto positivo o negativo no es necesario proporcionarlos en una lista.
 
-# In[ ]:
-
-
-# Colocar un bloque sobre otro
+ # Colocar un bloque sobre otro
 apilar = probpl.EsquemaPlanificación('apilar({x},{y})',
     precondicionesP=[despejado('{y}'), agarrado('{x}')],
     efectosN=[despejado('{y}'), agarrado('{x}')],
@@ -222,26 +182,18 @@ bajar = probpl.EsquemaPlanificación('bajar({x})',
 
 # La representación como cadena de un esquema de acción muestra las acciones que se generarían a partir de él.
 
-# In[ ]:
-
-
-print("\nagarrar")
+ print("\nagarrar")
 print(agarrar)
 print("\n")
 
 
-# In[ ]:
-
-print("apilar")
+ print("apilar")
 print(apilar)
 print("\n")
 
 # Finalmente, para representar el problema de planificación se pasa la lista de esquemas de acción a la clase `ProblemaPlanificación` (en general, se pueden proporcionar tanto acciones como operadores, incluso mezclados). 
 
-# In[ ]:
-
-
-problema_mundo_bloques = probpl.ProblemaPlanificación(
+ problema_mundo_bloques = probpl.ProblemaPlanificación(
     operadores = [apilar,desapilar,agarrar,bajar],
     estado_inicial = estado_inicial_bloques,
     objetivosP = [sobrelamesa('C'),sobre('B','C'),sobre('A','B')])
@@ -249,10 +201,7 @@ problema_mundo_bloques = probpl.ProblemaPlanificación(
 
 # Una vez implementado el problema de planificación, para buscar un plan solución basta aplicar algún algoritmo de búsqueda en espacio de estados.
 
-# In[ ]:
-
-
-print("búsqueda_profundidad.buscar(problema_mundo_bloques)\n")
+ print("búsqueda_profundidad.buscar(problema_mundo_bloques)\n")
 búsqueda_profundidad.buscar(problema_mundo_bloques)
 
 
@@ -268,28 +217,19 @@ búsqueda_profundidad.buscar(problema_mundo_bloques)
 
 # Consideremos los siguientes conjuntos de símbolos de objetos (__que no tienen por qué ser los únicos que se usen en el problema__):
 
-# In[ ]:
-
-
-cuevas = {'C{}'.format(i) for i in range(5)}
+ cuevas = {'C{}'.format(i) for i in range(5)}
 buceadores = {'B{}'.format(i) for i in range(2)}
 cantidades = {str(i) for i in range(9)}
 
 
-# In[ ]:
-
-
-print("Cuevas: {}".format(cuevas))
+ print("Cuevas: {}".format(cuevas))
 print("Buceadores: {}".format(buceadores))
 print("Cantidades: {}".format(cantidades))
 
 
 # y las siguientes relaciones de conexión entre las cuevas:
 
-# In[ ]:
-
-
-conexiones = [('C0', 'C1'),
+ conexiones = [('C0', 'C1'),
               ('C1', 'C0'),
               ('C1', 'C2'),
               ('C1', 'C4'),
@@ -307,8 +247,7 @@ conexiones = [('C0', 'C1'),
 # * `tanques_llenos`: para cada buceador indica cuantos de sus 4 tanques están llenos de aire; para cada cueva indica cuantos tanques llenos de aire hay en dicha cueva, para que un buceador los pueda coger.
 # * `con_foto_de`: para cada lugar de la cueva indica si se le ha realizado o no una fotografía.
 
-# In[ ]:
-posicion_buceador = probpl.Predicado(buceadores, cuevas | {'superficie'})
+ posicion_buceador = probpl.Predicado(buceadores, cuevas | {'superficie'})
 disponible = probpl.Predicado(buceadores)
 trabajando = probpl.Predicado(buceadores)
 descompresion = probpl.Predicado(buceadores)
@@ -329,9 +268,7 @@ estado = probpl.Estado(disponible('B0'),
 # * `contratar(B0)`: contrata al buceador `B0`, que inmediatamente se dispone a trabajar; siempre y cuando esté disponible y no haya otro buceador contratado ahora mismo. El buceador `B1` rechazará ser contratado después de él. Contratar al buceador `B0` tiene coste 10.
 # * `contratar(B1)`: contrata al buceador `B1`, que inmediatamente se dispone a trabajar; siempre y cuando esté disponible y no haya otro buceador contratado ahora mismo. Contratar al buceador `B1` tiene coste 67.
 
-# In[ ]:
-
-contratarB0 = probpl.AcciónPlanificación(nombre='contratar(B0)',
+ contratarB0 = probpl.AcciónPlanificación(nombre='contratar(B0)',
                                          precondicionesP=[disponible('B0')],
                                          precondicionesN=[trabajando('B0'), trabajando('B1')],
                                          efectosP=[trabajando('B0'), tanques_llenos('B0', '4')],
@@ -348,8 +285,7 @@ contratarB0 = probpl.AcciónPlanificación(nombre='contratar(B0)',
 # * `cargar_tanque`: un buceador carga uno de sus tanques vacíos con uno lleno que se ha soltado previamente en una de las cuevas.
 # * `salir_del_agua`: un buceador sale a superficie y pasa al proceso de descompresión.
 
-# In[ ]:
-bucear2 = probpl.EsquemaPlanificación(nombre='bucear({b}, {t1}, {t2} {c1}, {c2})',
+ bucear2 = probpl.EsquemaPlanificación(nombre='bucear({b}, {t1}, {t2} {c1}, {c2})',
                                      precondicionesP=[tanques_llenos('{b}', '{t1}'),
                                                       trabajando('{b}'),
                                                       posicion_buceador('{b}', '{c1}')],
@@ -386,16 +322,5 @@ print(bucear)
 
 # __Ejercicio 4__: implementar la instancia del problema de tal manera que inicialmente los dos buceadores estén en la superficie, disponibles para ser contratados; no haya tanques llenos en las cuevas; y no se haya hecho todavía ninguna foto. El objetivo será fotografiar la cueva `C4` y que los dos buceadores estén en la superficie.
 
-# In[ ]:
-
-
-
-
-
-# __Ejercicio 5__: Aplicar algún algoritmo de búsqueda en espacio de estados para encontrar un plan solución de la instancia del problema (**Nota**: una búsqueda no informada puede requerir un tiempo considerable). ¿Cuántas acciones tiene el plan resultante?. ¿Se puede alcanzar el mismo objetivo pero con una foto de la cueva `C3`?
-
-# In[ ]:
-
-
-
+ # __Ejercicio 5__: Aplicar algún algoritmo de búsqueda en espacio de estados para encontrar un plan solución de la instancia del problema (**Nota**: una búsqueda no informada puede requerir un tiempo considerable). ¿Cuántas acciones tiene el plan resultante?. ¿Se puede alcanzar el mismo objetivo pero con una foto de la cueva `C3`?
 

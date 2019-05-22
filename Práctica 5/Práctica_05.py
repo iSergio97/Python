@@ -17,9 +17,6 @@
 
 # En primer lugar, importamos los módulos necesarios:
 
-# In[ ]:
-
-
 import random
 from deap import base, creator, tools, algorithms
 import numpy
@@ -34,22 +31,14 @@ import numpy
 
 # Podemos entonces declarar la clase `Fitness` en el módulo `creator` con la siguiente expresión
 
-# In[ ]:
-
-
+# creator.create tiende a maximizar. Si queremos minimizar, debemos añadir un -1.0 como peso
 creator.create('Fitness', base.Fitness, weights=(-1.0,))
 
 # La clase `Individuo` la declaramos en el módulo `creator` con la expresión
-
-# In[ ]:
-
-
+# Crea la clase 'Individuo', que hereda de list
 creator.create('Individuo', list, fitness=creator.Fitness)
 
 # Ahora debemos crear una _caja de herramientas_ (_toolbox_) en la que registremos todos los elementos necesarios para poder aplicar un algoritmo genético.
-
-# In[ ]:
-
 
 caja_de_herramientas = base.Toolbox()
 
@@ -57,51 +46,40 @@ caja_de_herramientas = base.Toolbox()
 
 # En primer lugar registramos una función `gen` que devuelve un 0 o un 1 de manera aleatoria.
 
-# In[ ]:
-
-
 caja_de_herramientas.register('gen', random.randint, 0, 1)
-
-# In[ ]:
-
 
 random.seed(12345)  # Semilla para el mecanismo de generación de números aleatorios
 for _ in range(5):
     print(caja_de_herramientas.gen())
 
 # Para generar un individuo debemos generar 10 genes de manera aleatoria. La función `initRepeat` del módulo `tools` aplicada a los argumentos `container`, `func` y `n` guarda en el contenedor `container` los resultados obtenidos al aplicar `n` veces la función `func`. Podemos entonces registrar de la siguiente manera en la caja de herramientas una función `individuo` que devuelve un individuo aleatorio.
+print("Creación individuo aleatorio")
+print(caja_de_herramientas.register('individuo', tools.initRepeat,
+                              container=creator.Individuo, func=caja_de_herramientas.gen, n=10))
+print("\n")
 
-# In[ ]:
-
-
-caja_de_herramientas.register('individuo', tools.initRepeat,
-                              container=creator.Individuo, func=caja_de_herramientas.gen, n=10)
-
-# In[ ]:
-
-
-random.seed(12345)
-caja_de_herramientas.individuo()
-
+print("Random seed")
+print(random.seed(12345))
+print("\n")
+print("caja de herramientas individuo")
+print(caja_de_herramientas.individuo())
+print("fin herramientas individuo")
+print("\n")
 # Consideraremos una población como una lista de 10 individuos. Haciendo uso de nuevo de la función `initRepeat` podemos registrar en la caja de herramientas una función `población` que devuelve una población aleatoria.
 
-# In[ ]:
+print("caja de herramientas register")
+print(caja_de_herramientas.register('población', tools.initRepeat,
+                              container=list, func=caja_de_herramientas.individuo, n=10))
+print("\n")
 
-
-caja_de_herramientas.register('población', tools.initRepeat,
-                              container=list, func=caja_de_herramientas.individuo, n=10)
-
-# In[ ]:
-
-
+print("Random seed 2")
 random.seed(12345)
+print("\n")
+print("caja de herramientas población")
 caja_de_herramientas.población()
-
+print("\n")
 
 # A continuación registramos la función que permite evaluar el fenotipo de cada individuo. __La función debe devolver una tupla y los algoritmos genéticos implementados en el paquete DEAP esperan que esté registrada con el nombre__ `evaluate`.
-
-# In[ ]:
-
 
 def fenotipo(individuo):
     P1 = []
@@ -119,56 +97,40 @@ def evaluar_individuo(individuo):
     return (abs(sum(P1) - 36) + abs(numpy.prod(P2) - 360),)
 
 
-caja_de_herramientas.register('evaluate', evaluar_individuo)
-
-# In[ ]:
-
-
+print("evaluar_individuo")
+print(caja_de_herramientas.register('evaluate', evaluar_individuo))
 fenotipo([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
 
-# In[ ]:
-
-
-caja_de_herramientas.evaluate([1, 1, 1, 0, 0, 1, 0, 1, 0, 1])
-
+print(caja_de_herramientas.evaluate([1, 1, 1, 0, 0, 1, 0, 1, 0, 1]))
+print("\n")
 # Una vez registradas todas las funciones relativas a los individuos, pasamos a registrar los operadores que utilizaremos en el algoritmo genético. El paquete DEAP proporciona implementaciones de muchos operadores habituales (véase http://deap.readthedocs.org/en/1.0.x/api/tools.html#operators), entre ellos el cruce en un punto (función `cxOnePoint` del módulo `tools`) y la mutación de cadenas de bits (función `mutFlipBit` del módulo `tools`). __Los algoritmos genéticos implementados en el paquete DEAP esperan que el operador de cruce esté registrado con el nombre__ `mate` __y el operador de mutación con el nombre__ `mutate`.
 
-# In[ ]:
-
-
-caja_de_herramientas.register('mate', tools.cxOnePoint)
-caja_de_herramientas.register('mutate', tools.mutFlipBit, indpb=0.1)
+print("\n")
+print("caja de herramientas mate")
+print(caja_de_herramientas.register('mate', tools.cxOnePoint))
+print("\ncaja de herramientas mutate")
+print(caja_de_herramientas.register('mutate', tools.mutFlipBit, indpb=0.1))
 # indpb es la probabilidad de mutación de cada gen del cromosoma
 
-
-# In[ ]:
-
-
+print("\nrandom seed 3")
 random.seed(12345)
-caja_de_herramientas.mate([1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-                          [0, 0, 0, 0, 0, 1, 1, 1, 1, 1])
-
-# In[ ]:
-
-
+print(caja_de_herramientas.mate([1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+                          [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]))
+print("\nrandom seed 4")
 random.seed(12345)
-caja_de_herramientas.mutate([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+print(caja_de_herramientas.mutate([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
 
 # Finalmente, como método de selección de individuos registramos en la caja de herramientas el método de selección por torneo, en el que para seleccionar un individuo se elige al azar una cierta cantidad de individuos y de entre ellos se selecciona el más apto. Este método está implementado en la función `selTournament` del módulo `tools`. __Los algoritmos genéticos implementados en el paquete DEAP esperan que el método de selección esté registrado con el nombre__ `select`.
 # 
 # __Nota__: la función _fitness_ que hemos definido es no negativa y, para transformar este problema de minimización en un problema de maximización, sus valores se ven luego multiplicados por el peso `-1.0` que establecimos en la clase `Fitness`. Por lo tanto, no es posible usar por esta vía el método de selección por ruleta aleatoria, ya que todos los valores con los que se trabaja finalmente son negativos. En caso de querer usar este método, habría que modificar la función _fitness_ como se explicó en el tema y usar `1.0` como peso.
 
-# In[ ]:
+print(caja_de_herramientas.register('select', tools.selTournament, tournsize=3))
 
-
-caja_de_herramientas.register('select', tools.selTournament, tournsize=3)
-
-# In[ ]:
-
-
+print("\nrandom seed 5")
 random.seed(12345)
 P = caja_de_herramientas.población()
-caja_de_herramientas.select(P, 5)
+print(caja_de_herramientas.select(P, 5))
+print("\n")
 
 # Estamos ya en condiciones de resolver el problema planteado mediante un algoritmo genético. Este puede ser uno implementado _ad hoc_ por nosotros, o puede ser uno de los ya implementados en el paquete DEAP (véase http://deap.readthedocs.org/en/1.0.x/api/algo.html).
 
@@ -182,9 +144,6 @@ caja_de_herramientas.select(P, 5)
 # 
 # __Nota de implementación__: el _fitness_ de los individuos que permanecen de una generación a la siguiente no se reevalúa. El resultado devuelto por el algoritmo es una tupla con la población final y un registro indicando para cada generación a cuántos individuos nuevos ha debido calcularse su _fitness_.
 
-# In[ ]:
-
-
 random.seed(12345)
 población_inicial = caja_de_herramientas.población()
 población_final, registro = algorithms.eaSimple(población_inicial,
@@ -193,18 +152,18 @@ población_final, registro = algorithms.eaSimple(población_inicial,
                                                 mutpb=0.3,  # Probabilidad de mutación
                                                 ngen=20,  # Número de generaciones
                                                 verbose=False)
-
+print("print del for")
 for individuo in población_final:
     print(individuo, caja_de_herramientas.evaluate(individuo))
+    print("\n")
 
+print("print del registro")
 print(registro)
+print("\n")
 
 # Todas las funciones del paquete DEAP que implementan algoritmos genéticos admiten el cálculo de estadísticas y un _salón de la fama_ con los mejores individuos que hayan aparecido a lo largo de la evolución de la población.
 
-# In[ ]:
-
-
-# Estadísticas sobre el fitness de los individuos: mínimo, media y máximo
+ # Estadísticas sobre el fitness de los individuos: mínimo, media y máximo
 # Nota: usamos para ello las funciones correspondientes de numpy, porque los
 # valores de fitness están guardados en tuplas
 estadísticas = tools.Statistics(lambda ind: ind.fitness.values)
@@ -214,8 +173,6 @@ estadísticas.register("máximo", numpy.max)
 
 # Salón de la fama para recopilar los tres mejores individuos de todas las generaciones
 salón_fama = tools.HallOfFame(3)
-
-# In[ ]:
 
 
 random.seed(12345)
@@ -228,26 +185,25 @@ población, registro = algorithms.eaSimple(población_inicial,
                                           stats=estadísticas,
                                           halloffame=salón_fama)
 
-# In[ ]:
-
-
+print("\n")
 print('Las tres mejores soluciones encontradas han sido:')
 for individuo in salón_fama:
     print('Individuo: P1={1}, P2={2}; Fitness: {0}'.format(
         individuo.fitness.values[0], *fenotipo(individuo)))
+    print("\n")
 
+
+print("salon de la fama 2")
+print(salón_fama)
+print("\n")
 # # El problema de la mochila
 
-# El _problema de la mochila_ (_knapsack problem_) es un problema de optimización combinatoria que aparece en procesos de decisión del mundo real en una amplia variedad de campos. El problema se puede enunciar de manera abstracta como sigue:
+# El _problema de la mochila (knapsack problem) es un problema de optimización combinatoria que aparece en procesos de decisión del mundo real en una amplia variedad de campos. El problema se puede enunciar de manera abstracta como sigue:
 # > Dado un conjunto de elementos, cada uno de ellos con un peso y un valor, determinar la cantidad de cada elemento a incluir en una colección de tal manera que el peso total sea menor o igual que un límite dado y el valor total sea lo mayor posible.
 # 
 # En esta práctica nos restringiremos al problema de la mochila 0-1, en el que cada elemento solo se puede incluir a lo sumo una vez en la colección. En concreto, consideraremos la instancia que consiste de 1000 elementos, con los pesos y valores recogidos en el fichero `instancia_knapsack.txt`, y con un peso límite de 4816. Para esta instancia la solución óptima tiene un valor de 27147.
 
 # Los pesos y los valores de los elementos de la instancia se pueden leer del fichero evaluando las siguientes expresiones:
-
-# In[ ]:
-
-
 PESOS = []
 VALORES = []
 with open('instancia_knapsack.txt', 'r') as fichero:
@@ -265,52 +221,53 @@ print(VALORES)
 # * La evaluación del fenotipo de cada individuo es la suma de los valores de los elementos incluidos en la colección, salvo que el peso supere el límite establecido, en cuyo caso es $-\infty$ (penalización por _pena de muerte_).
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
+creator.create('FitnessM', base.Fitness, weights=(1.0,))
+creator.create('IndividuoM', list, fitness=creator.Fitness)
+toolbox1 = base.Toolbox()
+toolbox1.register('gen', random.randint, 0, 1)
+toolbox1.register('individuo', tools.initRepeat, container=creator.IndividuoM, func=toolbox1.gen, n=1000)
+toolbox1.register('población', tools.initRepeat, container=list, func=toolbox1.individuo, n=5000)
+def evaluacion1(individuo):
+    pesoTotal = 0
+    valorTotal = 0
+    for i in range(1000):
+        if individuo[i] == 1:
+            pesoTotal += PESOS[i]
+            valorTotal += VALORES[i]
+        if pesoTotal <= 4816:
+            return (valorTotal, )
+        else:
+            return (float('-inf'), )
 
-# In[ ]:
+
+toolbox1.register('evaluate', evaluacion1)
 
 
-# import random
-# from deap import base, creator, tools, algorithms
-# import numpy
-# import math
-#
-# creator.create('FitnessM', base.Fitness, weights=(1.0,))
-# creator.create('IndividuoM', list, fitness = creator.Fitness)
-# toolbox1 = base.Toolbox()
-# toolbox1.register('gen', ...)
-# toolbox1.register('individuo', tools.initRepeat,
-#                                container=creator.IndividuoM, func=toolbox1.gen, n=...)
-# toolbox1.register('población', tools.initRepeat,
-#                                container=list, func=toolbox2.individuo, n=...)
-#
-# def evaluacion1(individuo):
-#   ...
-#
-# toolbox1.register('evaluate', evaluacion1)
-#
-# toolbox1.register('mate', ...)
-# toolbox1.register('mutate', ...)
-# toolbox1.register('select', ...)
-#
-# estadísticas1 = tools.Statistics(lambda ind: ind.fitness.values)
-# estadísticas1.register("mínimo", numpy.min)
-# estadísticas1.register("media", numpy.mean)
-# estadísticas1.register("máximo", numpy.max)
-#
-# salón_fama1 = tools.HallOfFame(3)
-#
-# random.seed(12345)
-# población, registro = algorithms.eaSimple(toolbox1.población(),
-#                                           toolbox1,
-#                                           cxpb=0.5, # Probabilidad de que dos individuos contiguos se crucen
-#                                           mutpb=0.3, # Probabilidad de que un individuo mute
-#                                           ngen=20, # Número de generaciones
-#                                           stats=estadísticas1,
-#                                           halloffame=salón_fama1)
-#
-# print('Las tres mejores soluciones encontradas han sido:')
-# for individuo in salón_fama1:
-#     print('Individuo con fitness: {0}'.format(individuo.fitness.values[0]))
+toolbox1.register('mate', tools.cxOnePoint)
+toolbox1.register('mutate', tools.mutFlipBit, indpb=0.1)
+toolbox1.register('select', tools.selTournament, tournsize=5)
+
+estadísticas1 = tools.Statistics(lambda ind: ind.fitness.values)
+estadísticas1.register("minimo", numpy.min)
+estadísticas1.register("media", numpy.mean)
+estadísticas1.register("maximo", numpy.max)
+
+salon_fama1 = tools.HallOfFame(3)
+print("crea el salon_fama1")
+
+random.seed(12345)
+#poblacion1, registro1 = algorithms.eaSimple(toolbox1.población(),
+ #                                           toolbox1,
+  #                                          cxpb=0.5,
+   #                                         mutpb=0.3,
+    #                                        ngen=20,
+     #                                       stats=estadísticas1,
+      #                                      halloffame=salon_fama1)
+
+#print('\nLas tres mejores soluciones encontradas han sido: ')
+#for individuo in salon_fama1:
+ #   print('Individuo con fitness: {0}'.format(individuo.fitness.values[0]))
+
 
 
 # __Ejercicio 2__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
@@ -321,10 +278,53 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
+print("Ejercicio 2")
+
+creator.create('FitnessM2', base.Fitness, weights=(1.0,))
+creator.create('IndividuoM2', list, fitness=creator.Fitness)
+toolbox4 = base.Toolbox()
+toolbox4.register('elementos', random.sample, range(1000), 1000)
+toolbox4.register('individuo', tools.initIterate, container=creator.IndividuoM2, generator=toolbox4.elementos)
+toolbox4.register('población', tools.initRepeat, container=list, func=toolbox4.individuo, n=5000)
+
+def evaluacion4(individuo):
+    pesoTotal = 0
+    valorTotal = 0
+    for i in range(1000):
+        if pesoTotal + PESOS[individuo[i]] <= 4816:
+            pesoTotal += PESOS[i]
+            valorTotal += VALORES[i]
+
+    return (valorTotal, )
+
+toolbox4.register('evaluate', evaluacion4)
 
 
-# __Ejercicio 3__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
+toolbox4.register('mate', tools.cxOnePoint)
+toolbox4.register('mutate', tools.mutFlipBit, indpb=0.1)
+toolbox4.register('select', tools.selTournament, tournsize=5)
+
+estadísticas4 = tools.Statistics(lambda ind: ind.fitness.values)
+estadísticas4.register("minimo", numpy.min)
+estadísticas4.register("media", numpy.mean)
+estadísticas4.register("maximo", numpy.max)
+
+salon_fama4 = tools.HallOfFame(3)
+print('crea el salon de la fama 4')
+
+random.seed(12345)
+poblacion1, registro1 = algorithms.eaSimple(toolbox4.población(),
+                                            toolbox4,
+                                            cxpb=0.5,
+                                            mutpb=0.3,
+                                            ngen=20,
+                                            stats=estadísticas4,
+                                            halloffame=salon_fama4)
+
+#print('\nLas tres mejores soluciones encontradas han sido: ')
+for individuo in salon_fama4:
+    print('Individuo con fitness: {0}'.format(individuo.fitness.values[0]))
+ # __Ejercicio 3__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
 # * Los genes son 0 y 1.
 # * Los individuos son cromosomas de longitud la cantidad de elementos disponibles.
 # * Cada individuo representa la solución en la que se van considerando en orden los elementos, de tal forma que el elemento $i$-ésimo se incluye en la colección si y solo si el gen $i$-esimo es 1 y no se supera el peso límite.
@@ -332,10 +332,7 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
-
-
-# __Ejercicio 4__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
+ # __Ejercicio 4__: para resolver un problema de la mochila 0-1 mediante algoritmos genéticos definimos los parámetros necesarios como sigue:
 # * Los genes son los elementos disponibles.
 # * Los individuos son permutaciones de los genes.
 # * Cada individuo representa la solución en la que se van considerando en orden los genes, de tal forma que el elemento representado por el gen se incluye en la colección si no se supera el peso límite.
@@ -343,12 +340,6 @@ print(VALORES)
 # 
 # Se pide implementar esta representación en una caja de herramientas que permita realizar las pruebas experimentales que se piden en el ejercicio 5.
 
-# In[ ]:
+ # __Ejercicio 5__: realizar pruebas experimentales en las que se intente resolver la instancia del problema de la mochila 0-1 proporcionada mediante los algoritmos genéticos implementados en el paquete DEAP, usando las representaciones de los ejercicios 1 a 4, y considerando distintos valores para los parámetros de los algoritmos.
 
-
-# __Ejercicio 5__: realizar pruebas experimentales en las que se intente resolver la instancia del problema de la mochila 0-1 proporcionada mediante los algoritmos genéticos implementados en el paquete DEAP, usando las representaciones de los ejercicios 1 a 4, y considerando distintos valores para los parámetros de los algoritmos.
-
-# In[ ]:
-
-
-# ¿Con cuál de las cuatro representaciones has obtenido mejores resultados? ¿Puedes razonar alguna explicación para ello?
+ # ¿Con cuál de las cuatro representaciones has obtenido mejores resultados? ¿Puedes razonar alguna explicación para ello?
