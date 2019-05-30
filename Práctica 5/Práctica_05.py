@@ -206,6 +206,8 @@ print("\n")
 # Los pesos y los valores de los elementos de la instancia se pueden leer del fichero evaluando las siguientes expresiones:
 PESOS = []
 VALORES = []
+# Para poder cargar esta prueba en Visual Studio Code, cambiar el with por esta:
+# with open('C:\\Users\\stb_1\\OneDrive\\Escritorio\\WorkSpaces\\Python\\Práctica 5\\instancia_knapsack.txt', 'r') as fichero:
 with open('instancia_knapsack.txt', 'r') as fichero:
     for línea in fichero:
         peso, valor = tuple(línea.split())
