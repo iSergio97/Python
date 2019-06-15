@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +135,11 @@
             <path>
               <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Proyecto IA" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -363,11 +366,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.Práctica 3" />
-      <item itemvalue="Python.Test" />
-      <item itemvalue="Python.búsqueda_espacio_estados" />
       <item itemvalue="Python.Práctica_03" />
       <item itemvalue="Python.Práctica_04" />
       <item itemvalue="Python.Práctica_05" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.búsqueda_espacio_estados" />
       <item itemvalue="Python.mvg" />
       <item itemvalue="Python.problema_espacio_estados" />
     </list>
@@ -560,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556537489152</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Proyecto base Wappo">
+      <created>1560589594552</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1560589594553</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -648,7 +658,8 @@
     <MESSAGE value="Cuarta práctica IA" />
     <MESSAGE value="Quinta práctica IA" />
     <MESSAGE value="Archivos para la quinta práctica de IA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Archivos para la quinta práctica de IA" />
+    <MESSAGE value="Proyecto base Wappo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyecto base Wappo" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/Acceso_Restringido.py" />
