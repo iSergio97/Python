@@ -9,9 +9,11 @@ class Mapa:
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
 
+    #El len del tamaño horizontal no debería ser tamaño de las paredes - 1 en vez de + 1?
     def tamano_hor(self):
         return len(self.paredes_v) + 1
 
+    #Lo mismo con las paredes verticales
     def tamano_ver(self):
         return len(self.tamano_h) + 1
 
@@ -47,12 +49,15 @@ paredes_hor = [[1],
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor)
 
 # Estados inicial y final:
+# Supongo que esto de estado inicial y final corresponde con el primer nivel, ¿no?
 estadoInicial = [[5, 3],
                  [2, 1]]
 estadoFinal = [3, 7]
 
 
 # Coste:
+# Aquí no habría que comprobar cuánto debe de ser el coste si avanza hacia el zombie o trampa? Y, si avanza
+# hacia delante, sí es de coste 1.
 def coste(estado):
     return 1
 
@@ -194,8 +199,11 @@ def moverMonstruo(f, c, estado):
     # Si no estamos ni en su fila ni en su columna
     else:
         # Si estamos a su derecha
+        # Como sabes si estamos a su derecha?
+        # Lo mismo con el resto de movimientos que no son directos (filas o columnas iguales a la del muñeco)
         if f < estado[1[0]]:
             # Se mueve dos pasos a su derecha de ser posible
+            # Aquí no sería mejor comprobar cualquier combinación y que se tome la que más cerca le deje?
             if mapa_ejemplo.tipo_celda_der(estado[1[0]], estado[1[1]]) != 0 \
                     and mapa_ejemplo.tipo_celda_der(estado[1[0]], estado[1[1]] + 1) != 0:
                 return estado[1[0]], estado[1[1]] + 2
@@ -269,7 +277,8 @@ problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAba
 # bOptima = búsqee.BúsquedaÓptima()
 # print(bOptima.buscar(problema))
 
-
+# Este es la heurística, ¿verdad?
+# Si es, ¿qué compruebas? ¿Qué esté más cerca de la meta (primer abs) y el segundo abs?
 def h(nodo):
     estado = nodo.estado
     return abs(estado[0[0]] - estadoFinal[0]) + abs(estado[0[1]] + estadoFinal[1])
