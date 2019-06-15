@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +16,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
+        <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+            <state>
               <folding>
-                <element signature="e#1309#1322#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,6 +112,7 @@
         <option value="$PROJECT_DIR$/Práctica 4/Práctica_04.py" />
         <option value="$PROJECT_DIR$/Práctica 5/test.py" />
         <option value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
+        <option value="$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
       </list>
     </option>
   </component>
@@ -142,11 +137,6 @@
             <path>
               <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Práctica 5" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -185,7 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Práctica_05">
+  <component name="RunManager" selected="Python.mvg">
     <configuration name="Python" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,27 +191,6 @@
       <option name="additionalOptions" value="" />
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Practica 1 - nurse" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Práctica 3" type="PythonConfigurationType" factoryName="Python">
@@ -350,6 +319,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mvg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tema 3/Tests/Theory test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="problema_espacio_estados" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -375,19 +365,19 @@
       <item itemvalue="Python.Práctica 3" />
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.búsqueda_espacio_estados" />
-      <item itemvalue="Python.Practica 1 - nurse" />
       <item itemvalue="Python.Práctica_03" />
       <item itemvalue="Python.Práctica_04" />
-      <item itemvalue="Python.problema_espacio_estados" />
       <item itemvalue="Python.Práctica_05" />
+      <item itemvalue="Python.mvg" />
+      <item itemvalue="Python.problema_espacio_estados" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mvg" />
         <item itemvalue="Python.Práctica_05" />
         <item itemvalue="Python.Práctica_04" />
         <item itemvalue="Python.Práctica_03" />
         <item itemvalue="Python.problema_espacio_estados" />
-        <item itemvalue="Python.Practica 1 - nurse" />
       </list>
     </recent_temporary>
   </component>
@@ -585,7 +575,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.24330357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -729,20 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Theory test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tema 3/3.3/factorial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -770,21 +746,21 @@
     <entry file="file://$PROJECT_DIR$/Práctica 1/.ipynb_checkpoints/Práctica_01-checkpoint.ipynb" />
     <entry file="file://$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" />
     <entry file="file://$PROJECT_DIR$/Práctica 1/nursery.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
           <caret column="75" lean-forward="true" selection-end-column="75" />
         </state>
       </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/cars.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -900,9 +876,33 @@
     <entry file="file://$PROJECT_DIR$/Práctica 5/Práctica_05.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+          <caret line="298" selection-start-line="298" selection-end-line="298" />
           <folding>
             <element signature="e#1309#1322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Theory test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
