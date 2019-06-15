@@ -278,7 +278,7 @@ problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAba
 # print(bOptima.buscar(problema))
 
 # Este es la heurística, ¿verdad?
-# Si es, ¿qué compruebas? ¿Qué esté más cerca de la meta (primer abs) y el segundo abs?
+# Si es, ¿qué compruebas? ¿Que esté más cerca de la meta (primer abs) y el segundo abs?
 def h(nodo):
     estado = nodo.estado
     return abs(estado[0[0]] - estadoFinal[0]) + abs(estado[0[1]] + estadoFinal[1])
