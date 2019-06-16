@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="159" column="137" selection-start-line="159" selection-start-column="137" selection-end-line="159" selection-end-column="137" />
+            <state relative-caret-position="217">
+              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -31,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1237">
+            <state relative-caret-position="1592">
               <caret line="234" column="23" lean-forward="true" selection-start-line="234" selection-start-column="23" selection-end-line="234" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -651,7 +651,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560688137242</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Corrección heurística&#10;&#10;Añadida la restricción de que si el movimiento le deja a distancia 2 del zombie.&#10;&#10;Falta por definir que se favorezca la acción de meter al zombie en la trampa y el contador de stun del zombie">
+      <created>1560688538920</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560688538920</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Corrección heurística&#10;&#10;Añadida la restricción de que si el movimiento le deja a distancia 2 del zombie.&#10;&#10;Falta por definir que se favorezca la acción de meter al zombie en la trampa y el contador de stun del zombie">
+      <created>1560688616224</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560688616224</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -667,13 +681,13 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.24330357" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" visible="true" weight="0.31751227" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.31751227" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -743,7 +757,8 @@
     <MESSAGE value="Proyecto base Wappo" />
     <MESSAGE value="Wappo.py modificado" />
     <MESSAGE value="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar" />
+    <MESSAGE value="Corrección heurística&#10;&#10;Añadida la restricción de que si el movimiento le deja a distancia 2 del zombie.&#10;&#10;Falta por definir que se favorezca la acción de meter al zombie en la trampa y el contador de stun del zombie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección heurística&#10;&#10;Añadida la restricción de que si el movimiento le deja a distancia 2 del zombie.&#10;&#10;Falta por definir que se favorezca la acción de meter al zombie en la trampa y el contador de stun del zombie" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1/__init__.py" />
@@ -1020,7 +1035,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1237">
+        <state relative-caret-position="1592">
           <caret line="234" column="23" lean-forward="true" selection-start-line="234" selection-start-column="23" selection-end-line="234" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -1030,8 +1045,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="159" column="137" selection-start-line="159" selection-start-column="137" selection-end-line="159" selection-end-column="137" />
+        <state relative-caret-position="217">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

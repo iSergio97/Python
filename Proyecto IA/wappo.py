@@ -65,11 +65,11 @@ paredes_hor = [[1],
                []]
 
 # Estados inicial y final:
-estadoInicial = (2, 1)
-estadoFinal = (6, 4)
+estadoInicial = (2, 4)
+estadoFinal = (2, 7)
 
 # Aun por definir
-posicionZombie = (0, 4)
+posicionZombie = (0, 1)
 posicionTrampa = set()
 # Fin de atributos del mapa
 
