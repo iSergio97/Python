@@ -1,21 +1,27 @@
 import problema_espacio_estados as probee
 import búsqueda_espacio_estados as búsqee
+
 import copy
 
 
 # Comienzo de clase
 class Mapa:
-    def __init__(self, paredes_v, paredes_h, estado_inicial):
+    def __init__(self, paredes_v, paredes_h, estado_inicial, estado_final, posicion_zombie, posicion_trampa):
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
         self.estado_inicial = estado_inicial
+        self.estado_final = estado_final
+        self.posicion_zombie = posicion_zombie
+        self.posicion_trampa = posicion_trampa
 
     def tamano_hor(self):
-        return len(self.paredes_v) + 1
+        return len(self.paredes_v) - 1
 
     def tamano_ver(self):
-        return len(self.paredes_h) + 1
+        return len(self.paredes_h) - 1
 
+# ¿Por qué devuelves 0 si la posición donde está f está c i, si no está, devuelves 1?
+# ¿No debería ser al revés?
     def tipo_celda_arr(self, f, c):
         return 0 if self.paredes_h[f - 1].__contains__(self, c) else 1
 
@@ -30,6 +36,15 @@ class Mapa:
 
     def estado_inicial(self):
         return self.estado_inicial
+
+    def estado_final(self):
+        return self.estado_final
+
+    def posicion_zombie(self):
+        return self.posicion_zombie
+
+    def posicion_trampa(self):
+        return self.posicion_trampa
 # Fin de clase
 
 
@@ -49,17 +64,16 @@ paredes_hor = [[1],
                []]
 
 # Estados inicial y final:
-estadoInicial = [5, 3,
-                 2, 1]
-estadoFinal = [3, 7]
+estadoInicial = [(2, 1)]
+estadoFinal = [(6, 4)]
+
+# Aun por definir
+posicionZombie = [(0, 4)]
+posicionTrampa= [set()]
 # Fin de atributos del mapa
 
-mapa_ejemplo = Mapa(paredes_ver, paredes_hor, estadoInicial)
+mapa_ejemplo = Mapa(paredes_ver, paredes_hor, estadoInicial, estadoFinal, posicionZombie, posicionTrampa)
 
-
-# Coste:
-def coste(estado):
-    return 1
 
 
 # Acciones:
@@ -75,11 +89,18 @@ def aplicar_mov_der(estado):
                                                               and estado[1] + 1 == estadoFinal[1]) \
         else estado[0], estado[1], moverMonstruo(estado[0], estado[1] + 1, estado)
 
+# Coste:
+# Modificar a coste variable en función de la acción tomada (el movimiento lo mata directamente por trampa o zombie)
+def coste(estado):
+    coste = 1
+    if aplicar_mov_der(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+        coste = 100000
+    return coste
 
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
 
 
-    # Moverse a la izquierda:
+# Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
     return estado[1] - 1 == estadoFinal[1] or \
            (estado[1] > -1
@@ -91,11 +112,16 @@ def aplicar_mov_izq(estado):
                                                               and estado[1] + 1 == estadoFinal[1])\
         else estado[0], estado[1] - 1, moverMonstruo(estado[0], estado[1] - 1, estado)
 
+def coste(estado):
+    coste = 1
+    if aplicar_mov_izq(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+        coste = 100000
+    return coste
 
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
 
 
-    # Moverse hacia abajo:
+# Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
     return estado[0] + 1 == estadoFinal[0] or \
            (estado[0] < mapa_ejemplo.tamano_ver() - 1
@@ -107,11 +133,16 @@ def aplicar_mov_aba(estado):
                                                               and estado[1] == estadoFinal[1]) \
         else estado[0] + 1, estado[1], moverMonstruo(estado[0] + 1, estado[1], estado)
 
+def coste(estado):
+    coste = 1
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+        coste = 100000
+    return coste
 
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
 
 
-    # Moverse hacia arriba:
+# Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
     return estado[0] - 1 == estadoFinal[0] or \
            (estado[0] > -1
@@ -123,8 +154,13 @@ def aplicar_mov_arr(estado):
                                                               and estado[1] == estadoFinal[1]) \
         else estado[0] - 1, estado[1], moverMonstruo(estado[0] - 1, estado[1], estado)
 
+def coste(estado):
+    coste = 1
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+        coste = 100000
+    return coste
 
-moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr)
+moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
 
 
 def moverMonstruo(f, c, estado):
@@ -268,20 +304,31 @@ def moverMonstruo(f, c, estado):
 
 # Definir el problema
 
+print("\nEntra a probee.")
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
                                          estadoInicial, [estadoFinal])
-print('Hola')
+print("\nSale de probee.")
+print('\nHola')
 bOptima = búsqee.BúsquedaÓptima()
-print(bOptima.buscar(problema))
+print("\nAcaba de ejecutar bOptima")
+# print(bOptima.buscar(problema))
+print("\nEjecuta el print de bOptima.buscar")
+
+
+print("\nCarga la heurística")
 
 
 def h(nodo):
     estado = nodo.estado
-    return abs(estado[0] - estadoFinal[0]) + abs(estado[1] - estadoFinal[1])
+    return estadoFinal[0]
 
 
-print('Hola 2')
+
+print('\nSale de la heurística')
+print('\nEntra a b_a_estrella')
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
+print("\nSale de b_a_estrella")
 
-# %%timeit -n1 -r1
+print("\nHace el print b_a_estrella.buscar")
 print(b_a_estrella.buscar(mapa_ejemplo))
+print("\nSale del print de b_a_estrella.buscar")
