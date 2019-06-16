@@ -1,5 +1,6 @@
 import problema_espacio_estados as probee
 import búsqueda_espacio_estados as búsqee
+import math
 
 import copy
 
@@ -15,10 +16,10 @@ class Mapa:
         self.posicion_trampa = posicion_trampa
 
     def tamano_hor(self):
-        return len(self.paredes_v) - 1
+        return len(self.paredes_v) + 1
 
     def tamano_ver(self):
-        return len(self.paredes_h) - 1
+        return len(self.paredes_h) + 1
 
 # ¿Por qué devuelves 0 si la posición donde está f está c i, si no está, devuelves 1?
 # ¿No debería ser al revés?
@@ -69,7 +70,7 @@ estadoFinal = (6, 4)
 
 # Aun por definir
 posicionZombie = (0, 4)
-posicionTrampa= set()
+posicionTrampa = set()
 # Fin de atributos del mapa
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, estadoInicial, estadoFinal, posicionZombie, posicionTrampa)
@@ -93,7 +94,7 @@ def aplicar_mov_der(estado):
 # Modificar a coste variable en función de la acción tomada (el movimiento lo mata directamente por trampa o zombie)
 def coste(estado):
     coste = 1
-    if aplicar_mov_der(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+    if aplicar_mov_der(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
         coste = 100000
     return coste
 
@@ -114,7 +115,7 @@ def aplicar_mov_izq(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_izq(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+    if aplicar_mov_izq(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
         coste = 100000
     return coste
 
@@ -135,7 +136,7 @@ def aplicar_mov_aba(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)) :
         coste = 100000
     return coste
 
@@ -156,7 +157,7 @@ def aplicar_mov_arr(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1)):
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
         coste = 100000
     return coste
 

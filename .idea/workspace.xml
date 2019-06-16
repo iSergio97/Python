@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+            <state relative-caret-position="177">
+              <caret line="159" column="137" selection-start-line="159" selection-start-column="137" selection-end-line="159" selection-end-column="137" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -51,8 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>in</find>
-      <find>In 13</find>
       <find>clasif</find>
       <find>codificado</find>
       <find>codificado[</find>
@@ -66,7 +64,6 @@
       <find>coste_bloque</find>
       <find>print</find>
       <find>asld</find>
-      <find>\n</find>
       <find>agarrar</find>
       <find>dominio</find>
       <find>problema_mundo</find>
@@ -81,6 +78,9 @@
       <find>estadoI</find>
       <find>coste</find>
       <find>mapa_e</find>
+      <find>\n</find>
+      <find>or</find>
+      <find>def coste</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -637,7 +637,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560687657899</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Wappo.py modificado">
+      <created>1560687889339</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560687889339</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar">
+      <created>1560688137242</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560688137242</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -728,7 +742,8 @@
     <MESSAGE value="Archivos para la quinta práctica de IA" />
     <MESSAGE value="Proyecto base Wappo" />
     <MESSAGE value="Wappo.py modificado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wappo.py modificado" />
+    <MESSAGE value="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1/__init__.py" />
@@ -1015,8 +1030,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="177">
+          <caret line="159" column="137" selection-start-line="159" selection-start-column="137" selection-end-line="159" selection-end-column="137" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
