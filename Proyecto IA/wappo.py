@@ -1,25 +1,25 @@
 import problema_espacio_estados as probee
 import búsqueda_espacio_estados as búsqee
 import math
+import datetime
 
-import copy
-
+print(datetime.datetime.now())
 
 # Comienzo de clase
 class Mapa:
-    def __init__(self, paredes_v, paredes_h, estado_inicial, estado_final, posicion_zombie, posicion_trampa):
+    def __init__(self, paredes_v, paredes_h, estado_inicial, estado_final, posicion_inicio_zombie, posicion_trampa):
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
         self.estado_inicial = estado_inicial
         self.estado_final = estado_final
-        self.posicion_zombie = posicion_zombie
+        self.posicion_inicio_zombie = posicion_inicio_zombie
         self.posicion_trampa = posicion_trampa
 
     def tamano_hor(self):
-        return len(self.paredes_v) + 1
+        return len(self.paredes_v) - 1
 
     def tamano_ver(self):
-        return len(self.paredes_h) + 1
+        return len(self.paredes_h) - 1
 
 # ¿Por qué devuelves 0 si la posición donde está f está c i, si no está, devuelves 1?
 # ¿No debería ser al revés?
@@ -41,8 +41,8 @@ class Mapa:
     def estado_final(self):
         return self.estado_final
 
-    def posicion_zombie(self):
-        return self.posicion_zombie
+    def posicion_inicio_zombie(self):
+        return self.posicion_inicio_zombie
 
     def posicion_trampa(self):
         return self.posicion_trampa
@@ -51,25 +51,17 @@ class Mapa:
 
 # Atributos del mapa
 paredes_ver = [[],
-               [1],
-               [1],
-               [1],
-               [],
                []]
 
-paredes_hor = [[1],
-               [],
-               [],
-               [],
-               [],
+paredes_hor = [[],
                []]
 
 # Estados inicial y final:
-estadoInicial = (2, 4)
-estadoFinal = (2, 7)
+estadoInicial = (0, 0)
+estadoFinal = (1, 0)
 
 # Aun por definir
-posicionZombie = (0, 1)
+posicionZombie = set()
 posicionTrampa = set()
 # Fin de atributos del mapa
 
@@ -94,7 +86,8 @@ def aplicar_mov_der(estado):
 # Modificar a coste variable en función de la acción tomada (el movimiento lo mata directamente por trampa o zombie)
 def coste(estado):
     coste = 1
-    if aplicar_mov_der(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
+    if aplicar_mov_der(estado[1]) and \
+            (posicionZombie(estado[1] + 1) or posicionTrampa(estado[1] + 1) or (math.pow(abs(estado[0] - estado[2]), 2) + math.pow(abs(estado[1] - estado[3]), 2)) < math.sqrt(2)):
         coste = 100000
     return coste
 
@@ -115,7 +108,8 @@ def aplicar_mov_izq(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_izq(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
+    if aplicar_mov_izq(estado[0]) and \
+            (posicionZombie(estado[0], estado[1] - 1) or posicionTrampa(estado[0], estado[1] - 1) or (math.pow(abs(estado[0] - estado[2]), 2) + math.pow(abs(estado[1] - 1 - estado[3]), 2)) < math.sqrt(2)):
         coste = 100000
     return coste
 
@@ -136,7 +130,7 @@ def aplicar_mov_aba(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)) :
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1, estado[1]) or posicionTrampa(estado[0] + 1, estado[1]) or (math.pow(abs(estado[0] + 1 - estado[2]), 2) + math.pow(abs(estado[1] - estado[3]), 2)) < math.sqrt(2)):
         coste = 100000
     return coste
 
@@ -157,12 +151,14 @@ def aplicar_mov_arr(estado):
 
 def coste(estado):
     coste = 1
-    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] + 1) or posicionTrampa(estado[0] + 1) or (abs(estado[0] - estado[1]) > 2)):
+    if aplicar_mov_aba(estado[0]) and (posicionZombie(estado[0] - 1, estado[1]) or posicionTrampa(estado[0] - 1, estado[1]) or (math.pow(abs(estado[0] - 1 - estado[2]), 2) + math.pow(abs(estado[1] - estado[3]), 2)) < math.sqrt(2)):
         coste = 100000
     return coste
 
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
 
+# La parte de si está en su fila o en su columna se puede dejar como está
+# La parte de si no está, se puede comprobar mejor, en función de triángulos que suponen la distancia entre ambas coordenadas
 
 def moverMonstruo(f, c, estado):
     # Si estamos en su casilla
@@ -175,13 +171,13 @@ def moverMonstruo(f, c, estado):
         if c + 1 == estado[3]:
             # Se mueve un paso a la derecha de ser posible
             return estado[2], estado[3] + 1 \
-                if mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0 else estado[2], estado[3]
+                if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0 else estado[2], estado[3]
         # Si estamos dos o más pasos a su derecha
         elif c + 1 < estado[3]:
             # Se mueve dos pasos a su derecha de ser posible
-            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0 \
-                    and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
-                return estado[2], estado[3] + 2
+            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0:
+                return estado[2], estado[3]
             # Si no uno y si no ninguno
             else:
                 return estado[2], estado[3] + 1 \
@@ -190,17 +186,17 @@ def moverMonstruo(f, c, estado):
         elif c - 1 == estado[3]:
             # Se mueve un paso a la izquierda de ser posible
             return estado[2], estado[3] - 1 \
-                if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3]) != 0 else estado[2], estado[3]
+                if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
         # Si estamos dos o más pasos a su izquierda
         else:
             # Se mueve dos pasos a su izquierda de ser posible
-            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3]) != 0 \
+            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
                     and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
-                return estado[2], estado[3] - 2
+                return estado[2], estado[3]
             # Si no uno y si no ninguno
             else:
-                return estado[2], estado[3] + - 1 \
-                    if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3]) != 0 else estado[2], estado[3]
+                return estado[2], estado[3] - 1 \
+                    if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
     # Si estamos en su columna
     elif c == estado[3]:
         # Y estamos un paso debajo de él
@@ -211,8 +207,8 @@ def moverMonstruo(f, c, estado):
         # Si estamos dos o más pasos debajo de él
         elif f + 1 < estado[2]:
             # Se mueve dos pasos hacia abajo de ser posible
-            if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 \
-                    and mapa_ejemplo.tipo_celda_aba(estado[2], estado[3] + 1) != 0:
+            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
+                    and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                 return estado[2] + 2, estado[3]
             # Si no uno y si no ninguno
             else:
@@ -222,11 +218,11 @@ def moverMonstruo(f, c, estado):
         elif f - 1 < estado[2]:
             # Se mueve un paso hacia arriba de ser posible
             return estado[2] - 1, estado[3] \
-                if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 else estado[2], estado[3]
+                if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 else estado[2], estado[3]
         # Si estamos dos o más pasos encima de él
         else:
             # Se mueve dos pasos hacia arriba de ser posible
-            if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 \
+            if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
                     and mapa_ejemplo.tipo_celda_arr(estado[2], estado[3] - 1) != 0:
                 return estado[2] - 2, estado[3]
             # Si no uno y si no ninguno
@@ -236,70 +232,71 @@ def moverMonstruo(f, c, estado):
     # Si no estamos ni en su fila ni en su columna
     else:
         # Si estamos a su derecha
+        # Aquí se debería comprobar si es más eficiente que se mueva en función de la distancia euclídea de las coordenadas
         if f < estado[2]:
             # Se mueve dos pasos a su derecha de ser posible
-            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0 \
+            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
                     and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
                 return estado[2], estado[3] + 2
             # Si no uno
-            elif mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0:
+            elif mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
                 return estado[2], estado[3] + 1
             # Y si no, se mueve verticalmente
             else:
                 # Si estamos debajo de él
                 if c < estado[3]:
                     # Se mueve dos pasos hacia abajo de ser posible
-                    if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 \
-                            and mapa_ejemplo.tipo_celda_aba(estado[2], estado[3] + 1) != 0:
+                    if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                         return estado[2] + 2, estado[3]
                     # Si no uno y si no ninguno
                     else:
                         return estado[2] + 1, estado[3] \
-                            if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 \
+                            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
                             else estado[2], estado[3]
                 # Si estamos encima de él
                 else:
                     # Se mueve dos pasos hacia arriba de ser posible
-                    if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 \
-                            and mapa_ejemplo.tipo_celda_arr(estado[2], estado[3] - 1) != 0:
+                    if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
                         return estado[2] - 2, estado[3]
                     # Si no uno y si no ninguno
                     else:
                         return estado[2] - 1, estado[3] \
-                            if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0\
+                            if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0\
                             else estado[2], estado[3]
         # Si por el contrario estamos a su izquierda
         else:
             # Se mueve dos pasos a su izquierda de ser posible
-            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3]) != 0 \
-                    and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
+            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0:
                 return estado[2], estado[3] - 2
             # Si no uno y si no ninguno
-            elif mapa_ejemplo.tipo_celda_izq(estado[2], estado[3]) != 0:
-                return estado[2], estado[3] + - 1
+            elif mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
+                return estado[2], estado[3]
             # Y si no, se mueve verticalmente
             else:
                 # Si estamos debajo de él
                 if c < estado[3]:
                     # Se mueve dos pasos hacia abajo de ser posible
-                    if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 \
-                            and mapa_ejemplo.tipo_celda_aba(estado[2], estado[3] + 1) != 0:
+                    if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                         return estado[2] + 2, estado[3]
                     # Si no uno y si no ninguno
                     else:
                         return estado[2] + 1, estado[3] \
-                            if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 \
+                            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
                             else estado[2], estado[3]
                 # Si estamos encima de él
                 else:
                     # Se mueve dos pasos hacia arriba de ser posible
-                    if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 \
-                            and mapa_ejemplo.tipo_celda_arr(estado[2], estado[3] - 1) != 0:
+                    if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
                         return estado[2] - 2, estado[3]
                     # Si no uno y si no ninguno
                     else:
                         return estado[2] - 1, estado[3] \
-                            if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 \
+                            if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 \
                             else estado[2], estado[3]
 
 
@@ -307,13 +304,12 @@ def moverMonstruo(f, c, estado):
 
 print("\nEntra a probee.")
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
-                                         estadoInicial, [estadoFinal])
+                                         estadoInicial, estadoFinal)
 print("\nSale de probee.")
 print('\nHola')
 bOptima = búsqee.BúsquedaÓptima()
 print("\nAcaba de ejecutar bOptima")
 # print(bOptima.buscar(problema))
-print("\nEjecuta el print de bOptima.buscar")
 
 
 print("\nCarga la heurística")
@@ -322,8 +318,6 @@ print("\nCarga la heurística")
 def h(nodo):
     estado = nodo.estado
     return abs(estado[0] - estadoFinal[0]) + abs(estado[1] - estadoFinal[1])
-
-
 
 print('\nSale de la heurística')
 print('\nEntra a b_a_estrella')
