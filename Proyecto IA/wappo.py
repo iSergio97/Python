@@ -320,7 +320,7 @@ print("\nCarga la heurística")
 
 def h(nodo):
     estado = nodo.estado
-    return estadoFinal[0]
+    return abs(estado[0] - estadoFinal[0]) + abs(estado[1] - estadoFinal[1])
 
 
 
@@ -329,6 +329,6 @@ print('\nEntra a b_a_estrella')
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
 print("\nSale de b_a_estrella")
 
-print("\nHace el print b_a_estrella.buscar")
+print("\nEntra el print b_a_estrella.buscar")
 print(b_a_estrella.buscar(mapa_ejemplo))
 print("\nSale del print de b_a_estrella.buscar")
