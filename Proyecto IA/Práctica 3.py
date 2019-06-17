@@ -245,3 +245,142 @@ def h(nodo):
 # pasando por las posiciones `(1, 6)` y `(5, 5)`, en ese orden.
 
 
+def moverMonstruo(f, c, estado):
+    # Si estamos en su casilla
+    if f == estado[2] and c == estado[3]:
+        # No se mueve
+        return estado[2], estado[3]
+    # Si estamos en su fila
+    elif f == estado[2]:
+        # Y estamos un paso a su derecha
+        if c + 1 == estado[3]:
+            # Se mueve un paso a la derecha de ser posible
+            return estado[2], estado[3] + 1 \
+                if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0 else estado[2], estado[3]
+        # Si estamos dos o más pasos a su derecha
+        elif c + 1 < estado[3]:
+            # Se mueve dos pasos a su derecha de ser posible
+            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0:
+                return estado[2], estado[3]
+            # Si no uno y si no ninguno
+            else:
+                return estado[2], estado[3] + 1 \
+                    if mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0 else estado[2], estado[3]
+        # Si por el contrario estamos un paso a su izquierda
+        elif c - 1 == estado[3]:
+            # Se mueve un paso a la izquierda de ser posible
+            return estado[2], estado[3] - 1 \
+                if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
+        # Si estamos dos o más pasos a su izquierda
+        else:
+            # Se mueve dos pasos a su izquierda de ser posible
+            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
+                return estado[2], estado[3]
+            # Si no uno y si no ninguno
+            else:
+                return estado[2], estado[3] - 1 \
+                    if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
+    # Si estamos en su columna
+    elif c == estado[3]:
+        # Y estamos un paso debajo de él
+        if f + 1 == estado[2]:
+            # Se mueve hacia abajo de ser posible
+            return estado[2] + 1, estado[3] \
+                if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 else estado[2], estado[3]
+        # Si estamos dos o más pasos debajo de él
+        elif f + 1 < estado[2]:
+            # Se mueve dos pasos hacia abajo de ser posible
+            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
+                    and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
+                return estado[2] + 2, estado[3]
+            # Si no uno y si no ninguno
+            else:
+                return estado[2] + 1, estado[3] \
+                    if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 else estado[2], estado[3]
+        # Si por el contrario estamos un paso encima de él
+        elif f - 1 < estado[2]:
+            # Se mueve un paso hacia arriba de ser posible
+            return estado[2] - 1, estado[3] \
+                if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 else estado[2], estado[3]
+        # Si estamos dos o más pasos encima de él
+        else:
+            # Se mueve dos pasos hacia arriba de ser posible
+            if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
+                    and mapa_ejemplo.tipo_celda_arr(estado[2], estado[3] - 1) != 0:
+                return estado[2] - 2, estado[3]
+            # Si no uno y si no ninguno
+            else:
+                return estado[2] - 1, estado[3] \
+                    if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 else estado[2], estado[3]
+    # Si no estamos ni en su fila ni en su columna
+    else:
+        # Si estamos a su derecha
+        if f < estado[2]:
+            # Se mueve dos pasos a su derecha de ser posible
+            if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
+                return estado[2], estado[3] + 2
+            # Si no uno
+            elif mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
+                return estado[2], estado[3] + 1
+            # Y si no, se mueve verticalmente
+            else:
+                # Si estamos debajo de él
+                if c < estado[3]:
+                    # Se mueve dos pasos hacia abajo de ser posible
+                    if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
+                        return estado[2] + 2, estado[3]
+                    # Si no uno y si no ninguno
+                    else:
+                        return estado[2] + 1, estado[3] \
+                            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
+                            else estado[2], estado[3]
+                # Si estamos encima de él
+                else:
+                    # Se mueve dos pasos hacia arriba de ser posible
+                    if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
+                        return estado[2] - 2, estado[3]
+                    # Si no uno y si no ninguno
+                    else:
+                        return estado[2] - 1, estado[3] \
+                            if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0\
+                            else estado[2], estado[3]
+        # Si por el contrario estamos a su izquierda
+        else:
+            # Se mueve dos pasos a su izquierda de ser posible
+            if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
+                    and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0:
+                return estado[2], estado[3] - 2
+            # Si no uno y si no ninguno
+            elif mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
+                return estado[2], estado[3]
+            # Y si no, se mueve verticalmente
+            else:
+                # Si estamos debajo de él
+                if c < estado[3]:
+                    # Se mueve dos pasos hacia abajo de ser posible
+                    if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
+                        return estado[2] + 2, estado[3]
+                    # Si no uno y si no ninguno
+                    else:
+                        return estado[2] + 1, estado[3] \
+                            if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
+                            else estado[2], estado[3]
+                # Si estamos encima de él
+                else:
+                    # Se mueve dos pasos hacia arriba de ser posible
+                    if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
+                            and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
+                        return estado[2] - 2, estado[3]
+                    # Si no uno y si no ninguno
+                    else:
+                        return estado[2] - 1, estado[3] \
+                            if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 \
+                            else estado[2], estado[3]
+
+

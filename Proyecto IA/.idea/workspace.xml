@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6370c77f-7a90-4470-9993-cf4220217ce7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wappo.py" beforeDir="false" afterPath="$PROJECT_DIR$/wappo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wappo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4638">
-              <caret line="326" selection-start-line="326" selection-end-line="326" />
+            <state relative-caret-position="3162">
+              <caret line="186" column="20" lean-forward="true" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Práctica 3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1354">
-              <caret line="234" column="31" selection-start-line="234" selection-start-column="31" selection-end-line="234" selection-end-column="31" />
+            <state relative-caret-position="286">
+              <caret line="326" column="47" lean-forward="true" selection-start-line="325" selection-start-column="14" selection-end-line="326" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -46,6 +45,7 @@
       <find>tamano</find>
       <find>estado[1[1]]</find>
       <find>estado[0[1]]</find>
+      <find>coste</find>
     </findStrings>
     <replaceStrings>
       <replace>estado[1]</replace>
@@ -58,9 +58,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Práctica_03.ipynb" />
-        <option value="$PROJECT_DIR$/Práctica 3.py" />
         <option value="$PROJECT_DIR$/../Práctica_04/Práctica_04.py" />
         <option value="$PROJECT_DIR$/búsqueda_espacio_estados.py" />
+        <option value="$PROJECT_DIR$/Práctica 3.py" />
         <option value="$PROJECT_DIR$/wappo.py" />
       </list>
     </option>
@@ -149,6 +149,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18163805" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -190,16 +191,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Práctica_04/Práctica_04 - copia.py" />
     <entry file="file://$PROJECT_DIR$/../Práctica_04/Práctica_04.py" />
-    <entry file="file://$PROJECT_DIR$/Práctica 3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1354">
-          <caret line="234" column="31" selection-start-line="234" selection-start-column="31" selection-end-line="234" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../../wappo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -210,10 +201,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="326" column="47" lean-forward="true" selection-start-line="325" selection-start-column="14" selection-end-line="326" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4638">
-          <caret line="326" selection-start-line="326" selection-end-line="326" />
+        <state relative-caret-position="3162">
+          <caret line="186" column="20" lean-forward="true" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
