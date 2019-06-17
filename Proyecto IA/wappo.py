@@ -5,9 +5,10 @@ import datetime
 
 print(datetime.datetime.now())
 
+
 # Comienzo de clase
 class Mapa:
-    def __init__(self, paredes_v, paredes_h, mapa_trampas, estado_inicial):
+    def __init__(self, paredes_v, paredes_h, trampas, estado_inicial):
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
         self.trampas = mapa_trampas
@@ -65,7 +66,7 @@ estadoInicial = (5, 3,
                  2, 1, 0)
 estadoFinal = (3, 7)
 
-mapa_ejemplo = Mapa(paredes_ver, paredes_hor, estadoInicial)
+mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
 
 
 def coste(estado):
