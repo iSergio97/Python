@@ -16,10 +16,10 @@ class Mapa:
         self.posicion_trampa = posicion_trampa
 
     def tamano_hor(self):
-        return len(self.paredes_v) - 1
+        return len(self.paredes_v)
 
     def tamano_ver(self):
-        return len(self.paredes_h) - 1
+        return len(self.paredes_h)
 
 # ¿Por qué devuelves 0 si la posición donde está f está c i, si no está, devuelves 1?
 # ¿No debería ser al revés?
@@ -158,8 +158,8 @@ def coste(estado):
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
 
 # La parte de si está en su fila o en su columna se puede dejar como está
-# La parte de si no está, se puede comprobar mejor, en función de triángulos que suponen la distancia entre ambas coordenadas
 
+#Falta por comprobar en cada movimiento si está bloqueado por pared o por trampa y si el movimiento + 1 o + 2 lo mete en una trampa
 def moverMonstruo(f, c, estado):
     # Si estamos en su casilla
     if f == estado[2] and c == estado[3]:
@@ -300,16 +300,16 @@ def moverMonstruo(f, c, estado):
                             else estado[2], estado[3]
 
 
+
 # Definir el problema
 
 print("\nEntra a probee.")
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
                                          estadoInicial, estadoFinal)
 print("\nSale de probee.")
-print('\nHola')
 bOptima = búsqee.BúsquedaÓptima()
-print("\nAcaba de ejecutar bOptima")
-# print(bOptima.buscar(problema))
+print("\nSale de asignación bOptima")
+print(bOptima.buscar(problema))
 
 
 print("\nCarga la heurística")

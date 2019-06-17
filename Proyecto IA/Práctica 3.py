@@ -162,8 +162,8 @@ mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
 
 
 # Estados inicial y final:
-estadoInicial = (5,0)    # [5,0]
-estadoFinal = (0,9)      # [0,9]
+estadoInicial = (5, 0)    # [5,0]
+estadoFinal = (0, 9)      # [0,9]
 
 
 # Coste:
