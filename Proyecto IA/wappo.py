@@ -1,6 +1,5 @@
 import problema_espacio_estados as probee
 import búsqueda_espacio_estados as búsqee
-import math
 import datetime
 
 print(datetime.datetime.now())
@@ -15,29 +14,48 @@ class Mapa:
         self.estado_inicial = estado_inicial
 
     def tamano_hor(self):
-        return len(self.trampas[0])-1
+        return len(self.trampas[0])
 
     def tamano_ver(self):
-        return len(self.trampas)-1
+        return len(self.trampas)
 
     def tipo_celda_arr(self, f, c):
-        return 0 if paredes_ver[f-1][c] == 1 else 1
+        #return 0 if paredes_ver[f][c] == 1 else 1
+        if 0 >= f:
+            return 1
+        else:
+            return self.paredes_h[f][c]
 
     def tipo_celda_aba(self, f, c):
-        return 0 if paredes_ver[f][c] == 1 else 1
+        #return 0 if paredes_ver[f][c] == 1 else 1
+        if 0 <= f + 1 or f > len(paredes_hor):
+            return 1
+        else:
+            return self.paredes_h[f][c]
 
     def tipo_celda_izq(self, f, c):
-        return 0 if paredes_hor[f][c-1] == 1 else 1
+        #return 0 if paredes_hor[f][c] == 1 else 1
+        if 0 >= c or c > len(paredes_ver):
+            return 1
+        else:
+            return self.paredes_v[f][c]
 
     def tipo_celda_der(self, f, c):
-        return 0 if paredes_hor[f][c] == 1 else 1
+        #return 0 if paredes_hor[f][c + 1] == 1 else 1
+        if len(paredes_ver) - 1 <= c:
+            return 1
+        else:
+            return self.paredes_h[f][c]
 
     def trampa(self, f, c):
-        return self.trampas[f][c]
+        if f < len(paredes_hor) and c < len(paredes_ver):
+            return self.trampas[f][c]
+        else:
+            return 1
 # Fin de clase
 
 
-paredes_ver = ([[1, 0, 0, 0, 0, 0],
+paredes_ver = ([[0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
@@ -45,9 +63,9 @@ paredes_ver = ([[1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
 paredes_hor = ([[0, 0, 0, 0, 0, 0],
-                [1, 0, 0, 0, 0, 0],
-                [1, 0, 0, 0, 0, 0],
-                [1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
@@ -60,17 +78,23 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
 # print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
 
 # Estados inicial y final:
-estadoInicial = (1, 0,
-                 4, 2, 0)
+estadoInicial = (0, 0,
+                 5, 5, 0)
 estadoFinal = (0, 1)
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
 
-print("Mapa de ejemplo tipo celda derecha")
+print("mapa_ejemplo.tipo_celda_izq(0, 0")
+print(mapa_ejemplo.tipo_celda_izq(0, 0))
 
-# Este print devuelve el valor de la posición actual del tipo derecha
-print(mapa_ejemplo.tipo_celda_der((estadoInicial[0]), (estadoInicial[1])))
+print("mapa_ejemplo.tipo_celda_der(-1, -1")
+print(mapa_ejemplo.tipo_celda_arr(-1, -1))
 
+print("mapa_ejemplo.tipo_celda_izq(7, 7)")
+print(mapa_ejemplo.tipo_celda_izq(7, 7))
+
+print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
+print(mapa_ejemplo.tipo_celda_aba(-1, -1))
 
 def coste(estado):
     return 1000000 if mapa_trampas(estado[0], estado[1]) == 0 \
@@ -82,7 +106,7 @@ def coste(estado):
 def aplicabilidad_mov_der(estado):
     return estado[1] < mapa_ejemplo.tamano_hor()-1 \
            and mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0], estado[1]+1) == 0
+           and mapa_trampas(estado[0], estado[1]+1) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_der(estado):
@@ -190,8 +214,7 @@ def turnos(f, c, estado):
 
 # Definir el problema
 print("\nEntra a probee.")
-problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
-                                         estadoInicial, estadoFinal)
+problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba], [estadoInicial], [estadoFinal])
 print("\nSale de probee.")
 bOptima = búsqee.BúsquedaÓptima()
 print("\nSale de asignación bOptima")
