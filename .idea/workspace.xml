@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/wappo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/wappo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +22,32 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="197">
-                  <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
+                <state relative-caret-position="372">
+                  <caret line="128" column="68" selection-start-line="128" selection-start-column="68" selection-end-line="128" selection-end-column="68" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="663">
+                  <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="218" selection-start-line="218" selection-end-line="218" />
                 </state>
               </provider>
             </entry>
@@ -38,8 +59,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1270">
-                  <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+                <state relative-caret-position="-208">
+                  <caret line="178" selection-start-line="178" selection-end-line="178" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -60,18 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>es_apli</find>
-      <find>es_ap</find>
-      <find>fin bucle for</find>
-      <find>TODO</find>
-      <find>coste_bloque</find>
-      <find>print</find>
-      <find>asld</find>
-      <find>agarrar</find>
-      <find>dominio</find>
-      <find>problema_mundo</find>
-      <find>esquemaPla</find>
-      <find>Ejercicio 2</find>
       <find />
       <find>tools.hallOfFame</find>
       <find>hallo</find>
@@ -83,13 +92,25 @@
       <find>or</find>
       <find>def coste</find>
       <find>aEstre</find>
-      <find>coste</find>
       <find>buscar</find>
       <find>self.frontera.va</find>
       <find>estado_inicial</find>
       <find>mover</find>
       <find>monstruo</find>
       <find>def movermonstruo</find>
+      <find>coste</find>
+      <find>h</find>
+      <find>def h</find>
+      <find>turnos</find>
+      <find>def ap</find>
+      <find>mov_arr</find>
+      <find>mov_aba</find>
+      <find>mov_der</find>
+      <find>and not</find>
+      <find>mapa_trampas</find>
+      <find>.trampa</find>
+      <find>mapa_ejemplo.trampa</find>
+      <find>!= 0</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -126,7 +147,6 @@
         <option value="$PROJECT_DIR$/Tema 3/test.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/Imports importantes para IA" />
-        <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" />
         <option value="$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" />
         <option value="$PROJECT_DIR$/Práctica 1/Practica 1.py" />
         <option value="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" />
@@ -142,6 +162,7 @@
         <option value="$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/ejemplo.py" />
+        <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/wappo.py" />
       </list>
     </option>
@@ -160,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -177,6 +197,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,27 +291,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Práctica_05" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Práctica 5" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -375,6 +375,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tema 3/Tests/Programing test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="wappo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -400,19 +421,19 @@
       <item itemvalue="Python.Práctica 3" />
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.búsqueda_espacio_estados" />
-      <item itemvalue="Python.Práctica_05" />
-      <item itemvalue="Python.mvg" />
-      <item itemvalue="Python.wappo" />
       <item itemvalue="Python.Práctica 3 (1)" />
+      <item itemvalue="Python.mvg" />
       <item itemvalue="Python.sphere" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.wappo" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.wappo" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.Práctica 3 (1)" />
         <item itemvalue="Python.sphere" />
         <item itemvalue="Python.mvg" />
-        <item itemvalue="Python.Práctica_05" />
       </list>
     </recent_temporary>
   </component>
@@ -672,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560706569202</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="El bixo este no avanza">
+      <created>1560774067609</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1560774067609</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -766,7 +794,8 @@
     <MESSAGE value="Corrección heurística&#10;&#10;No avanza de bOptima.buscar&#10;&#10;Si lo comento, no avanza del último print de de b_a_estrella.buscar" />
     <MESSAGE value="Corrección heurística&#10;&#10;Añadida la restricción de que si el movimiento le deja a distancia 2 del zombie.&#10;&#10;Falta por definir que se favorezca la acción de meter al zombie en la trampa y el contador de stun del zombie" />
     <MESSAGE value="Revisión movimiento zombie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revisión movimiento zombie" />
+    <MESSAGE value="El bixo este no avanza" />
+    <option name="LAST_COMMIT_MESSAGE" value="El bixo este no avanza" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -870,11 +899,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/cars.csv">
+      <provider editor-type-id="text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1019,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -1033,22 +1055,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="129" column="24" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/problema_espacio_estados.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/ejemplo.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/ejemplo.py" />
     <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -1056,10 +1066,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1270">
-          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+        <state relative-caret-position="663">
+          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -1068,8 +1095,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
+        <state relative-caret-position="372">
+          <caret line="128" column="68" selection-start-line="128" selection-start-column="68" selection-end-line="128" selection-end-column="68" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
