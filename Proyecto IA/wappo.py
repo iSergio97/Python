@@ -11,14 +11,14 @@ class Mapa:
     def __init__(self, paredes_v, paredes_h, trampas, estado_inicial):
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
-        self.trampas = mapa_trampas
+        self.trampas = trampas
         self.estado_inicial = estado_inicial
 
     def tamano_hor(self):
-        return len(self.paredes_h)
+        return len(self.trampas[0]) - 1
 
     def tamano_ver(self):
-        return len(self.paredes_v)
+        return len(self.trampas) - 1
 
     def tipo_celda_arr(self, f, c):
         return 0 if c in self.paredes_h[f - 1] else 1
@@ -34,9 +34,6 @@ class Mapa:
 
     def trampa(self, f, c):
         return self.trampas[f[c]]
-
-    def estado_inicial(self):
-        return self.estado_inicial
 # Fin de clase
 
 
@@ -77,7 +74,7 @@ def coste(estado):
     # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
     return (estado[0] == estadoFinal[0] and estado[1] + 1 == estadoFinal[1]) or \
-           (estado[1] < mapa_ejemplo.tamano_hor() - 1
+           (estado[1] < mapa_ejemplo.tamano_hor()
             and mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) != 0)
 
 
@@ -97,7 +94,7 @@ moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplic
 # Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
     return (estado[0] == estadoFinal[0] and estado[1] - 1 == estadoFinal[1]) or \
-           (estado[1] > -1
+           (estado[1] > 0
             and mapa_ejemplo.tipo_celda_izq(estado[0], estado[1]) != 0)
 
 
@@ -117,7 +114,7 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, a
 # Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
     return (estado[0] + 1 == estadoFinal[0] and estado[1] == estadoFinal[1]) or \
-           (estado[0] < mapa_ejemplo.tamano_ver() - 1
+           (estado[0] < mapa_ejemplo.tamano_ver()
             and mapa_ejemplo.tipo_celda_aba(estado[0], estado[1]) != 0)
 
 
@@ -137,7 +134,7 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 # Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
     return (estado[0] - 1 == estadoFinal[0] and estado[1] == estadoFinal[1]) or \
-           (estado[0] > -1
+           (estado[0] > 0
             and mapa_ejemplo.tipo_celda_arr(estado[0], estado[1]) != 0)
 
 
