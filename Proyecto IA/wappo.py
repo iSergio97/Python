@@ -15,52 +15,53 @@ class Mapa:
         self.estado_inicial = estado_inicial
 
     def tamano_hor(self):
-        return len(self.trampas[0]) - 1
+        return len(self.trampas[0])-1
 
     def tamano_ver(self):
-        return len(self.trampas) - 1
+        return len(self.trampas)-1
 
     def tipo_celda_arr(self, f, c):
-        return self.trampas[f][c]
+        return 0 if paredes_ver[f-1][c] == 1 else 1
 
     def tipo_celda_aba(self, f, c):
-        return self.trampas[f][c]
+        return 0 if paredes_ver[f][c] == 1 else 1
 
     def tipo_celda_izq(self, f, c):
-        return self.trampas[f][c]
+        return 0 if paredes_hor[f][c-1] == 1 else 1
 
     def tipo_celda_der(self, f, c):
-        return self.trampas[f][c]
+        return 0 if paredes_hor[f][c] == 1 else 1
 
     def trampa(self, f, c):
         return self.trampas[f][c]
 # Fin de clase
 
 
-paredes_ver = [[],
-               [],
-               [],
-               [],
-               []]
+paredes_ver = ([[1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0]])
 
-paredes_hor = [[],
-               [],
-               [],
-               [],
-               []]
+paredes_hor = ([[0, 0, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0]])
 
-# ¿Y si en vez de un mapa de trampas ponemos directamente las coordenadas?
-mapa_trampas = [[0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0]]
-#print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
+mapa_trampas = ([[0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0]])
+# print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
 
 # Estados inicial y final:
-estadoInicial = (0, 0,
-                 4, 4, 0)
+estadoInicial = (1, 0,
+                 4, 2, 0)
 estadoFinal = (0, 1)
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
@@ -71,17 +72,23 @@ print("Mapa de ejemplo tipo celda derecha")
 print(mapa_ejemplo.tipo_celda_der((estadoInicial[0]), (estadoInicial[1])))
 
 
-
 def coste(estado):
-    return 1000000 if 0 == mapa_trampas(estado[0], estado[1]) or (estado[0] == estado[2] and estado[1] == estado[3]) or mapa_ejemplo.tipo_celda_der((estadoInicial[0]), (estadoInicial[1])) != 0 else 1
+    return 1000000 if mapa_trampas(estado[0], estado[1]) == 0 \
+                      or (estado[0] == estado[2] and estado[1] == estado[3]) else 1
+
+
 # Acciones:
     # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
-    return estado[1] < mapa_ejemplo.tamano_hor() - 1 and mapa_ejemplo.tipo_celda_der((estadoInicial[0]), (estadoInicial[1])) == 0 and mapa_trampas(estado[0], estado[1 + 1]) == 0
+    return estado[1] < mapa_ejemplo.tamano_hor()-1 \
+           and mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) != 0 \
+           and mapa_trampas(estado[0], estado[1]+1) == 0
 
 
 def aplicar_mov_der(estado):
-    return estado[0], estado[1]+1, moverMonstruo(estado[0], estado[1]+1, estado[4])
+    f = estado[0]
+    c = estado[1]+1
+    return f, c, moverMonstruo(f, c, estado)
 
 
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
@@ -89,11 +96,15 @@ moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplic
 
 # Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
-    return estado[1] > - 1 and mapa_ejemplo.tipo_celda_izq((estadoInicial[0]), (estadoInicial[1])) == 0 and mapa_trampas([estado[0]][(estado[1] - 1)]) == 0
+    return estado[1] > -1 \
+           and mapa_ejemplo.tipo_celda_izq(estado[0], estado[1]) == 0 \
+           and mapa_trampas[estado[0]][estado[1]-1] == 0
 
 
 def aplicar_mov_izq(estado):
-    return estado[0], estado[1]-1, moverMonstruo(estado[0], estado[1]-1, estado[4])
+    f = estado[0]
+    c = estado[1]-1
+    return f, c, moverMonstruo(f, c, estado)
 
 
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
@@ -101,12 +112,15 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, a
 
 # Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
-    return estado[0] < mapa_ejemplo.tamano_ver() - 1 \
-            and mapa_ejemplo.tipo_celda_aba((estadoInicial[0]), (estadoInicial[1])) == 0 and mapa_trampas([(estado[0] + 1)][estado[1]]) == 0
+    return estado[0] < mapa_ejemplo.tamano_ver()-1 \
+           and mapa_ejemplo.tipo_celda_aba(estado[0], estado[1]) != 0 \
+           and mapa_trampas(estado[0]+1, estado[1]) == 0
 
 
 def aplicar_mov_aba(estado):
-    return estado[0] + 1, estado[1], moverMonstruo(estado[0] + 1, estado[1], estado[4])
+    f = estado[0]+1
+    c = estado[1]
+    return f, c, moverMonstruo(f, c, estado)
 
 
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
@@ -114,25 +128,24 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 
 # Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
-    return estado[0] > - 1 and mapa_ejemplo.tipo_celda_arr((estadoInicial[0]), (estadoInicial[1])) == 0 and mapa_trampas([(estado[0] - 1)], [estado[1]]) == 0
+    return estado[0] < -1 \
+           and mapa_ejemplo.tipo_celda_arr(estado[0], estado[1]) != 0 \
+           and mapa_trampas(estado[0]-1, estado[1]) == 0
 
 
 def aplicar_mov_arr(estado):
-    return estado[0] - 1, estado[1], moverMonstruo(estado[0]-1, estado[1], estado[4])
+    f = estado[0]-1
+    c = estado[1]
+    return f, c, moverMonstruo(f, c, estado)
 
 
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
 
 
-# TODO: Échale un vistazo a esto y cambia el acceso al mapa de trampas, bloqueos y demás
-# TODO: mapa_ejemplo.tipo_celda_der((estadoInicial[0]), (estadoInicial[1]))
-# TODO: La línea de arriba accede de forma correcta a las posiciones
 def moverMonstruo(f, c, estado):
-    if estado[4] > 0 or (f == estado[2] and c == estado[3]):
-        return estado[2], estado[3]
-    else:
-        f_monstruo = estado[2]
-        c_monstruo = estado[3]
+    f_monstruo = estado[2]
+    c_monstruo = estado[3]
+    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo)):
         for _ in range(1):
             # Si estamos a la derecha del monstruo y nos podemos mover a la derecha
             if c > c_monstruo and mapa_ejemplo.tipo_celda_der(f_monstruo, c_monstruo + 1) != 0:
@@ -165,7 +178,7 @@ def moverMonstruo(f, c, estado):
                 if mapa_trampas(f_monstruo, c_monstruo) == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
-    return f_monstruo, c_monstruo
+    return f_monstruo, c_monstruo, turnos(f_monstruo, c_monstruo, estado)
 
 
 def turnos(f, c, estado):
