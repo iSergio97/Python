@@ -78,16 +78,16 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
 # print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
 
 # Estados inicial y final:
-estadoInicial = (0, 0,
+estadoInicial = (1, 1,
                  5, 5, 0)
-estadoFinal = (0, 1)
+estadoFinal = (2, 1)
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
 
 # print("mapa_ejemplo.tipo_celda_izq(0, 0")
 # print(mapa_ejemplo.tipo_celda_izq(0, 0))
 
-print("mapa_ejemplo.tipo_celda_der(0, 0")
+print("mapa_ejemplo.tipo_celda_der(0, 0, ¿0?")
 print(mapa_ejemplo.tipo_celda_der(0, 0))
 
 # print("mapa_ejemplo.tipo_celda_izq(7, 7)")
@@ -104,12 +104,17 @@ def coste(estado):
 print("estado[1] < mapa_ejemplo.tamano_hor()-1")
 print(estadoInicial[1] < mapa_ejemplo.tamano_hor() - 1)
 
+print("Mapa ejemplo celda derecha en 1, 1")
+print(mapa_ejemplo.tipo_celda_der(1, 1))
+
 # Acciones:
     # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
-    print(estado[1] < mapa_ejemplo.tamano_hor())
-    tamano = estado[1] < mapa_ejemplo.tamano_hor()
-    print(tamano)
+    print(estado[0])
+    print(estado[1])
+    print(estado[2])
+    print(estado[3])
+    print(estado[4])
     pared = mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) == 0
     print(pared)
     trampa = mapa_ejemplo.trampa(estado[0], estado[1]) == 0
@@ -118,6 +123,9 @@ def aplicabilidad_mov_der(estado):
     print(posMonsIgualPersonajeX)
     posMonsIgualPersonajeY = estado[1] != estado[3]
     print(posMonsIgualPersonajeY)
+    print(estado[1] < mapa_ejemplo.tamano_hor())
+    tamano = estado[1] < mapa_ejemplo.tamano_hor()
+    print(tamano)
     return tamano and pared and posMonsIgualPersonajeX and posMonsIgualPersonajeY and trampa
 
 
