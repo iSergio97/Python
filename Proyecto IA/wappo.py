@@ -59,22 +59,22 @@ paredes_ver = ([[0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 1],
                 [0, 0, 0, 0, 0, 0]])
 
 paredes_hor = ([[0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0]])
+                [0, 0, 0, 0, 1, 0],
+                [0, 0, 0, 0, 1, 0]])
 
 mapa_trampas = ([[0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0]])
+                 [0, 0, 0, 0, 1, 1],
+                 [0, 0, 0, 0, 1, 0]])
 # print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
 
 # Estados inicial y final:
@@ -84,29 +84,41 @@ estadoFinal = (0, 1)
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
 
-print("mapa_ejemplo.tipo_celda_izq(0, 0")
-print(mapa_ejemplo.tipo_celda_izq(0, 0))
+# print("mapa_ejemplo.tipo_celda_izq(0, 0")
+# print(mapa_ejemplo.tipo_celda_izq(0, 0))
 
-print("mapa_ejemplo.tipo_celda_der(-1, -1")
-print(mapa_ejemplo.tipo_celda_arr(-1, -1))
+print("mapa_ejemplo.tipo_celda_der(0, 0")
+print(mapa_ejemplo.tipo_celda_der(0, 0))
 
-print("mapa_ejemplo.tipo_celda_izq(7, 7)")
-print(mapa_ejemplo.tipo_celda_izq(7, 7))
-
-print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
-print(mapa_ejemplo.tipo_celda_aba(-1, -1))
+# print("mapa_ejemplo.tipo_celda_izq(7, 7)")
+# print(mapa_ejemplo.tipo_celda_izq(7, 7))
+#
+# print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
+# print(mapa_ejemplo.tipo_celda_aba(-1, -1))
 
 def coste(estado):
     return 1000000 if mapa_trampas(estado[0], estado[1]) == 0 \
                       or (estado[0] == estado[2] and estado[1] == estado[3]) else 1
 
 
+print("estado[1] < mapa_ejemplo.tamano_hor()-1")
+print(estadoInicial[1] < mapa_ejemplo.tamano_hor() - 1)
+
 # Acciones:
     # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
-    return estado[1] < mapa_ejemplo.tamano_hor()-1 \
-           and mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0], estado[1]+1) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
+    print(estado[1] < mapa_ejemplo.tamano_hor())
+    tamano = estado[1] < mapa_ejemplo.tamano_hor()
+    print(tamano)
+    pared = mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) == 0
+    print(pared)
+    trampa = mapa_ejemplo.trampa(estado[0], estado[1]) == 0
+    print(trampa)
+    posMonsIgualPersonajeX = estado[0] != estado[2]
+    print(posMonsIgualPersonajeX)
+    posMonsIgualPersonajeY = estado[1] != estado[3]
+    print(posMonsIgualPersonajeY)
+    return tamano and pared and posMonsIgualPersonajeX and posMonsIgualPersonajeY and trampa
 
 
 def aplicar_mov_der(estado):
@@ -122,7 +134,7 @@ moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplic
 def aplicabilidad_mov_izq(estado):
     return estado[1] > -1 \
            and mapa_ejemplo.tipo_celda_izq(estado[0], estado[1]) == 0 \
-           and mapa_trampas[estado[0]][estado[1]-1] == 0
+           and mapa_trampas[estado[0]][estado[1]-1] == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_izq(estado):
@@ -136,9 +148,9 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, a
 
 # Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
-    return estado[0] < mapa_ejemplo.tamano_ver()-1 \
+    return estado[0] < mapa_ejemplo.tamano_ver() \
            and mapa_ejemplo.tipo_celda_aba(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0]+1, estado[1]) == 0
+           and mapa_trampas(estado[0]+1, estado[1]) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_aba(estado):
@@ -154,7 +166,7 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 def aplicabilidad_mov_arr(estado):
     return estado[0] < -1 \
            and mapa_ejemplo.tipo_celda_arr(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0]-1, estado[1]) == 0
+           and mapa_trampas(estado[0]-1, estado[1]) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_arr(estado):
