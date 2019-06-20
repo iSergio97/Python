@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/wappo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/wappo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="150" column="48" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
+            <state relative-caret-position="140">
+              <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -50,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="106">
               <caret line="164" selection-start-line="164" selection-end-line="164" />
             </state>
           </provider>
@@ -67,8 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>estado_inicial</find>
-      <find>mover</find>
       <find>monstruo</find>
       <find>def movermonstruo</find>
       <find>coste</find>
@@ -97,6 +94,8 @@
       <find>self.frontera.nodos</find>
       <find>def buscar</find>
       <find>problema =</find>
+      <find>estado</find>
+      <find>mapa_trampas(</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -699,7 +698,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560984376164</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="No hay bucle infinito">
+      <created>1561033066861</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1561033066861</updated>
+    </task>
+    <task id="LOCAL-00039" summary="No hay bucle infinito">
+      <created>1561033704140</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1561033704140</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -795,7 +808,8 @@
     <MESSAGE value="Revisión movimiento zombie" />
     <MESSAGE value="El bixo este no avanza" />
     <MESSAGE value="Corrección métodos comprobar si hay pared intermedio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección métodos comprobar si hay pared intermedio" />
+    <MESSAGE value="No hay bucle infinito" />
+    <option name="LAST_COMMIT_MESSAGE" value="No hay bucle infinito" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,7 +841,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>180</line>
+          <line>185</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -837,32 +851,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>228</line>
+          <line>233</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>230</line>
+          <line>235</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>232</line>
+          <line>237</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>238</line>
+          <line>243</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>245</line>
+          <line>250</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>249</line>
+          <line>254</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -887,43 +901,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>108</line>
+          <line>111</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>123</line>
+          <line>128</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>116</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>120</line>
-          <option name="timeStamp" value="55" />
+          <line>98</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1210,7 +1199,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="106">
           <caret line="164" selection-start-line="164" selection-end-line="164" />
         </state>
       </provider>
@@ -1224,8 +1213,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="150" column="48" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
+        <state relative-caret-position="140">
+          <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

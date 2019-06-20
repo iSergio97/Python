@@ -97,7 +97,7 @@ print(mapa_ejemplo.tipo_celda_der(0, 0))
 # print(mapa_ejemplo.tipo_celda_aba(-1, -1))
 
 def coste(estado):
-    return 1000000 if mapa_trampas(estado[0], estado[1]) == 0 \
+    return 1000000 if mapa_trampas[estado[0]][estado[1]] != 0 \
                       or (estado[0] == estado[2] and estado[1] == estado[3]) else 1
 
 
@@ -110,22 +110,19 @@ print(mapa_ejemplo.tipo_celda_der(1, 1))
 # Acciones:
     # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
-    print(estado[0])
-    print(estado[1])
-    print(estado[2])
-    print(estado[3])
-    print(estado[4])
     pared = mapa_ejemplo.tipo_celda_der(estado[0], estado[1]) == 0
-    print(pared)
     trampa = mapa_ejemplo.trampa(estado[0], estado[1]) == 0
-    print(trampa)
     posMonsIgualPersonajeX = estado[0] != estado[2]
-    print(posMonsIgualPersonajeX)
+    # TODO: Arreglar esto
+    # Llegado a este punto, peta
+    # IndexError: tuple index out of range
+    # Échale un vistazo y añade las comprobaciones necesarias para que esto no falle pls
+    print("Estado 1")
+    print(estado[1])
+    print("Estado 3")
+    print(estado[3])
     posMonsIgualPersonajeY = estado[1] != estado[3]
-    print(posMonsIgualPersonajeY)
-    print(estado[1] < mapa_ejemplo.tamano_hor())
     tamano = estado[1] < mapa_ejemplo.tamano_hor()
-    print(tamano)
     return tamano and pared and posMonsIgualPersonajeX and posMonsIgualPersonajeY and trampa
 
 
@@ -158,7 +155,7 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, a
 def aplicabilidad_mov_aba(estado):
     return estado[0] < mapa_ejemplo.tamano_ver() \
            and mapa_ejemplo.tipo_celda_aba(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0]+1, estado[1]) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
+           and mapa_trampas[estado[0]+1][estado[1]] == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_aba(estado):
@@ -174,7 +171,7 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 def aplicabilidad_mov_arr(estado):
     return estado[0] < -1 \
            and mapa_ejemplo.tipo_celda_arr(estado[0], estado[1]) != 0 \
-           and mapa_trampas(estado[0]-1, estado[1]) == 0 and estado[0] != estado[2] and estado[1] != estado[3]
+           and mapa_trampas[estado[0]-1][estado[1]] == 0 and estado[0] != estado[2] and estado[1] != estado[3]
 
 
 def aplicar_mov_arr(estado):
@@ -197,7 +194,7 @@ def moverMonstruo(f, c, estado):
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo + 1
                 # Si el monstruo cae en una trampa o nos alcanza
-                if mapa_trampas(f_monstruo, c_monstruo) == 1 or (f_monstruo == f and c_monstruo == c):
+                if mapa_trampas[f_monstruo] [c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
             # Si estamos a la izquierda del monstruo y nos podemos mover a la izquierda
@@ -205,21 +202,21 @@ def moverMonstruo(f, c, estado):
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo - 1
                 # Si el monstruo cae en una trampa o nos alcanza
-                if mapa_trampas(f_monstruo, c_monstruo) == 1 or (f_monstruo == f and c_monstruo == c):
+                if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
             elif f > f_monstruo and mapa_ejemplo.tipo_celda_aba(f_monstruo + 1, c_monstruo) != 0:
                 f_monstruo = f_monstruo + 1
                 c_monstruo = c_monstruo
                 # Si el monstruo cae en una trampa o nos alcanza
-                if mapa_trampas(f_monstruo, c_monstruo) == 1 or (f_monstruo == f and c_monstruo == c):
+                if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
             elif f < f_monstruo and mapa_ejemplo.tipo_celda_arr(f_monstruo - 1, c_monstruo) != 0:
                 f_monstruo = f_monstruo - 1
                 c_monstruo = c_monstruo
                 # Si el monstruo cae en una trampa o nos alcanza
-                if mapa_trampas(f_monstruo, c_monstruo) == 1 or (f_monstruo == f and c_monstruo == c):
+                if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
     return f_monstruo, c_monstruo, turnos(f_monstruo, c_monstruo, estado)
@@ -229,12 +226,12 @@ def turnos(f, c, estado):
     if estado[4] > 0:
         return estado[4] - 1
     else:
-        return 3 if mapa_trampas([f], [c]) == 1 else 0
+        return 3 if mapa_trampas[f][c] == 1 else 0
 
 
 # Definir el problema
 print("\nEntra a probee.")
-problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba], [estadoInicial], [estadoFinal])
+problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba], estadoInicial, [estadoFinal])
 print("\nSale de probee.")
 bOptima = búsqee.BúsquedaÓptima()
 print("\nSale de asignación bOptima")
