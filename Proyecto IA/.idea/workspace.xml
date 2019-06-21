@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6370c77f-7a90-4470-9993-cf4220217ce7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Práctica 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wappo.py" beforeDir="false" afterPath="$PROJECT_DIR$/wappo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +11,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wappo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="148" column="85" selection-start-line="148" selection-start-column="85" selection-end-line="148" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -21,6 +33,7 @@
       <find>estado[1[1]]</find>
       <find>estado[0[1]]</find>
       <find>coste</find>
+      <find>movermonstruo</find>
     </findStrings>
     <replaceStrings>
       <replace>estado[1]</replace>
@@ -166,20 +179,20 @@
     <entry file="file://$PROJECT_DIR$/../Práctica_04/Práctica_04 - copia.py" />
     <entry file="file://$PROJECT_DIR$/../Práctica_04/Práctica_04.py" />
     <entry file="file://$PROJECT_DIR$/../../../../../../wappo.py" />
-    <entry file="file://$PROJECT_DIR$/wappo.py">
+    <entry file="file://$PROJECT_DIR$/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="272">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Práctica 3.py">
+    <entry file="file://$PROJECT_DIR$/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="338">
+          <caret line="148" column="85" selection-start-line="148" selection-start-column="85" selection-end-line="148" selection-end-column="85" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
