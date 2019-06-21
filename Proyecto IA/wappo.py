@@ -7,11 +7,12 @@ print(datetime.datetime.now())
 
 # Comienzo de clase
 class Mapa:
-    def __init__(self, paredes_v, paredes_h, trampas, estado_inicial):
+    def __init__(self, paredes_v, paredes_h, trampas, estado_inicial, estado_final):
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
         self.trampas = trampas
         self.estado_inicial = estado_inicial
+        self.estado_final = estado_final
 
     def tamano_hor(self):
         return len(self.trampas[0])
@@ -52,6 +53,9 @@ class Mapa:
             return self.trampas[f][c]
         else:
             return 1
+
+    def es_estado_final(self, estado):
+        return estado[0] == self.estado_final[0] and estado[1] == self.estado_final[1]
 # Fin de clase
 
 
@@ -80,9 +84,9 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
 # Estados inicial y final:
 estadoInicial = (4, 2,
                  1, 0, 0)
-estadoFinal = (4, 2)
+estadoFinal = (4, 1)
 
-mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial)
+mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial, estadoFinal)
 
 # print("mapa_ejemplo.tipo_celda_izq(0, 0")
 # print(mapa_ejemplo.tipo_celda_izq(0, 0))
@@ -129,7 +133,7 @@ def aplicabilidad_mov_der(estado):
 def aplicar_mov_der(estado):
     f = estado[0]
     c = estado[1]+1
-    return f, c, moverMonstruo(f, c, estado)
+    return moverMonstruo(f, c, estado)
 
 
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
@@ -145,7 +149,7 @@ def aplicabilidad_mov_izq(estado):
 def aplicar_mov_izq(estado):
     f = estado[0]
     c = estado[1]-1
-    return f, c, moverMonstruo(f, c, estado)
+    return moverMonstruo(f, c, estado)
 
 
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
@@ -161,7 +165,7 @@ def aplicabilidad_mov_aba(estado):
 def aplicar_mov_aba(estado):
     f = estado[0]+1
     c = estado[1]
-    return f, c, moverMonstruo(f, c, estado)
+    return moverMonstruo(f, c, estado)
 
 
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
@@ -177,7 +181,7 @@ def aplicabilidad_mov_arr(estado):
 def aplicar_mov_arr(estado):
     f = estado[0]-1
     c = estado[1]
-    return f, c, moverMonstruo(f, c, estado)
+    return moverMonstruo(f, c, estado)
 
 
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
@@ -186,8 +190,8 @@ moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplica
 def moverMonstruo(f, c, estado):
     f_monstruo = estado[2]
     c_monstruo = estado[3]
-    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo) and f_monstruo > len(paredes_ver) and c_monstruo > len(paredes_hor) and f_monstruo < 0 and c_monstruo < 0):
-        for _ in range(1):
+    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo) and f_monstruo > len(paredes_ver) and c_monstruo > len(paredes_hor) and f_monstruo < 0 and c_monstruo < 0) and estado[4] > 1:
+        for _ in range(2):
             # Si estamos a la derecha del monstruo y nos podemos mover a la derecha
             if c > c_monstruo and mapa_ejemplo.tipo_celda_der(f_monstruo, c_monstruo + 1) == 0:
                 # El monstruo se mueve 1 paso a la derecha
@@ -221,19 +225,17 @@ def moverMonstruo(f, c, estado):
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
                     break
-    return f_monstruo, c_monstruo, turnos(f_monstruo, c_monstruo, estado)
 
+        return f, c, f_monstruo, c_monstruo, estado[4]
 
-def turnos(f, c, estado):
-    if estado[4] > 0:
-        return estado[4] - 1
     else:
-        return 3 if mapa_trampas[f][c] == 1 else 0
+        return f, c, f_monstruo, c_monstruo, estado[4]-1
 
 
 # Definir el problema
 print("\nEntra a probee.")
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba], estadoInicial, [estadoFinal])
+# problema.es_estado_final(estadoFinal)
 print("\nSale de probee.")
 bOptima = búsqee.BúsquedaÓptima()
 print("\nSale de asignación bOptima")

@@ -1,6 +1,5 @@
+estado = (1, 2, 3, 4 ,5)
 
-for i in range (0, 10):
-    if(i != 2):
-        print(i)
-    else:
-        break
+estado[1] += 1
+
+print(estado[1])
