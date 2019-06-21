@@ -21,35 +21,35 @@ class Mapa:
         return len(self.trampas)
 
     def tipo_celda_arr(self, f, c):
-        return 0 if self.paredes_v[f - 1][c] == 1 or c + 1 <= -1 else 1
+        return 0 if self.paredes_v[f - 1][c] == 1 or f - 1 < -1 else 1
 
     def tipo_celda_aba(self, f, c):
-        return 0 if self.paredes_v[f][c] == 1 or c + 1 >= self.tamano_ver() else 1
+        return 0 if self.paredes_v[f][c] == 1 or f + 1 > self.tamano_ver() else 1
 
     def tipo_celda_izq(self, f, c):
-        return 0 if self.paredes_h[f][c - 1] == 1 or c + 1 <= -1 else 1
+        return 0 if self.paredes_h[f][c - 1] == 1 or c - 1 < -1 else 1
 
     def tipo_celda_der(self, f, c):
-        return 0 if self.paredes_h[f][c] == 1 or c + 1 >= self.tamano_hor() else 1
+        return 0 if self.paredes_h[f][c] == 1 or c + 1 > self.tamano_hor() else 1
 
     def es_estado_final(self, estado):
         return estado[0] == self.estado_final[0] and estado[1] == self.estado_final[1]
 # Fin de clase
 
 
-# 1 si hay pared a la derecha de la casilla, 0 si no
-paredes_ver = ([[0, 0, 0, 0, 0, 0],
-                [1, 0, 0, 0, 0, 0],
+# 1 si hay pared debajo de la casilla, 0 si no
+paredes_ver = ([[1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
-# 1 si hay pared debajo de la casilla, 0 si no
+# 1 si hay pared a la derecha de la casilla, 0 si no
 paredes_hor = ([[0, 0, 0, 0, 0, 0],
-                [0, 1, 0, 0, 0, 0],
-                [0, 1, 0, 0, 0, 0],
-                [0, 1, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
@@ -98,12 +98,12 @@ print(mapa_ejemplo.tipo_celda_der(2, 4))
 def aplicabilidad_mov_der(estado):
     f = estado[0]
     c = estado[1]
-    return mapa_ejemplo.tipo_celda_der(f, c) != 0 or mapa_ejemplo.trampas[f][c - 1] != 1
+    return mapa_ejemplo.tipo_celda_der(f, c) != 0 or mapa_ejemplo.trampas[f][c + 1] != 1
 
 
 def aplicar_mov_der(estado):
     f = estado[0]
-    c = estado[1]+1
+    c = estado[1] + 1
     return movimiento(f, c, estado)
 
 
@@ -119,7 +119,7 @@ def aplicabilidad_mov_izq(estado):
 
 def aplicar_mov_izq(estado):
     f = estado[0]
-    c = estado[1]-1
+    c = estado[1] - 1
     return movimiento(f, c, estado)
 
 
@@ -134,7 +134,7 @@ def aplicabilidad_mov_aba(estado):
 
 
 def aplicar_mov_aba(estado):
-    f = estado[0]+1
+    f = estado[0] + 1
     c = estado[1]
     return movimiento(f, c, estado)
 
@@ -150,7 +150,7 @@ def aplicabilidad_mov_arr(estado):
 
 
 def aplicar_mov_arr(estado):
-    f = estado[0]-1
+    f = estado[0] - 1
     c = estado[1]
     return movimiento(f, c, estado)
 
@@ -161,10 +161,7 @@ moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplica
 def movimiento(f, c, estado):
     f_monstruo = estado[2]
     c_monstruo = estado[3]
-    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo)
-            and f_monstruo > len(paredes_ver)
-            and c_monstruo > len(paredes_hor)
-            and f_monstruo < 0 and c_monstruo < 0) and estado[4] > 1:
+    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo)):
         for _ in range(2):
             # Si estamos a la derecha del monstruo y se puede mover a la derecha
             if c > c_monstruo and mapa_ejemplo.tipo_celda_der(f_monstruo, c_monstruo) == 0:
