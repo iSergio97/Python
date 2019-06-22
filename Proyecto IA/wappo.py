@@ -168,39 +168,40 @@ def movimiento(f, c, estado):
                 # El monstruo se mueve 1 paso a la derecha
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo + 1
+                turnos = estado[4]
                 # Si el monstruo cae en una trampa o nos alcanza
-                if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
+                if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo != c):
                     # Termina el movimiento
-                    estado[4] = 3
+                    turnos = 3
                     break
             # Si estamos a la izquierda del monstruo y se puede mover a la izquierda
-            elif c < c_monstruo and mapa_ejemplo.tipo_celda_izq(f_monstruo, c_monstruo) == 0:
+            elif c < c_monstruo and mapa_ejemplo.tipo_celda_izq(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo - 1
                 # Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
-                    estado[4] = 3
+                    turnos = 3
                     break
             # Si estamos debajo del monstruo y se puede mover hacia abajo
-            elif f > f_monstruo and mapa_ejemplo.tipo_celda_aba(f_monstruo, c_monstruo) == 0:
+            elif f > f_monstruo and mapa_ejemplo.tipo_celda_aba(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo + 1
                 c_monstruo = c_monstruo
                 # Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
-                    estado[4] = 3
+                    turnos = 3
                     break
             # Si estamos encima del monstruo y se puede mover hacia arriba
-            elif f < f_monstruo and mapa_ejemplo.tipo_celda_arr(f_monstruo, c_monstruo) == 0:
+            elif f < f_monstruo and mapa_ejemplo.tipo_celda_arr(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo - 1
                 c_monstruo = c_monstruo
                 # Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
                     # Termina el movimiento
-                    estado[4] = 3
+                    turnos = 3
                     break
-        return f, c, f_monstruo, c_monstruo, estado[4]
+        return f, c, f_monstruo, c_monstruo, turnos
     else:
         return f, c, f_monstruo, c_monstruo, estado[4] - 1
 
