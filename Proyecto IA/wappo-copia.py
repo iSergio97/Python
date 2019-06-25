@@ -35,7 +35,7 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
 #  Estados inicial y final:
 estadoInicial = (4, 2,
                  0, 1, 0)
-estadoFinal = (4, 1)
+estadoFinal = (5, 3)
 
 #  print("mapa_ejemplo.tipo_celda_izq(0, 0")
 #  print(mapa_ejemplo.tipo_celda_izq(0, 0))
@@ -59,6 +59,10 @@ def aplicabilidad_mov_der(estado):
     f = estado[0]
     c = estado[1]
     status = False
+
+    if estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]:
+        status = True
+
     if c < mapa_ejemplo.tamano_hor() - 1:
         if mapa_ejemplo.tipo_celda_der(f, c) != 0 or mapa_ejemplo.trampas[f][c + 1] != 1:
             status = True
@@ -80,6 +84,8 @@ def aplicabilidad_mov_izq(estado):
     f = estado[0]
     c = estado[1]
     status = False
+    if estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]:
+        status = True
     if c > 0:
         if mapa_ejemplo.tipo_celda_izq(f, c) != 0 or mapa_ejemplo.trampas[f][c - 1] != 1:
             return True
@@ -101,6 +107,8 @@ def aplicabilidad_mov_aba(estado):
     f = estado[0]
     c = estado[1]
     status = False
+    if estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]:
+        status = True
     if f < len(paredes_hor) - 1:
         if mapa_ejemplo.tipo_celda_aba(f, c) != 0 or mapa_ejemplo.trampas[f + 1][c] != 1:
             status = True
@@ -121,7 +129,9 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 def aplicabilidad_mov_arr(estado):
     f = estado[0]
     c = estado[1]
-    status = True
+    status = False
+    if estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]:
+        status = True
     if f > 0:
         if mapa_ejemplo.tipo_celda_arr(f, c) != 0 or mapa_ejemplo.trampas[f - 1][c] != 1:
             status = False
@@ -232,12 +242,43 @@ class Mapa:
 
     def es_estado_final(self, estado):
         return estado[0] == self.estado_final[0] and estado[1] == self.estado_final[1]
-#  Fin de clase
+
+    def acciones_aplicables(self, estado):
+        if estado[0] == 0:
+            if estado[1] == 0:
+                self.acciones = [moverAbajo, moverDerecha]
+            elif estado[1] == len(paredes_hor):
+                self.acciones = [moverArriba, moverDerecha]
+            else:
+                self.acciones = [moverDerecha, moverArriba, moverAbajo]
+        elif estado[0] == len(paredes_ver):
+            if estado[1] == 0:
+                self.acciones = [moverAbajo, moverIzquierda]
+            elif estado[1] == len(paredes_hor):
+                self.acciones = [moverArriba, moverIzquierda]
+            else:
+                self.acciones = [moverArriba, moverArriba, moverIzquierda]
+        # Esto creo que es un poco redundante, pero por probar
+        elif estado[1] == 0:
+            if estado[0] == len(paredes_ver):
+                self.acciones = [moverAbajo, moverDerecha]
+            else:
+                self.acciones = [moverAbajo, moverDerecha, moverIzquierda]
+        else:
+            self.acciones = [moverAbajo, moverArriba, moverIzquierda, moverDerecha]
+
+        return self.acciones
+
+            #  Fin de clase
 
 
 acciones = [moverAbajo, moverArriba, moverDerecha, moverIzquierda]
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial, estadoFinal, acciones)
+
+print("Mapa ejemplo acciones aplicables en 0, 0")
+estado = [0, 0]
+print(mapa_ejemplo.acciones_aplicables(estado))
 
 
 #  Definir el problema

@@ -1,10 +1,10 @@
 __author__ = "Sergio Garrido Domínguez"
 
 
-# factorial.py
-# A program to compute factorial of a number
-# Input(s) the radius
-# Output(s) the area and volume of the sphere
+#  factorial.py
+#  A program to compute factorial of a number
+#  Input(s) the radius
+#  Output(s) the area and volume of the sphere
 import math
 
 def areaAndVolume():

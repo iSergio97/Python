@@ -66,20 +66,20 @@ def agrupar_diccionarios(diccionarios):
                 diccionario_total[key] = diccionario[key]
     return diccionario_total
 
-# Un Estado es un conjunto de átomos positivos cerrados que expresan los hechos
-# que son ciertos. Cualquier instancia de un átomo que no aparezca en un estado
-# se considerará falso.
-# Ejemplo:
-#    Estado({despejado(B), despejado(C), despejado(D), brazo_libre(),
-#            sobre(B,A), sobre_la_mesa(C), sobre_la_mesa(D), sobre_la_mesa(A)})
-# Representación: Diccionario que para cada símbolo de predicado tiene asociado
-# el conjunto de posibles tuplas que representan las instancias de dicho
-# predicado que son ciertas.
-# Ejemplo:
-#    {'despejado' : {(B), (C), (D)},
-#     'brazo_libre' : {()},
-#     'sobre': {(B,A)},
-#     'sobre_la_mesa': {(C), (D), (A)}}
+#  Un Estado es un conjunto de átomos positivos cerrados que expresan los hechos
+#  que son ciertos. Cualquier instancia de un átomo que no aparezca en un estado
+#  se considerará falso.
+#  Ejemplo:
+#     Estado({despejado(B), despejado(C), despejado(D), brazo_libre(),
+#             sobre(B,A), sobre_la_mesa(C), sobre_la_mesa(D), sobre_la_mesa(A)})
+#  Representación: Diccionario que para cada símbolo de predicado tiene asociado
+#  el conjunto de posibles tuplas que representan las instancias de dicho
+#  predicado que son ciertas.
+#  Ejemplo:
+#     {'despejado' : {(B), (C), (D)},
+#      'brazo_libre' : {()},
+#      'sobre': {(B,A)},
+#      'sobre_la_mesa': {(C), (D), (A)}}
 
 class Estado:
     def __init__(self, *atomos):
@@ -112,7 +112,7 @@ class Estado:
                    for key in condiciones.keys()
                    for value in condiciones[key])
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 class AcciónPlanificación(probee.Acción):
     def __init__(self, nombre,
@@ -169,7 +169,7 @@ class AcciónPlanificación(probee.Acción):
                               for valor in valores]) +
                 '\n  Coste: ' + str(self.coste))
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 def instanciar(diccionario, asignación):
     instancia = {}
@@ -231,64 +231,64 @@ class EsquemaPlanificación:
                 '\nACCIONES GENERADAS:\n' +
                 '\n'.join(str(acción) for acción in acciones))
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
-#class Operador:
-#    def __init__(self, nombre, precondiciones=None, efectos=None,
-#                 relaciones_rígidas=None, coste=None, **variables):
-#        self.nombre = nombre
-#        if precondiciones is None:
-#            precondiciones = []
-#        if not isinstance(precondiciones, list):
-#            precondiciones = [precondiciones]
-#        self.precondiciones = precondiciones
-#        if efectos is None:
-#            efectos = []
-#        if not isinstance(efectos, list):
-#            efectos = [efectos]
-#        self.efectos = efectos
-#        if relaciones_rígidas is None:
-#            relaciones_rígidas = []
-#        if not isinstance(relaciones_rígidas, list):
-#            relaciones_rígidas = [relaciones_rígidas]
-#        self.relaciones_rígidas = relaciones_rígidas
-#        if coste is None or isinstance(coste, int):
-#            coste = CosteOperador(coste)()
-#        self.coste_operador = coste
-#        self.variables = variables
+# class Operador:
+#     def __init__(self, nombre, precondiciones=None, efectos=None,
+#                  relaciones_rígidas=None, coste=None, **variables):
+#         self.nombre = nombre
+#         if precondiciones is None:
+#             precondiciones = []
+#         if not isinstance(precondiciones, list):
+#             precondiciones = [precondiciones]
+#         self.precondiciones = precondiciones
+#         if efectos is None:
+#             efectos = []
+#         if not isinstance(efectos, list):
+#             efectos = [efectos]
+#         self.efectos = efectos
+#         if relaciones_rígidas is None:
+#             relaciones_rígidas = []
+#         if not isinstance(relaciones_rígidas, list):
+#             relaciones_rígidas = [relaciones_rígidas]
+#         self.relaciones_rígidas = relaciones_rígidas
+#         if coste is None or isinstance(coste, int):
+#             coste = CosteOperador(coste)()
+#         self.coste_operador = coste
+#         self.variables = variables
 #
-#    def _procesar(self, componente, asignación):
-#        return {variable_estados.format(**asignación):
-#                valor.format(**asignación)
-#                for variable_estados, valor in componente.items()}
+#     def _procesar(self, componente, asignación):
+#         return {variable_estados.format(**asignación):
+#                 valor.format(**asignación)
+#                 for variable_estados, valor in componente.items()}
 #
-#    def obtener_acción(self, asignación):
-#        nombre = self.nombre.format(**asignación)
-#        precondiciones = [self._procesar(precondición, asignación)
-#                          for precondición in self.precondiciones]
-#        efectos = [self._procesar(efecto, asignación)
-#                   for efecto in self.efectos]
-#        coste = self.coste_operador.coste(asignación)
-#        return AcciónPlanificación(nombre, precondiciones, efectos, coste)
+#     def obtener_acción(self, asignación):
+#         nombre = self.nombre.format(**asignación)
+#         precondiciones = [self._procesar(precondición, asignación)
+#                           for precondición in self.precondiciones]
+#         efectos = [self._procesar(efecto, asignación)
+#                    for efecto in self.efectos]
+#         coste = self.coste_operador.coste(asignación)
+#         return AcciónPlanificación(nombre, precondiciones, efectos, coste)
 #
-#    def verifica_relaciones_rígidas(self, asignación):
-#        return all(relación_rígida.verifica(asignación)
-#                   for relación_rígida in self.relaciones_rígidas)
+#     def verifica_relaciones_rígidas(self, asignación):
+#         return all(relación_rígida.verifica(asignación)
+#                    for relación_rígida in self.relaciones_rígidas)
 #
-#    def obtener_acciones(self):
-#        nombres_variables = self.variables.keys()
-#        valores_variables = self.variables.values()
-#        producto_valores = itertools.product(*valores_variables)
-#        asignaciones = (dict(zip(nombres_variables, valores))
-#                        for valores in producto_valores)
-#        return [self.obtener_acción(asignación) for asignación in asignaciones
-#                if self.verifica_relaciones_rígidas(asignación)]
+#     def obtener_acciones(self):
+#         nombres_variables = self.variables.keys()
+#         valores_variables = self.variables.values()
+#         producto_valores = itertools.product(*valores_variables)
+#         asignaciones = (dict(zip(nombres_variables, valores))
+#                         for valores in producto_valores)
+#         return [self.obtener_acción(asignación) for asignación in asignaciones
+#                 if self.verifica_relaciones_rígidas(asignación)]
 #
-#    def __str__(self):
-#        acciones = self.obtener_acciones()
-#        return ('Operador: ' + self.nombre +
-#                '\nACCIONES GENERADAS:\n' +
-#                '\n\n'.join(str(acción) for acción in acciones))
+#     def __str__(self):
+#         acciones = self.obtener_acciones()
+#         return ('Operador: ' + self.nombre +
+#                 '\nACCIONES GENERADAS:\n' +
+#                 '\n\n'.join(str(acción) for acción in acciones))
 
 class CosteEsquema:
     def __init__(self, coste=None):
@@ -310,7 +310,7 @@ class CosteEsquema:
         coste_esquema.argumentos = argumentos
         return coste_esquema
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 class ProblemaPlanificación(probee.ProblemaEspacioEstados):
     def __init__(self, operadores, estado_inicial, 

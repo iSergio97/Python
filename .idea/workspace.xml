@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="Arreglo modificación tupla">
+    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="Arreglo modificación tupla.&#10;Eliminada la función de turnos, ahora aplicable en el return de movimiento de monstruo.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/Práctica_03.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Práctica_03.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/wappo-copia.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/wappo-copia.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/wappo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/wappo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 1/.ipynb_checkpoints/Práctica_01-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 1/.ipynb_checkpoints/Práctica_01-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 1/Practica 1 - cars.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 1/Practica 1 - cars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 1/Práctica_01.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 3/Práctica 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3/Práctica 3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 3/Práctica_03.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3/Práctica_03.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 3/Práctica_03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 4/Práctica_04.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 4/Práctica_04.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 4/Práctica_04.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 4/problema_planificación_pddl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 4/problema_planificación_pddl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 5/Práctica_05.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/Práctica_05.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/Práctica_05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Práctica 5/tempCodeRunnerFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 1/1.6/chaotic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 1/1.6/chaotic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 1/1.6/hello_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 1/1.6/hello_world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 2/2.1/converterToCelsius.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 2/2.1/converterToCelsius.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 2/2.1/converterToFahrenheit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 2/2.1/converterToFahrenheit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 2/2.7/futVal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 2/2.7/futVal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/3.1/change.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/3.1/change.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/3.2/quadratic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/3.2/quadratic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/3.3/factorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/3.3/factorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/Tests/Programing test/sphere.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tema 3/Tests/Theory test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tema 3/Tests/Theory test/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,32 +44,76 @@
     <favorites_list name="Python" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="232" selection-start-line="232" selection-end-line="232" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="87" column="55" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.47098213">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="237" selection-start-line="237" selection-end-line="237" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Práctica 3/búsqueda_espacio_estados.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2040">
+                  <caret line="122" column="72" selection-start-line="122" selection-start-column="72" selection-end-line="122" selection-end-column="72" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4403">
+                  <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="174">
+                  <caret line="139" column="14" selection-start-line="139" selection-start-column="14" selection-end-line="139" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Práctica 3/problema_espacio_estados.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="246">
+                  <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,39 +124,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>!= 0</find>
-      <find>ProblemaEs</find>
-      <find>AEs</find>
-      <find>BúsquedaA</find>
-      <find>m</find>
-      <find>mapa_ejemplo</find>
-      <find>aplicabilidad</find>
-      <find>mapa</find>
-      <find>mapa_ejemplo.tipo_celda_izq(estado[0], estado[1]) == 0</find>
-      <find>tipo_celda</find>
-      <find>buscar</find>
-      <find>self.frontera.nodos</find>
-      <find>def buscar</find>
-      <find>problema =</find>
-      <find>estado</find>
-      <find>mapa_trampas(</find>
-      <find>print(&quot;Estado 1</find>
-      <find>h(</find>
-      <find>def h</find>
-      <find>estadoFinal</find>
-      <find>[estadofinal</find>
-      <find>turnos</find>
-      <find>moverMonstruo</find>
-      <find>es_estado_</find>
-      <find>estado1</find>
-      <find>es_estad</find>
-      <find>for</find>
-      <find>es_estado</find>
-      <find>mapa_ejemplo =</find>
       <find>problema</find>
+      <find>for acc</find>
+      <find>turnos</find>
+      <find>acciones_aplicables</find>
+      <find>class</find>
+      <find>class Ma</find>
+      <find>[mover</find>
+      <find>poner_disco</find>
+      <find>de</find>
+      <find>a13</find>
+      <find>#</find>
+      <find>acciones_aplicable</find>
+      <find>class M</find>
+      <find>problema =</find>
+      <find>Ma</find>
+      <find>class Map</find>
+      <find>acciones_apli</find>
+      <find>acciones</find>
+      <find>acciones = [</find>
+      <find>Busqueda</find>
+      <find>BúsquedaA</find>
+      <find>es_estado</find>
+      <find>clas</find>
+      <find>class Mapa</find>
+      <find>Mapa:</find>
+      <find>so</find>
+      <find>solucion</find>
+      <find>estado_final</find>
+      <find>estadoFinal</find>
+      <find>aplicabilidad</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>#</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -132,10 +205,11 @@
         <option value="$PROJECT_DIR$/Práctica 5/Práctica_05.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/ejemplo.py" />
-        <option value="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py" />
         <option value="$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/wappo.py" />
+        <option value="$PROJECT_DIR$/Proyecto IA/Práctica 3.py" />
+        <option value="$PROJECT_DIR$/Proyecto IA/wappo-copia.py" />
       </list>
     </option>
   </component>
@@ -153,7 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -166,29 +239,36 @@
               <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="Proyecto IA" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Práctica 3" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Práctica 4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Proyecto IA" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/Práctica 4" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 1" />
-      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 2\2.1" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 5" />
       <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 1" />
       <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python" />
       <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 3\Tests\Theory test" />
       <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 3\3.1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Proyecto IA" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Práctica 1" />
+      <recent name="C:\Users\stb_1\OneDrive\Escritorio\WorkSpaces\Python\Tema 2\2.1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -203,7 +283,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.wappo">
+  <component name="RunManager" selected="Python.wappo-copia">
     <configuration name="Python" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -305,27 +385,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mvg" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tema 3/Tests/Theory test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tema 3/Tests/Theory test/mvg.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="sphere" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -368,6 +427,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wappo-copia" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Proyecto IA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Proyecto IA/wappo-copia.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="wappo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -394,18 +474,18 @@
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.búsqueda_espacio_estados" />
       <item itemvalue="Python.Práctica 3 (1)" />
-      <item itemvalue="Python.mvg" />
       <item itemvalue="Python.sphere" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.wappo-copia" />
       <item itemvalue="Python.wappo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.wappo" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.wappo-copia" />
         <item itemvalue="Python.Práctica 3 (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.wappo" />
         <item itemvalue="Python.sphere" />
-        <item itemvalue="Python.mvg" />
       </list>
     </recent_temporary>
   </component>
@@ -707,7 +787,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561112649010</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Arreglo modificación tupla.&#10;Eliminada la función de turnos, ahora aplicable en el return de movimiento de monstruo.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar">
+      <created>1561126897147</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1561126897147</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Subida copia del proyecto pero con el mismo problema.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar">
+      <created>1561333796222</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1561333796222</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -728,7 +822,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.31751227" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.36006546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -806,7 +900,9 @@
     <MESSAGE value="No hay bucle infinito" />
     <MESSAGE value="Arregla el TODO pls" />
     <MESSAGE value="Esta mierda no avanza. Se convierte de la tupla (a, b, c, d, e) a (a, b, (c, d, e))" />
-    <option name="LAST_COMMIT_MESSAGE" value="Esta mierda no avanza. Se convierte de la tupla (a, b, c, d, e) a (a, b, (c, d, e))" />
+    <MESSAGE value="Arreglo modificación tupla.&#10;Eliminada la función de turnos, ahora aplicable en el return de movimiento de monstruo.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar" />
+    <MESSAGE value="Subida copia del proyecto pero con el mismo problema.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subida copia del proyecto pero con el mismo problema.&#10;&#10;Corregir problema &quot;AttributeError: 'Mapa' object has no attribute 'acciones_aplicables'&quot; intentar ejecutar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -838,57 +934,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>189</line>
+          <line>160</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>50</line>
+          <line>33</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>236</line>
+          <line>183</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>239</line>
+          <line>187</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>241</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>247</line>
+          <line>189</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>254</line>
+          <line>195</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>258</line>
+          <line>196</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>29</line>
+          <line>25</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>36</line>
+          <line>28</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>43</line>
+          <line>31</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -898,8 +989,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo.py</url>
-          <line>115</line>
+          <line>97</line>
           <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py</url>
+          <line>161</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -910,27 +1006,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tema 2/2.1/converterToCelsius.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tema 2/2.1/converterToFahrenheit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tema 2/2.7/futVal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="3" selection-end-column="28" />
-          <folding>
-            <marker date="1549130126173" expanded="true" signature="215:220" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,8 +1075,8 @@
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/Practica 1 - nurse.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1008,9 +1087,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Práctica 3/problema_espacio_estados.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Imports importantes para IA">
       <provider selected="true" editor-type-id="text-editor">
@@ -1039,11 +1115,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica_03.ipynb" />
-    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica_03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3792" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 3/mapa.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1136,13 +1207,6 @@
     <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4403">
-          <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 4/búsqueda_espacio_estados.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -1150,20 +1214,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Práctica 3/búsqueda_espacio_estados.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="128" selection-start-line="128" selection-end-line="145" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tema 3/Tests/Programing test/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1174,34 +1228,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
+    <entry file="file://$PROJECT_DIR$/Práctica 4/problema_espacio_estados.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="324" selection-start-line="324" selection-end-line="324" />
+        <state relative-caret-position="416">
+          <caret line="40" column="8" selection-end-line="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="87" column="55" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="55" />
+        <state relative-caret-position="-14">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        <state relative-caret-position="124">
+          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica_03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/búsqueda_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="122" column="72" selection-start-line="122" selection-start-column="72" selection-end-line="122" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/problema_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/búsqueda_espacio_estados.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Práctica 3/Práctica 3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4403">
+          <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

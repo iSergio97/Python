@@ -1,10 +1,10 @@
 __author__ = "Sergio Garrido Domínguez"
 
-# quadratic.py
-# A program to compute the real roots of a quadratic equation
-# Input(s) the values of the numbers of the equation
-# Output(s) the roots of the equation
-# Note: This .py only solve equations with real solutions
+#  quadratic.py
+#  A program to compute the real roots of a quadratic equation
+#  Input(s) the values of the numbers of the equation
+#  Output(s) the roots of the equation
+#  Note: This .py only solve equations with real solutions
 
 import math
 

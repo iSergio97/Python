@@ -12,5 +12,5 @@ def main():
             print(x)
 
 
-#Note: Leave to blank lines between the end function and the next instruction
-#main()
+# Note: Leave to blank lines between the end function and the next instruction
+# main()

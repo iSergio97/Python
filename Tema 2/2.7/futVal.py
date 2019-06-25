@@ -1,7 +1,7 @@
-#futVal.py
-#A program to calculate the value of an investment
-#Input(s) an actualVal (number), the temp (number) and the % (number)
-#Output(s) a Fahrenheit temp
+# futVal.py
+# A program to calculate the value of an investment
+# Input(s) an actualVal (number), the temp (number) and the % (number)
+# Output(s) a Fahrenheit temp
 __author__ = "Sergio Garrido Domínguez"
 
 def futVal():

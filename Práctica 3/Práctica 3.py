@@ -53,7 +53,7 @@ print(a13.aplicar(estado2))
 print("Fin a13.aplicar(estado2)")
 print("\n")
 
-#Comienzo de clase
+# Comienzo de clase
 class MoverDisco(probee.Acción):
     def __init__(self, i, j):
         nombre = 'De {} a {}'.format(i, j)
@@ -86,7 +86,7 @@ class MoverDisco(probee.Acción):
         disco = self.quitar_disco(nuevo_estado, self.varilla_de)
         self.poner_disco(nuevo_estado, self.varilla_a, disco)
         return nuevo_estado
-#Fin de la clase
+# Fin de la clase
 
 acciones = [MoverDisco(i, j) for i in range(1, 4) for j in range(1, 4) if i != j]
 estado_inicial = [{1, 2}, set(), set()]
@@ -127,7 +127,7 @@ print("b_profundidad.buscar(Torres_Hanoi_2_discos")
 print(b_profundidad.buscar(Torres_Hanoi_2_discos))
 print("\n")
 
-#Comienzo de clase
+# Comienzo de clase
 class TorresHanoi(probee.ProblemaEspacioEstados):
     def __init__(self, n):
         acciones = [MoverDisco(i, j) for i in range(1, 4) for j in range(1, 4) if i != j]
@@ -137,7 +137,7 @@ class TorresHanoi(probee.ProblemaEspacioEstados):
 
     def es_estado_final(self, estado):
         return estado[2] == set(range(1, self.n + 1))
-#Fin de clase
+# Fin de clase
 
 Torres_Hanoi_8_discos = TorresHanoi(8)
 
@@ -150,20 +150,20 @@ def h(nodo):
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
 
 
-#%%timeit -n1 -r1
+# %%timeit -n1 -r1
 
 print("b_óptima.buscar(Torres_Hanoi_8_discos)")
 print("TODO: Descomentar la línea  de abajo")
-#print(b_óptima.buscar(Torres_Hanoi_8_discos))
+# print(b_óptima.buscar(Torres_Hanoi_8_discos))
 print("\n")
 
-#%%timeit -n1 -r1
+# %%timeit -n1 -r1
 
 print("b_a_estrella.buscar(Torres_Hanoi_8_discos)")
 print("TODO: Descomentar la línea  de abajo")
-#print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
+# print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
 print("\n")
-#Comienzo de clase
+# Comienzo de clase
 
 class Mapa:
     def __init__(self, celdas):
@@ -178,7 +178,7 @@ class Mapa:
     def tipo_celda(self, f, c):
         return self.celdas[f][c]
 
-#Fin de clase
+# Fin de clase
 
 mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
                      [1, 1, 1, 1, 2, 2, 2, 0, 0, 1],
@@ -189,10 +189,10 @@ mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
 
 
 print("Ejercicio 1")
-einicial = (5,0) #Casilla 5-0
+einicial = (5,0) # Casilla 5-0
 efinal = (0,9)
 
-#Acción "Moverse a la derecha"
+# Acción "Moverse a la derecha"
 def aplicabilidadMoveRight(estado):
     return estado[1] < mapa_ejemplo.tamaño_hor()-1 and mapa_ejemplo.tipo_celda(estado[0], estado[1] + 1) != 0
 
@@ -211,9 +211,9 @@ print(moverDerecha.es_aplicable(einicial))
 
 print(moverDerecha.aplicar(einicial))
 
-#Acción "Moverse a la izquierda"
+# Acción "Moverse a la izquierda"
 def aplicabilidadMoveLeft(estado):
-    #Como se hace a la izquierda, se cambia el + por el -
+    # Como se hace a la izquierda, se cambia el + por el -
     return estado[1] > 0 and mapa_ejemplo.tipo_celda(estado[0], estado[1] - 1) != 0
 
 
@@ -226,7 +226,7 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidadMoveLeft, a
 
 
 
-#Acción "Moverse hacia abajo"
+# Acción "Moverse hacia abajo"
 def aplicabilidadMoveDown(estado):
    return estado[0] < mapa_ejemplo.tamaño_ver()-1 and mapa_ejemplo.tipo_celda(estado[0]+1, estado[1]) != 0
 
@@ -238,7 +238,7 @@ def aplicarMDown(estado):
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidadMoveDown, aplicarMDown, coste)
 
 
-#Acción "Moverse hacia arriba"
+# Acción "Moverse hacia arriba"
 def aplicabilidadMoveUp(estado):
 
     return estado[0] > 0 and mapa_ejemplo.tipo_celda(estado[0]-1, estado[1]) != 0
@@ -251,7 +251,7 @@ def aplicarMUp(estado):
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidadMoveUp, aplicarMUp, coste)
 
 
-#Definir el problema de espacio de estados
+# Definir el problema de espacio de estados
 
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverArriba, moverAbajo], einicial, [efinal])
 

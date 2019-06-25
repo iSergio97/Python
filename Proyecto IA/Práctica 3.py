@@ -41,7 +41,7 @@ print(a13.es_aplicable(estado2))
 
 print(a13.aplicar(estado2))
 
-#Comienzo de clase
+# Comienzo de clase
 class MoverDisco(probee.Acción):
     def __init__(self, i, j):
         nombre = 'De {} a {}'.format(i, j)
@@ -74,7 +74,8 @@ class MoverDisco(probee.Acción):
         disco = self.quitar_disco(nuevo_estado, self.varilla_de)
         self.poner_disco(nuevo_estado, self.varilla_a, disco)
         return nuevo_estado
-#Fin de la clase
+# Fin de la clase
+
 
 acciones = [MoverDisco(i, j) for i in range(1, 4) for j in range(1, 4) if i != j]
 estado_inicial = [{1, 2}, set(), set()]
@@ -101,7 +102,8 @@ b_profundidad = búsqee.BúsquedaEnProfundidad(detallado=True)
 
 print(b_profundidad.buscar(Torres_Hanoi_2_discos))
 
-#Comienzo de clase
+
+# Comienzo de clase
 class TorresHanoi(probee.ProblemaEspacioEstados):
     def __init__(self, n):
         acciones = [MoverDisco(i, j) for i in range(1, 4) for j in range(1, 4) if i != j]
@@ -111,28 +113,31 @@ class TorresHanoi(probee.ProblemaEspacioEstados):
 
     def es_estado_final(self, estado):
         return estado[2] == set(range(1, self.n + 1))
-#Fin de clase
+# Fin de clase
+
 
 Torres_Hanoi_8_discos = TorresHanoi(8)
 
 b_óptima = búsqee.BúsquedaÓptima()
 
+
 def h(nodo):
     estado = nodo.estado
     return len(estado[0]) + len(estado[1])
 
+
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
 
-# %%timeit -n1 -r1
-#print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
+#  %%timeit -n1 -r1
+# print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
 
-# %%timeit -n1 -r1
-#print(b_óptima.buscar(Torres_Hanoi_8_discos))
+#  %%timeit -n1 -r1
+# print(b_óptima.buscar(Torres_Hanoi_8_discos))
 
-# %%timeit -n1 -r1
-#print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
+#  %%timeit -n1 -r1
+# print(b_a_estrella.buscar(Torres_Hanoi_8_discos))
 
-#Comienzo de clase
+# Comienzo de clase
 
 class Mapa:
     def __init__(self, celdas):
@@ -147,7 +152,7 @@ class Mapa:
     def tipo_celda(self, f, c):
         return self.celdas[f][c]
 
-#Fin de clase
+# Fin de clase
 
 
 mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
@@ -157,23 +162,23 @@ mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
                      [1, 1, 1, 2, 2, 4, 0, 0, 0, 0],
                      [1, 1, 1, 1, 2, 2, 0, 0, 0, 0]])
 
-# Ejercicio 1: implementar como un problema de espacio de estados el problema de encontrar en el mapa anterior
-# el camino de menor coste entre la posición `A` y la posición `B`. El coste de salir de una celda de llanura es 1,
-# de una celda de bosque es 2 y de una celda de montaña es 4. El camino no puede pasar por ninguna celda de agua.
+#  Ejercicio 1: implementar como un problema de espacio de estados el problema de encontrar en el mapa anterior
+#  el camino de menor coste entre la posición `A` y la posición `B`. El coste de salir de una celda de llanura es 1,
+#  de una celda de bosque es 2 y de una celda de montaña es 4. El camino no puede pasar por ninguna celda de agua.
 
 
-# Estados inicial y final:
-estadoInicial = (5, 0)    # [5,0]
-estadoFinal = (0, 9)      # [0,9]
+#  Estados inicial y final:
+estadoInicial = (5, 0)    #  [5,0]
+estadoFinal = (0, 9)      #  [0,9]
 
 
-# Coste:
+#  Coste:
 def coste(estado):
     return mapa_ejemplo.tipo_celda(estado[0], estado[1])
 
 
-# Acciones:
-    # Moverse a la derecha:
+#  Acciones:
+    #  Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
     return estado[1] < mapa_ejemplo.tamaño_hor()-1 and mapa_ejemplo.tipo_celda(estado[0], estado[1]+1) != 0
 
@@ -185,7 +190,7 @@ def aplicar_mov_der(estado):
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
 
 
-    # Moverse a la izquierda:
+    #  Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
     return estado[1] > -1 and mapa_ejemplo.tipo_celda(estado[0], estado[1]-1) != 0
 
@@ -197,7 +202,7 @@ def aplicar_mov_izq(estado):
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
 
 
- # Moverse hacia abajo:
+ #  Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
     return estado[0] < mapa_ejemplo.tamaño_ver()-1 and mapa_ejemplo.tipo_celda(estado[0]+1, estado[1]) != 0
 
@@ -209,7 +214,7 @@ def aplicar_mov_aba(estado):
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
 
 
-    # Moverse hacia arriba:
+    #  Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
     return estado[0] > -1 and mapa_ejemplo.tipo_celda(estado[0]-1, estado[1]) != 0
 
@@ -221,12 +226,12 @@ def aplicar_mov_arr(estado):
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr)
 
 
-# Definir el problema
+#  Definir el problema
 
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
                                          estadoInicial, [estadoFinal])
 
-# Ejercicio 2: aplicar el algoritmo A* para encontrar una solución del problema anterior.
+#  Ejercicio 2: aplicar el algoritmo A* para encontrar una solución del problema anterior.
 
 bOptima = búsqee.BúsquedaÓptima()
 print(bOptima.buscar(problema))
@@ -235,150 +240,150 @@ def h(nodo):
     estado = nodo.estado
     return estado[0]+9-estado[1]
 
-# Supongamos que además de ir desde la posición A hasta la posición B, una unidad del juego tiene que pasar antes
-# por otros puntos de encuentro especificados. Este problema puede resolverse buscando y concatenando
-# los caminos intermedios entre los puntos de encuentro (incluyendo también los caminos desde el origen al primer
-# punto de encuentro y desde el último punto de encuentro al destino final).
+#  Supongamos que además de ir desde la posición A hasta la posición B, una unidad del juego tiene que pasar antes
+#  por otros puntos de encuentro especificados. Este problema puede resolverse buscando y concatenando
+#  los caminos intermedios entre los puntos de encuentro (incluyendo también los caminos desde el origen al primer
+#  punto de encuentro y desde el último punto de encuentro al destino final).
 
-# Ejercicio 3: definir una función `búsqueda_camino_con_puntos` que, dada una lista de puntos del camino (*waypoints*)
-# devuelva el camino de menor coste desde la posición A hasta la posición B, pasando en orden
-# por esos puntos del camino. Usar esta función para encontrar un camino de coste mínimo desde A hasta B,
-# pasando por las posiciones `(1, 6)` y `(5, 5)`, en ese orden.
+#  Ejercicio 3: definir una función `búsqueda_camino_con_puntos` que, dada una lista de puntos del camino (*waypoints*)
+#  devuelva el camino de menor coste desde la posición A hasta la posición B, pasando en orden
+#  por esos puntos del camino. Usar esta función para encontrar un camino de coste mínimo desde A hasta B,
+#  pasando por las posiciones `(1, 6)` y `(5, 5)`, en ese orden.
 
 
 def moverMonstruo(f, c, estado):
-    # Si estamos en su casilla
+    #  Si estamos en su casilla
     if f == estado[2] and c == estado[3]:
-        # No se mueve
+        #  No se mueve
         return estado[2], estado[3]
-    # Si estamos en su fila
+    #  Si estamos en su fila
     elif f == estado[2]:
-        # Y estamos un paso a su derecha
+        #  Y estamos un paso a su derecha
         if c + 1 == estado[3]:
-            # Se mueve un paso a la derecha de ser posible
+            #  Se mueve un paso a la derecha de ser posible
             return estado[2], estado[3] + 1 \
                 if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0 else estado[2], estado[3]
-        # Si estamos dos o más pasos a su derecha
+        #  Si estamos dos o más pasos a su derecha
         elif c + 1 < estado[3]:
-            # Se mueve dos pasos a su derecha de ser posible
+            #  Se mueve dos pasos a su derecha de ser posible
             if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
                     and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0:
                 return estado[2], estado[3]
-            # Si no uno y si no ninguno
+            #  Si no uno y si no ninguno
             else:
                 return estado[2], estado[3] + 1 \
                     if mapa_ejemplo.tipo_celda_der(estado[2], estado[3]) != 0 else estado[2], estado[3]
-        # Si por el contrario estamos un paso a su izquierda
+        #  Si por el contrario estamos un paso a su izquierda
         elif c - 1 == estado[3]:
-            # Se mueve un paso a la izquierda de ser posible
+            #  Se mueve un paso a la izquierda de ser posible
             return estado[2], estado[3] - 1 \
                 if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
-        # Si estamos dos o más pasos a su izquierda
+        #  Si estamos dos o más pasos a su izquierda
         else:
-            # Se mueve dos pasos a su izquierda de ser posible
+            #  Se mueve dos pasos a su izquierda de ser posible
             if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
                     and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
                 return estado[2], estado[3]
-            # Si no uno y si no ninguno
+            #  Si no uno y si no ninguno
             else:
                 return estado[2], estado[3] - 1 \
                     if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0 else estado[2], estado[3]
-    # Si estamos en su columna
+    #  Si estamos en su columna
     elif c == estado[3]:
-        # Y estamos un paso debajo de él
+        #  Y estamos un paso debajo de él
         if f + 1 == estado[2]:
-            # Se mueve hacia abajo de ser posible
+            #  Se mueve hacia abajo de ser posible
             return estado[2] + 1, estado[3] \
                 if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 else estado[2], estado[3]
-        # Si estamos dos o más pasos debajo de él
+        #  Si estamos dos o más pasos debajo de él
         elif f + 1 < estado[2]:
-            # Se mueve dos pasos hacia abajo de ser posible
+            #  Se mueve dos pasos hacia abajo de ser posible
             if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
                     and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                 return estado[2] + 2, estado[3]
-            # Si no uno y si no ninguno
+            #  Si no uno y si no ninguno
             else:
                 return estado[2] + 1, estado[3] \
                     if mapa_ejemplo.tipo_celda_aba(estado[2], estado[3]) != 0 else estado[2], estado[3]
-        # Si por el contrario estamos un paso encima de él
+        #  Si por el contrario estamos un paso encima de él
         elif f - 1 < estado[2]:
-            # Se mueve un paso hacia arriba de ser posible
+            #  Se mueve un paso hacia arriba de ser posible
             return estado[2] - 1, estado[3] \
                 if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 else estado[2], estado[3]
-        # Si estamos dos o más pasos encima de él
+        #  Si estamos dos o más pasos encima de él
         else:
-            # Se mueve dos pasos hacia arriba de ser posible
+            #  Se mueve dos pasos hacia arriba de ser posible
             if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
                     and mapa_ejemplo.tipo_celda_arr(estado[2], estado[3] - 1) != 0:
                 return estado[2] - 2, estado[3]
-            # Si no uno y si no ninguno
+            #  Si no uno y si no ninguno
             else:
                 return estado[2] - 1, estado[3] \
                     if mapa_ejemplo.tipo_celda_arr(estado[2], estado[3]) != 0 else estado[2], estado[3]
-    # Si no estamos ni en su fila ni en su columna
+    #  Si no estamos ni en su fila ni en su columna
     else:
-        # Si estamos a su derecha
+        #  Si estamos a su derecha
         if f < estado[2]:
-            # Se mueve dos pasos a su derecha de ser posible
+            #  Se mueve dos pasos a su derecha de ser posible
             if mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 2) != 0 \
                     and mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
                 return estado[2], estado[3] + 2
-            # Si no uno
+            #  Si no uno
             elif mapa_ejemplo.tipo_celda_der(estado[2], estado[3] + 1) != 0:
                 return estado[2], estado[3] + 1
-            # Y si no, se mueve verticalmente
+            #  Y si no, se mueve verticalmente
             else:
-                # Si estamos debajo de él
+                #  Si estamos debajo de él
                 if c < estado[3]:
-                    # Se mueve dos pasos hacia abajo de ser posible
+                    #  Se mueve dos pasos hacia abajo de ser posible
                     if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
                             and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                         return estado[2] + 2, estado[3]
-                    # Si no uno y si no ninguno
+                    #  Si no uno y si no ninguno
                     else:
                         return estado[2] + 1, estado[3] \
                             if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
                             else estado[2], estado[3]
-                # Si estamos encima de él
+                #  Si estamos encima de él
                 else:
-                    # Se mueve dos pasos hacia arriba de ser posible
+                    #  Se mueve dos pasos hacia arriba de ser posible
                     if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
                             and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
                         return estado[2] - 2, estado[3]
-                    # Si no uno y si no ninguno
+                    #  Si no uno y si no ninguno
                     else:
                         return estado[2] - 1, estado[3] \
                             if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0\
                             else estado[2], estado[3]
-        # Si por el contrario estamos a su izquierda
+        #  Si por el contrario estamos a su izquierda
         else:
-            # Se mueve dos pasos a su izquierda de ser posible
+            #  Se mueve dos pasos a su izquierda de ser posible
             if mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0 \
                     and mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 2) != 0:
                 return estado[2], estado[3] - 2
-            # Si no uno y si no ninguno
+            #  Si no uno y si no ninguno
             elif mapa_ejemplo.tipo_celda_izq(estado[2], estado[3] - 1) != 0:
                 return estado[2], estado[3]
-            # Y si no, se mueve verticalmente
+            #  Y si no, se mueve verticalmente
             else:
-                # Si estamos debajo de él
+                #  Si estamos debajo de él
                 if c < estado[3]:
-                    # Se mueve dos pasos hacia abajo de ser posible
+                    #  Se mueve dos pasos hacia abajo de ser posible
                     if mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0 \
                             and mapa_ejemplo.tipo_celda_aba(estado[2] + 2, estado[3]) != 0:
                         return estado[2] + 2, estado[3]
-                    # Si no uno y si no ninguno
+                    #  Si no uno y si no ninguno
                     else:
                         return estado[2] + 1, estado[3] \
                             if mapa_ejemplo.tipo_celda_aba(estado[2] + 1, estado[3]) != 0 \
                             else estado[2], estado[3]
-                # Si estamos encima de él
+                #  Si estamos encima de él
                 else:
-                    # Se mueve dos pasos hacia arriba de ser posible
+                    #  Se mueve dos pasos hacia arriba de ser posible
                     if mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3]) != 0 \
                             and mapa_ejemplo.tipo_celda_arr(estado[2] - 2, estado[3] - 1) != 0:
                         return estado[2] - 2, estado[3]
-                    # Si no uno y si no ninguno
+                    #  Si no uno y si no ninguno
                     else:
                         return estado[2] - 1, estado[3] \
                             if mapa_ejemplo.tipo_celda_arr(estado[2] - 1, estado[3]) != 0 \

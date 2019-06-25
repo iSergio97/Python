@@ -126,25 +126,25 @@ class BúsquedaGeneral:
         return (nodo not in self.frontera and
                 nodo not in self.explorados)
 
-    # def buscar(self, problema):
-    #     self.frontera.vaciar()
-    #     self.explorados.vaciar()
-    #     self.frontera.añadir(self.Nodo(problema.estado_inicial))
-    #     while True:
-    #         if not self.frontera or not self.frontera.nodos:
-    #             return None
-    #     nodo = self.frontera.sacar()
-    #     if self.detallado:
-    #         print('{0}Nodo: {1}'.format(' ' * nodo.profundidad, nodo))
-    #     if problema.es_estado_final(nodo.estado):
-    #         self.explorados.añadir(nodo)
-    #         return nodo.solucion()
-    #     self.explorados.añadir(nodo)
-    #     if self.es_expandible(nodo):
-    #         nodos_hijos = self.expandir_nodo(nodo, problema)
-    #         for nodo_hijo in nodos_hijos:
-    #             if self.es_nuevo(nodo_hijo):
-    #                 self.frontera.añadir(nodo_hijo)
+    #  def buscar(self, problema):
+    #      self.frontera.vaciar()
+    #      self.explorados.vaciar()
+    #      self.frontera.añadir(self.Nodo(problema.estado_inicial))
+    #      while True:
+    #          if not self.frontera or not self.frontera.nodos:
+    #              return None
+    #      nodo = self.frontera.sacar()
+    #      if self.detallado:
+    #          print('{0}Nodo: {1}'.format(' ' * nodo.profundidad, nodo))
+    #      if problema.es_estado_final(nodo.estado):
+    #          self.explorados.añadir(nodo)
+    #          return nodo.solucion()
+    #      self.explorados.añadir(nodo)
+    #      if self.es_expandible(nodo):
+    #          nodos_hijos = self.expandir_nodo(nodo, problema)
+    #          for nodo_hijo in nodos_hijos:
+    #              if self.es_nuevo(nodo_hijo):
+    #                  self.frontera.añadir(nodo_hijo)
 
     def buscar(self, problema):
         self.frontera.vaciar()

@@ -5,7 +5,7 @@ import datetime
 print(datetime.datetime.now())
 
 
-# Comienzo de clase
+#  Comienzo de clase
 class Mapa:
     def __init__(self, paredes_v, paredes_h, trampas, estado_inicial, estado_final):
         self.paredes_v = paredes_v
@@ -34,10 +34,10 @@ class Mapa:
 
     def es_estado_final(self, estado):
         return estado[0] == self.estado_final[0] and estado[1] == self.estado_final[1]
-# Fin de clase
+#  Fin de clase
 
 
-# 1 si hay pared debajo de la casilla, 0 si no
+#  1 si hay pared debajo de la casilla, 0 si no
 paredes_ver = ([[1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
@@ -45,7 +45,7 @@ paredes_ver = ([[1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
-# 1 si hay pared a la derecha de la casilla, 0 si no
+#  1 si hay pared a la derecha de la casilla, 0 si no
 paredes_hor = ([[0, 0, 0, 0, 0, 0],
                 [1, 0, 0, 0, 0, 0],
                 [1, 0, 0, 0, 0, 0],
@@ -53,33 +53,33 @@ paredes_hor = ([[0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0]])
 
-# 1 si hay trampa en la casilla, 0 si no
+#  1 si hay trampa en la casilla, 0 si no
 mapa_trampas = ([[0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0]])
-# print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
+#  print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
 
-# Estados inicial y final:
+#  Estados inicial y final:
 estadoInicial = (4, 2,
                  1, 0, 0)
 estadoFinal = (4, 1)
 
 mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial, estadoFinal)
 
-# print("mapa_ejemplo.tipo_celda_izq(0, 0")
-# print(mapa_ejemplo.tipo_celda_izq(0, 0))
+#  print("mapa_ejemplo.tipo_celda_izq(0, 0")
+#  print(mapa_ejemplo.tipo_celda_izq(0, 0))
 
 print("mapa_ejemplo.tipo_celda_der(0, 0, ¿0?")
 print(mapa_ejemplo.tipo_celda_der(0, 0))
 
 
-# print("mapa_ejemplo.tipo_celda_izq(7, 7)")
-# print(mapa_ejemplo.tipo_celda_izq(7, 7))
-# print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
-# print(mapa_ejemplo.tipo_celda_aba(-1, -1))
+#  print("mapa_ejemplo.tipo_celda_izq(7, 7)")
+#  print(mapa_ejemplo.tipo_celda_izq(7, 7))
+#  print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
+#  print(mapa_ejemplo.tipo_celda_aba(-1, -1))
 
 def coste(estado):
     return 1000000 if mapa_trampas[estado[0]][estado[1]] != 0 \
@@ -93,12 +93,12 @@ print("Mapa ejemplo celda derecha en 1, 1")
 print(mapa_ejemplo.tipo_celda_der(2, 4))
 
 
-# Acciones:
-# Moverse a la derecha:
+#  Acciones:
+#  Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
     f = estado[0]
     c = estado[1]
-    return mapa_ejemplo.tipo_celda_der(f, c) != 0 or mapa_ejemplo.trampas[f][c + 1] != 1
+    return c < mapa_ejemplo.tamano_hor() - 1 and mapa_ejemplo.tipo_celda_der(f, c) != 0 or mapa_ejemplo.trampas[f][c + 1] != 1
 
 
 def aplicar_mov_der(estado):
@@ -110,11 +110,11 @@ def aplicar_mov_der(estado):
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
 
 
-# Moverse a la izquierda:
+#  Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
     f = estado[0]
     c = estado[1]
-    return mapa_ejemplo.tipo_celda_izq(f, c) != 0 or mapa_ejemplo.trampas[f][c - 1] != 1
+    return c > 0 and mapa_ejemplo.tipo_celda_izq(f, c) != 0 or mapa_ejemplo.trampas[f][c - 1] != 1
 
 
 def aplicar_mov_izq(estado):
@@ -126,11 +126,11 @@ def aplicar_mov_izq(estado):
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
 
 
-# Moverse hacia abajo:
+#  Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
     f = estado[0]
     c = estado[1]
-    return mapa_ejemplo.tipo_celda_aba(f, c) != 0 or mapa_ejemplo.trampas[f + 1][c] != 1
+    return f < len(paredes_hor) and mapa_ejemplo.tipo_celda_aba(f, c) != 0 or mapa_ejemplo.trampas[f + 1][c] != 1
 
 
 def aplicar_mov_aba(estado):
@@ -142,11 +142,11 @@ def aplicar_mov_aba(estado):
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
 
 
-# Moverse hacia arriba:
+#  Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
     f = estado[0]
     c = estado[1]
-    return mapa_ejemplo.tipo_celda_arr(f, c) != 0 or mapa_ejemplo.trampas[f - 1][c] != 1
+    return f > - 1 and mapa_ejemplo.tipo_celda_arr(f, c) != 0 or mapa_ejemplo.trampas[f - 1][c] != 1
 
 
 def aplicar_mov_arr(estado):
@@ -163,42 +163,42 @@ def movimiento(f, c, estado):
     c_monstruo = estado[3]
     if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo)):
         for _ in range(2):
-            # Si estamos a la derecha del monstruo y se puede mover a la derecha
+            #  Si estamos a la derecha del monstruo y se puede mover a la derecha
             if c > c_monstruo and mapa_ejemplo.tipo_celda_der(f_monstruo, c_monstruo) == 0:
-                # El monstruo se mueve 1 paso a la derecha
+                #  El monstruo se mueve 1 paso a la derecha
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo + 1
                 turnos = estado[4]
-                # Si el monstruo cae en una trampa o nos alcanza
+                #  Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo != c):
-                    # Termina el movimiento
+                    #  Termina el movimiento
                     turnos = 3
                     break
-            # Si estamos a la izquierda del monstruo y se puede mover a la izquierda
+            #  Si estamos a la izquierda del monstruo y se puede mover a la izquierda
             elif c < c_monstruo and mapa_ejemplo.tipo_celda_izq(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo - 1
-                # Si el monstruo cae en una trampa o nos alcanza
+                #  Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
-                    # Termina el movimiento
+                    #  Termina el movimiento
                     turnos = 3
                     break
-            # Si estamos debajo del monstruo y se puede mover hacia abajo
+            #  Si estamos debajo del monstruo y se puede mover hacia abajo
             elif f > f_monstruo and mapa_ejemplo.tipo_celda_aba(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo + 1
                 c_monstruo = c_monstruo
-                # Si el monstruo cae en una trampa o nos alcanza
+                #  Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
-                    # Termina el movimiento
+                    #  Termina el movimiento
                     turnos = 3
                     break
-            # Si estamos encima del monstruo y se puede mover hacia arriba
+            #  Si estamos encima del monstruo y se puede mover hacia arriba
             elif f < f_monstruo and mapa_ejemplo.tipo_celda_arr(f_monstruo, c_monstruo) != 0:
                 f_monstruo = f_monstruo - 1
                 c_monstruo = c_monstruo
-                # Si el monstruo cae en una trampa o nos alcanza
+                #  Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo == c):
-                    # Termina el movimiento
+                    #  Termina el movimiento
                     turnos = 3
                     break
         return f, c, f_monstruo, c_monstruo, turnos
@@ -206,11 +206,11 @@ def movimiento(f, c, estado):
         return f, c, f_monstruo, c_monstruo, estado[4] - 1
 
 
-# Definir el problema
+#  Definir el problema
 print("\nEntra a probee.")
 problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
                                          estadoInicial, [estadoFinal])
-# problema.es_estado_final(estadoFinal)
+#  problema.es_estado_final(estadoFinal)
 print("\nSale de probee.")
 bOptima = búsqee.BúsquedaÓptima()
 print("\nSale de asignación bOptima")

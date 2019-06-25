@@ -1,9 +1,9 @@
 __author__ = "Sergio Garrido Domínguez"
 
-# change.py
-# A program to calculate the value of an account of coins in dollars
-# Input(s) an amount of quarters, another of dimes, another of nickels and the last one of pennies
-# Output(s) the amount of dollars you have
+#  change.py
+#  A program to calculate the value of an account of coins in dollars
+#  Input(s) an amount of quarters, another of dimes, another of nickels and the last one of pennies
+#  Output(s) the amount of dollars you have
 
 def change():
     print("Money change")
