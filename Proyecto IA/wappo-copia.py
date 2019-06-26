@@ -6,6 +6,33 @@ import copy
 print(datetime.datetime.now())
 
 
+# Comienzo de clase
+class Mapa:
+    def __init__(self, paredes_v, paredes_h, trampas):
+        self.paredes_v = paredes_v
+        self.paredes_h = paredes_h
+        self.trampas = trampas
+
+    def tamano_hor(self):
+        return len(self.trampas[0])
+
+    def tamano_ver(self):
+        return len(self.trampas)
+
+    def tipo_celda_arr(self, f, c):
+        return 0 if self.paredes_v[f - 1][c] == 1 or f - 1 < 0 else 1
+
+    def tipo_celda_aba(self, f, c):
+        return 0 if self.paredes_v[f][c] == 1 or f + 1 > self.tamano_ver() - 1 else 1
+
+    def tipo_celda_izq(self, f, c):
+        return 0 if self.paredes_h[f][c - 1] == 1 or c - 1 < 0 else 1
+
+    def tipo_celda_der(self, f, c):
+        return 0 if self.paredes_h[f][c] == 1 or c + 1 > self.tamano_hor() - 1 else 1
+#  Fin de clase
+
+
 # 1 si hay pared debajo de la casilla, 0 si no
 paredes_ver = ([[1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
@@ -29,32 +56,23 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0],
                  [0, 0, 0, 0, 0, 0]])
-# print("Posición del mapa de trampas en la posición (0, 0): " + str(mapa_trampas[0][5]))
+
+mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas)
 
 # Estados inicial y final:
 estadoInicial = (4, 2,
                  0, 1, 0)
-estadoFinal = (4, 3,
-               0, 0, 0)
-
-# print("mapa_ejemplo.tipo_celda_izq(0, 0")
-# print(mapa_ejemplo.tipo_celda_izq(0, 0))
-
-print("mapa_ejemplo.tipo_celda_der(0, 0, ¿0?")
+estadoFinal = (4, 3)
 
 
-# print("mapa_ejemplo.tipo_celda_izq(7, 7)")
-# print(mapa_ejemplo.tipo_celda_izq(7, 7))
-# print("mapa_ejemplo.tipo_celda_aba(-1, -1)")
-# print(mapa_ejemplo.tipo_celda_aba(-1, -1))
-
+# Coste
 def coste(estado):
     return 1000000 if mapa_trampas[estado[0]][estado[1]] != 0 \
                       or (estado[0] == estado[2] and estado[1] == estado[3]) else 1
 
 
 # Acciones:
-# Moverse a la derecha:
+    # Moverse a la derecha:
 def aplicabilidad_mov_der(estado):
     f = estado[0]
     c = estado[1]
@@ -65,15 +83,16 @@ def aplicabilidad_mov_der(estado):
 
 
 def aplicar_mov_der(estado):
+    nuevo_estado = copy.deepcopy(estado)
     f = estado[0]
     c = estado[1] + 1
-    return movimiento(f, c, estado)
+    return movimiento(f, c, nuevo_estado)
 
 
 moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplicar_mov_der, coste)
 
 
-# Moverse a la izquierda:
+    # Moverse a la izquierda:
 def aplicabilidad_mov_izq(estado):
     f = estado[0]
     c = estado[1]
@@ -84,15 +103,16 @@ def aplicabilidad_mov_izq(estado):
 
 
 def aplicar_mov_izq(estado):
+    nuevo_estado = copy.deepcopy(estado)
     f = estado[0]
     c = estado[1] - 1
-    return movimiento(f, c, estado)
+    return movimiento(f, c, nuevo_estado)
 
 
 moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, aplicar_mov_izq, coste)
 
 
-# Moverse hacia abajo:
+    # Moverse hacia abajo:
 def aplicabilidad_mov_aba(estado):
     f = estado[0]
     c = estado[1]
@@ -101,16 +121,18 @@ def aplicabilidad_mov_aba(estado):
     else:
         return True
 
+
 def aplicar_mov_aba(estado):
+    nuevo_estado = copy.deepcopy(estado)
     f = estado[0] + 1
     c = estado[1]
-    return movimiento(f, c, estado)
+    return movimiento(f, c, nuevo_estado)
 
 
 moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_mov_aba, coste)
 
 
-# Moverse hacia arriba:
+    # Moverse hacia arriba:
 def aplicabilidad_mov_arr(estado):
     f = estado[0]
     c = estado[1]
@@ -119,11 +141,12 @@ def aplicabilidad_mov_arr(estado):
     else:
         return True
 
+
 def aplicar_mov_arr(estado):
     nuevo_estado = copy.deepcopy(estado)
     f = estado[0] - 1
     c = estado[1]
-    return movimiento(f, c, estado)
+    return movimiento(f, c, nuevo_estado)
 
 
 moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplicar_mov_arr, coste)
@@ -178,56 +201,12 @@ def movimiento(f, c, estado):
         return f, c, f_monstruo, c_monstruo, turnos - 1
 
 
-# Comienzo de clase
-class Mapa:
-    def __init__(self, paredes_v, paredes_h, trampas, estado_inicial, estado_final, acciones):
-        self.paredes_v = paredes_v
-        self.paredes_h = paredes_h
-        self.trampas = trampas
-
-    def tamano_hor(self):
-        return len(self.trampas[0])
-
-    def tamano_ver(self):
-        return len(self.trampas)
-
-    def tipo_celda_arr(self, f, c):
-        return 0 if self.paredes_v[f - 1][c] == 1 or f - 1 < 0 else 1
-
-    def tipo_celda_aba(self, f, c):
-        return 0 if self.paredes_v[f][c] == 1 or f + 1 > self.tamano_ver() - 1 else 1
-
-    def tipo_celda_izq(self, f, c):
-        return 0 if self.paredes_h[f][c - 1] == 1 or c - 1 < 0 else 1
-
-    # Esto también ha dicho que lo dejemos dentro
-    def tipo_celda_der(self, f, c):
-        x = self.tamano_hor()
-        return 0 if self.paredes_h[f][c] == 1 or c + 1 > self.tamano_hor() - 1 else 1
-
-            #  Fin de clase
-
-
-actions = [moverAbajo, moverArriba, moverDerecha, moverIzquierda]
-
-mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas, estadoInicial, estadoFinal, actions)
-
-print("Mapa ejemplo acciones aplicables en 0, 0")
-status = [0, 0]
-print(mapa_ejemplo.acciones_aplicables(status))
-
-
 # Definir el problema
-print("\nEntra a probee.")
-problema = probee.ProblemaEspacioEstados(mapa_ejemplo.acciones, estadoInicial, [estadoFinal])
+problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
+                                         estadoInicial, [estadoFinal])
 
-print("\nSale de probee.")
 bOptima = búsqee.BúsquedaÓptima()
-print("\nSale de asignación bOptima")
 print(bOptima.buscar(problema))
-print("\nSale de bOptima.buscar(problema)")
-
-print("\nCarga la heurística")
 
 
 def h(nodo):
@@ -235,11 +214,7 @@ def h(nodo):
     return abs(estado[0] - estadoFinal[0]) + abs(estado[1] - estadoFinal[1])
 
 
-print('\nSale de la heurística')
-print('\nEntra a b_a_estrella')
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
-print("\nSale de b_a_estrella")
-
 
 print("\nEntra el print b_a_estrella.buscar")
 print(b_a_estrella.buscar(problema))
