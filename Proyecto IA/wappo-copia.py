@@ -1,6 +1,7 @@
 import problema_espacio_estados as probee
 import búsqueda_espacio_estados as búsqee
 import datetime
+import copy
 
 print(datetime.datetime.now())
 
@@ -33,7 +34,8 @@ mapa_trampas = ([[0, 0, 0, 0, 0, 0],
 # Estados inicial y final:
 estadoInicial = (4, 2,
                  0, 1, 0)
-estadoFinal = (5, 3)
+estadoFinal = (4, 3,
+               0, 0, 0)
 
 # print("mapa_ejemplo.tipo_celda_izq(0, 0")
 # print(mapa_ejemplo.tipo_celda_izq(0, 0))
@@ -118,6 +120,7 @@ def aplicabilidad_mov_arr(estado):
         return True
 
 def aplicar_mov_arr(estado):
+    nuevo_estado = copy.deepcopy(estado)
     f = estado[0] - 1
     c = estado[1]
     return movimiento(f, c, estado)
@@ -181,9 +184,6 @@ class Mapa:
         self.paredes_v = paredes_v
         self.paredes_h = paredes_h
         self.trampas = trampas
-        self.estado_inicial = estado_inicial
-        self.estado_final = estado_final
-        self.acciones = acciones
 
     def tamano_hor(self):
         return len(self.trampas[0])
@@ -200,38 +200,10 @@ class Mapa:
     def tipo_celda_izq(self, f, c):
         return 0 if self.paredes_h[f][c - 1] == 1 or c - 1 < 0 else 1
 
+    # Esto también ha dicho que lo dejemos dentro
     def tipo_celda_der(self, f, c):
         x = self.tamano_hor()
         return 0 if self.paredes_h[f][c] == 1 or c + 1 > self.tamano_hor() - 1 else 1
-
-    def es_estado_final(self, estado):
-        return estado[0] == self.estado_final[0] and estado[1] == self.estado_final[1]
-
-    def acciones_aplicables(self, estado):
-        if estado[0] == 0:
-            if estado[1] == 0:
-                self.acciones = [moverAbajo, moverDerecha]
-            elif estado[1] == len(paredes_hor):
-                self.acciones = [moverArriba, moverDerecha]
-            else:
-                self.acciones = [moverDerecha, moverArriba, moverAbajo]
-        elif estado[0] == len(paredes_ver):
-            if estado[1] == 0:
-                self.acciones = [moverAbajo, moverIzquierda]
-            elif estado[1] == len(paredes_hor):
-                self.acciones = [moverArriba, moverIzquierda]
-            else:
-                self.acciones = [moverArriba, moverArriba, moverIzquierda]
-        # Esto creo que es un poco redundante, pero por probar
-        elif estado[1] == 0:
-            if estado[0] == len(paredes_ver):
-                self.acciones = [moverAbajo, moverDerecha]
-            else:
-                self.acciones = [moverAbajo, moverDerecha, moverIzquierda]
-        else:
-            self.acciones = [moverAbajo, moverArriba, moverIzquierda, moverDerecha]
-
-        return self.acciones
 
             #  Fin de clase
 
@@ -268,9 +240,7 @@ print('\nEntra a b_a_estrella')
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
 print("\nSale de b_a_estrella")
 
-print("problema acciones aplicables")
-print(problema.acciones_aplicables)
 
 print("\nEntra el print b_a_estrella.buscar")
-print(b_a_estrella.buscar(mapa_ejemplo))
+print(b_a_estrella.buscar(problema))
 print("\nSale del print de b_a_estrella.buscar")
