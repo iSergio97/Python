@@ -62,7 +62,8 @@ mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas)
 # Estados inicial y final:
 estadoInicial = (4, 2,
                  0, 1, 0)
-estadoFinal = (4, 3)
+estadoFinal = (2, 0,
+               0, 0, 0)
 
 
 # Coste
@@ -76,7 +77,9 @@ def coste(estado):
 def aplicabilidad_mov_der(estado):
     f = estado[0]
     c = estado[1]
-    if (not mapa_ejemplo.tipo_celda_der(f, c) != 0) or (not mapa_ejemplo.trampas[f][c + 1] != 1):
+    if (not (f == estadoFinal[0] and c + 1 == estadoFinal[1])) \
+            or (not mapa_ejemplo.tipo_celda_der(f, c) != 0) \
+            or (not mapa_ejemplo.trampas[f][c + 1] != 1):
         return False
     else:
         return True
@@ -96,7 +99,9 @@ moverDerecha = probee.Acción("Mover a la derecha", aplicabilidad_mov_der, aplic
 def aplicabilidad_mov_izq(estado):
     f = estado[0]
     c = estado[1]
-    if (not mapa_ejemplo.tipo_celda_izq(f, c) != 0) or (not mapa_ejemplo.trampas[f][c - 1] != 1):
+    if (not (f == estadoFinal[0] and c - 1 == estadoFinal[1])) \
+            or (not mapa_ejemplo.tipo_celda_izq(f, c) != 0) \
+            or (not mapa_ejemplo.trampas[f][c - 1] != 1):
         return False
     else:
         return True
@@ -116,7 +121,9 @@ moverIzquierda = probee.Acción("Mover a la izquierda", aplicabilidad_mov_izq, a
 def aplicabilidad_mov_aba(estado):
     f = estado[0]
     c = estado[1]
-    if mapa_ejemplo.tipo_celda_aba(f, c) != 0 or mapa_ejemplo.trampas[f + 1][c] != 1:
+    if (not (f + 1 == estadoFinal[0] and c == estadoFinal[1])) \
+            or (mapa_ejemplo.tipo_celda_aba(f, c) != 0) \
+            or (mapa_ejemplo.trampas[f + 1][c] != 1):
         return False
     else:
         return True
@@ -136,7 +143,9 @@ moverAbajo = probee.Acción("Mover hacia abajo", aplicabilidad_mov_aba, aplicar_
 def aplicabilidad_mov_arr(estado):
     f = estado[0]
     c = estado[1]
-    if (not mapa_ejemplo.tipo_celda_arr(f, c) != 0) or (not mapa_ejemplo.trampas[f - 1][c] != 1):
+    if (not (f - 1 == estadoFinal[0] and c == estadoFinal[1])) \
+            or (not mapa_ejemplo.tipo_celda_arr(f, c) != 0) \
+            or (not mapa_ejemplo.trampas[f - 1][c] != 1):
         return False
     else:
         return True
@@ -201,12 +210,21 @@ def movimiento(f, c, estado):
         return f, c, f_monstruo, c_monstruo, turnos - 1
 
 
-# Definir el problema
-problema = probee.ProblemaEspacioEstados([moverDerecha, moverIzquierda, moverAbajo, moverArriba],
-                                         estadoInicial, [estadoFinal])
+# Comienzo de clase
+class Wappo(probee.ProblemaEspacioEstados):
+    def __init__(self):
+        acciones = [moverDerecha, moverIzquierda, moverAbajo, moverArriba]
+        estado_inicial = estadoInicial
+        super().__init__(acciones, estado_inicial)
 
-bOptima = búsqee.BúsquedaÓptima()
-print(bOptima.buscar(problema))
+    def es_estado_final(self, estado):
+        return estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]
+# Fin de clase
+
+
+problema = Wappo()
+
+b_óptima = búsqee.BúsquedaÓptima()
 
 
 def h(nodo):
@@ -216,6 +234,4 @@ def h(nodo):
 
 b_a_estrella = búsqee.BúsquedaAEstrella(h)
 
-print("\nEntra el print b_a_estrella.buscar")
 print(b_a_estrella.buscar(problema))
-print("\nSale del print de b_a_estrella.buscar")
