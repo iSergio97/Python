@@ -159,7 +159,7 @@ class BúsquedaGeneral:
 
             if problema.es_estado_final(nodo.estado):
                 self.explorados.añadir(nodo)
-                return nodo.solucion
+                return nodo.solucion()
             self.explorados.añadir(nodo)
             if self.es_expandible(nodo):
                 nodos_hijos = self.expandir_nodo(nodo, problema)

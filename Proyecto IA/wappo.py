@@ -161,14 +161,14 @@ moverArriba = probee.Acción("Mover hacia arriba", aplicabilidad_mov_arr, aplica
 def movimiento(f, c, estado):
     f_monstruo = estado[2]
     c_monstruo = estado[3]
-    if not (estado[4] > 0 or (f == f_monstruo and c == c_monstruo)):
+    turnos = estado[4]
+    if not (turnos > 0 or (f == f_monstruo and c == c_monstruo)):
         for _ in range(2):
             #  Si estamos a la derecha del monstruo y se puede mover a la derecha
             if c > c_monstruo and mapa_ejemplo.tipo_celda_der(f_monstruo, c_monstruo) == 0:
                 #  El monstruo se mueve 1 paso a la derecha
                 f_monstruo = f_monstruo
                 c_monstruo = c_monstruo + 1
-                turnos = estado[4]
                 #  Si el monstruo cae en una trampa o nos alcanza
                 if mapa_trampas[f_monstruo][c_monstruo] == 1 or (f_monstruo == f and c_monstruo != c):
                     #  Termina el movimiento
@@ -203,7 +203,7 @@ def movimiento(f, c, estado):
                     break
         return f, c, f_monstruo, c_monstruo, turnos
     else:
-        return f, c, f_monstruo, c_monstruo, estado[4] - 1
+        return f, c, f_monstruo, c_monstruo, turnos - 1
 
 
 #  Definir el problema
