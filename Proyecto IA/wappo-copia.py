@@ -98,8 +98,8 @@ def aplicabilidad_mov_der(estado):
 
 def aplicar_mov_der(estado):
     nuevo_estado = copy.deepcopy(estado)
-    f = estado[0]
-    c = estado[1] + 1
+    f = nuevo_estado[0]
+    c = nuevo_estado[1] + 1
     return movimiento(f, c, nuevo_estado)
 
 
@@ -122,8 +122,8 @@ def aplicabilidad_mov_izq(estado):
 
 def aplicar_mov_izq(estado):
     nuevo_estado = copy.deepcopy(estado)
-    f = estado[0]
-    c = estado[1] - 1
+    f = nuevo_estado[0]
+    c = nuevo_estado[1] - 1
     return movimiento(f, c, nuevo_estado)
 
 
@@ -149,8 +149,8 @@ def aplicabilidad_mov_aba(estado):
 
 def aplicar_mov_aba(estado):
     nuevo_estado = copy.deepcopy(estado)
-    f = estado[0] + 1
-    c = estado[1]
+    f = nuevo_estado[0] + 1
+    c = nuevo_estado[1]
     return movimiento(f, c, nuevo_estado)
 
 
@@ -173,8 +173,8 @@ def aplicabilidad_mov_arr(estado):
 
 def aplicar_mov_arr(estado):
     nuevo_estado = copy.deepcopy(estado)
-    f = estado[0] - 1
-    c = estado[1]
+    f = nuevo_estado[0] - 1
+    c = nuevo_estado[1]
     return movimiento(f, c, nuevo_estado)
 
 
@@ -184,9 +184,10 @@ print(moverArriba.es_aplicable(estadoInicial))
 
 
 def movimiento(f, c, estado):
-    f_monstruo = estado[2]
-    c_monstruo = estado[3]
-    turnos = estado[4]
+    nuevo_estado = copy.deepcopy(estado)
+    f_monstruo = nuevo_estado[2]
+    c_monstruo = nuevo_estado[3]
+    turnos = nuevo_estado[4]
     if not turnos > 0:
         # or (f == f_monstruo and c == c_monstruo)
         for _ in range(2):
