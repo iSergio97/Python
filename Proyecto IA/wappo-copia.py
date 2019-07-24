@@ -71,7 +71,7 @@ mapa_ejemplo = Mapa(paredes_ver, paredes_hor, mapa_trampas)
 # Estados inicial y final:
 estadoInicial = (4, 2,
                  0, 1, 0)
-estadoFinal = (2, 0,
+estadoFinal = (4, 1,
                0, 0, 0)
 
 
@@ -258,6 +258,7 @@ class Wappo(probee.ProblemaEspacioEstados):
 
     def es_estado_final(self, estado):
         return estado[0] == estadoFinal[0] and estado[1] == estadoFinal[1]
+
 # Fin de clase
 
 
