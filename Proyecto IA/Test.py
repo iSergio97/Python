@@ -1,9 +1,9 @@
 from mapa import classMap
+from PIL import Image
 
+image = Image.open("mapa.png")
+image.show()
 
-sigue = True
-i = 0
-# TODO: Añadir método de parada para el algoritmo.
 classMap()
 
 # print("Pre coloreado")

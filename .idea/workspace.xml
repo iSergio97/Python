@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +19,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -27,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="117" column="11" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
+            <state relative-caret-position="345">
+              <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -47,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nuevo_estado = copy.deepcopy(estado)</find>
       <find>problemaE</find>
       <find>copy</find>
       <find>nuevo_estado</find>
@@ -77,6 +80,7 @@
       <find>Mapa</find>
       <find>Ejer</find>
       <find>Ejercicio</find>
+      <find>PIL</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -213,7 +217,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mapa">
+  <component name="RunManager" selected="Python.Test (1)">
     <configuration name="Python" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -411,8 +415,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mapa" />
         <item itemvalue="Python.Test (1)" />
+        <item itemvalue="Python.mapa" />
         <item itemvalue="Python.Mapa" />
         <item itemvalue="Python.Practica 1 - cars" />
         <item itemvalue="Python.analyze" />
@@ -429,13 +433,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533897952248</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
-      <created>1548867626399</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1548867626399</updated>
     </task>
     <task id="LOCAL-00002" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
       <created>1548867799957</created>
@@ -773,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566042760398</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Añadido método de parada del bucle">
+      <created>1566043733818</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1566043733820</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -850,7 +854,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Tercera práctica de IA&#10;Corrección" />
     <MESSAGE value="Tercera práctica de IA" />
     <MESSAGE value="Cuarta práctica de IA" />
     <MESSAGE value="Corrección README" />
@@ -875,7 +878,8 @@
     <MESSAGE value="AttributeError: 'NodoConHeurística' object has no attribute 'solucion'&#10;&#10;Otro problema a resolver" />
     <MESSAGE value="Resolución proyecto IA nuevo (tras la asignación).&#10;&#10;Falta preparar la documentación, una interfaz gráfica e investigar un poco sobre el tema de la interfaz." />
     <MESSAGE value="Coloreado de líneas y añadida excepción al no poner números" />
-    <option name="LAST_COMMIT_MESSAGE" value="Coloreado de líneas y añadida excepción al no poner números" />
+    <MESSAGE value="Añadido método de parada del bucle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido método de parada del bucle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1290,15 +1294,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="117" column="11" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
+        <state relative-caret-position="345">
+          <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

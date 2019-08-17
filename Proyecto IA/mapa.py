@@ -112,6 +112,8 @@ i = 0
 while bool:
     if i == 0:
         i= i + 1
+        image = Image.open("mapa.png")
+        image.show()
         classMap()
     else:
         continuar = input("¿Desea probar otras posiciones para la resolución del mapa? (S/N)")
