@@ -12,7 +12,8 @@ print("\nIn 1")
 cars = pandas.read_csv('cars.csv', header=None,
                        names=['buying', 'maint', 'doors', 'persons',
                               'lug_boot', 'safety', 'acceptability'])
-print(cars.shape)  #  Número de filas y columnas
+
+print(cars.shape)  # Número de filas y columnas
 cars.head(10)
 
 
