@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
+    <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="Añadida mejora en la elección del nivel del mapa a resolver.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto IA/mapa.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/mapa.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+            <state relative-caret-position="156">
+              <caret line="31" column="110" selection-start-line="31" selection-start-column="110" selection-end-line="31" selection-end-column="110" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -51,11 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>problemaE</find>
-      <find>copy</find>
-      <find>nuevo_estado</find>
-      <find>aplicar_</find>
-      <find>def Mapa</find>
       <find>mapa_ejemplo</find>
       <find>estadoFinal</find>
       <find>NodoConHeur</find>
@@ -67,7 +60,6 @@
       <find>Movim</find>
       <find>aplicar</find>
       <find>mons</find>
-      <find>mapa</find>
       <find>Mapa(</find>
       <find>Wapp</find>
       <find>final</find>
@@ -81,6 +73,12 @@
       <find>Ejer</find>
       <find>Ejercicio</find>
       <find>PIL</find>
+      <find>for</find>
+      <find>input</find>
+      <find>eva</find>
+      <find>mapa</find>
+      <find>int(</find>
+      <find>classMap</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -407,10 +405,10 @@
       <item itemvalue="Python.Práctica 3" />
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.búsqueda_espacio_estados" />
-      <item itemvalue="Python.Practica 1 - cars" />
-      <item itemvalue="Python.analyze" />
       <item itemvalue="Python.Mapa" />
+      <item itemvalue="Python.Practica 1 - cars" />
       <item itemvalue="Python.Test (1)" />
+      <item itemvalue="Python.analyze" />
       <item itemvalue="Python.mapa" />
     </list>
     <recent_temporary>
@@ -433,13 +431,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533897952248</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
-      <created>1548867799957</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1548867799957</updated>
     </task>
     <task id="LOCAL-00003" summary="Ejercicios y comentarios del tema 2&#10;Renombrado el archivo &quot;Chaotic behaviour.py&quot; a &quot;chaotic.py&quot;">
       <created>1548867918400</created>
@@ -777,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566043733820</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Pequeña corrección">
+      <created>1566043970487</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1566043970488</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -798,7 +796,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.7086743" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.81178397" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40589198" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -854,7 +852,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Tercera práctica de IA" />
     <MESSAGE value="Cuarta práctica de IA" />
     <MESSAGE value="Corrección README" />
     <MESSAGE value="Cuarta práctica IA" />
@@ -879,7 +876,8 @@
     <MESSAGE value="Resolución proyecto IA nuevo (tras la asignación).&#10;&#10;Falta preparar la documentación, una interfaz gráfica e investigar un poco sobre el tema de la interfaz." />
     <MESSAGE value="Coloreado de líneas y añadida excepción al no poner números" />
     <MESSAGE value="Añadido método de parada del bucle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido método de parada del bucle" />
+    <MESSAGE value="Pequeña corrección" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pequeña corrección" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -988,6 +986,10 @@
           <url>file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py</url>
           <line>185</line>
           <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Proyecto IA/Test.py</url>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1102,16 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Práctica 3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -1131,13 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="324" selection-start-line="324" selection-end-line="324" />
         </state>
       </provider>
     </entry>
@@ -1169,12 +1154,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Práctica 1/cars.csv">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="29359">
           <caret line="1727" column="33" selection-end-line="1727" selection-end-column="33" />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
@@ -1292,20 +1277,34 @@
     <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="165" column="11" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+        <state relative-caret-position="156">
+          <caret line="31" column="110" selection-start-line="31" selection-start-column="110" selection-end-line="31" selection-end-column="110" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

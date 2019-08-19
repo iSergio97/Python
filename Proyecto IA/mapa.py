@@ -3,32 +3,33 @@ import búsqueda_espacio_estados as búsqee
 from PIL import Image
 
 #Inicio de clase
-def classMap():
-    class Mapa:
-        def __init__(self, celdas):
-            self.celdas = celdas
+class Mapa:
+    def __init__(self, celdas):
+        self.celdas = celdas
 
-        def tamaño_hor(self):
-            return len(self.celdas[0])
+    def tamaño_hor(self):
+        return len(self.celdas[0])
 
-        def tamaño_ver(self):
-            return len(self.celdas)
+    def tamaño_ver(self):
+        return len(self.celdas)
 
-        def tipo_celda(self, f, c):
-            return self.celdas[f][c]
+    def tipo_celda(self, f, c):
+        return self.celdas[f][c]
 
     # Fin de clase
 
-    mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
                          [1, 1, 1, 1, 2, 2, 2, 0, 0, 1],
                          [1, 1, 1, 2, 2, 4, 2, 2, 1, 1],
                          [1, 1, 1, 2, 4, 4, 4, 2, 1, 1],
                          [1, 1, 1, 2, 2, 4, 0, 0, 0, 0],
                          [1, 1, 1, 1, 2, 2, 0, 0, 0, 0]])
 
+def classMap(mapa):
     #Al seleccionar la casilla inicial, se lee de arriba hacia abajo y de izquierda a derecha.
     #einicial = (5,0) # Casilla 5-0
     #efinal = (5,0)
+    # TODO: Falta tratar que los valores que se añaden en ambos lados no sean mayores que los tamaños del mapa
     print("\033[94m")
     xinicial = input("Introduce the x value (your position to begin)")
     yinicial = input("Introduce the y value (your position to begin)")
@@ -56,20 +57,20 @@ def classMap():
     if(inicial and final):
         # Acción "Moverse a la derecha"
         def aplicabilidadMoveRight(estado):
-            return estado[1] < mapa_ejemplo.tamaño_hor() - 1 and mapa_ejemplo.tipo_celda(estado[0], estado[1] + 1) != 0
+            return estado[1] < mapa.tamaño_hor() - 1 and mapa_ejemplo.tipo_celda(estado[0], estado[1] + 1) != 0
 
         def aplicarMRight(estado):
             return estado[0], estado[1] + 1
 
         def coste(estado):
-            return mapa_ejemplo.tipo_celda(estado[0], estado[1])
+            return mapa.tipo_celda(estado[0], estado[1])
 
         moverDerecha = probee.Acción("Mover a la derecha", aplicabilidadMoveRight, aplicarMRight, coste)
 
         # Acción "Moverse a la izquierda"
         def aplicabilidadMoveLeft(estado):
             # Como se hace a la izquierda, se cambia el + por el -
-            return estado[1] > 0 and mapa_ejemplo.tipo_celda(estado[0], estado[1] - 1) != 0
+            return estado[1] > 0 and mapa.tipo_celda(estado[0], estado[1] - 1) != 0
 
         def aplicarMLeft(estado):
             return estado[0], estado[1] - 1
@@ -107,18 +108,18 @@ def classMap():
         print("\n")
 
 
-bool = True
-i = 0
-while bool:
-    if i == 0:
-        i= i + 1
-        image = Image.open("mapa.png")
-        image.show()
-        classMap()
-    else:
-        continuar = input("¿Desea probar otras posiciones para la resolución del mapa? (S/N)")
-        if continuar == "S":
-            classMap()
-        elif continuar == "N":
-            bool = False
-            break
+# bool = True
+# i = 0
+# while bool:
+#     if i == 0:
+#         i= i + 1
+#         image = Image.open("mapa.png")
+#         image.show()
+#         classMap(mapa_ejemplo)
+#     else:
+#         continuar = input("¿Desea probar otras posiciones para la resolución del mapa? (S/N)")
+#         if continuar == "S":
+#             classMap(mapa_ejemplo)
+#         elif continuar == "N":
+#             bool = False
+#             break
