@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5408409e-225e-44e6-ace6-2c4d7a465825" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto IA/Env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto IA/Help.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Help.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto IA/mapa.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto IA/mapa.py" afterDir="false" />
     </list>
@@ -19,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+            <state relative-caret-position="618">
+              <caret line="43" selection-start-line="43" selection-end-line="56" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+            <state relative-caret-position="447">
+              <caret line="124" selection-start-line="124" selection-end-line="124" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -52,7 +50,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Help.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="55" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="55" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -61,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/Env.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="374">
               <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
             </state>
           </provider>
@@ -73,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="1649">
               <caret line="99" column="23" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -93,9 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mons</find>
-      <find>Mapa(</find>
-      <find>Wapp</find>
       <find>final</find>
       <find>Final</find>
       <find>NodoConHeurística</find>
@@ -112,7 +107,6 @@
       <find>classMap</find>
       <find>;</find>
       <find>for</find>
-      <find>mapa</find>
       <find>cost 0</find>
       <find>20000</find>
       <find>input</find>
@@ -123,10 +117,15 @@
       <find>copy</find>
       <find>cost</find>
       <find>self.cost</find>
+      <find>mapa_ejemplo</find>
+      <find>mapa</find>
+      <find>Se h</find>
+      <find>einicil</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>#</replace>
+      <replace>mapa_ejemplo</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -186,10 +185,10 @@
         <option value="$PROJECT_DIR$/Proyecto IA/Mapa.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/EnvTest.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/Ejemplos.py" />
-        <option value="$PROJECT_DIR$/Proyecto IA/mapa.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/Help.py" />
-        <option value="$PROJECT_DIR$/Proyecto IA/Test.py" />
         <option value="$PROJECT_DIR$/Proyecto IA/Env.py" />
+        <option value="$PROJECT_DIR$/Proyecto IA/Test.py" />
+        <option value="$PROJECT_DIR$/Proyecto IA/mapa.py" />
       </list>
     </option>
   </component>
@@ -263,7 +262,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Help">
+  <component name="RunManager" selected="Python.Test (1)">
     <configuration name="Python" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -461,8 +460,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Help" />
         <item itemvalue="Python.Test (1)" />
+        <item itemvalue="Python.Help" />
         <item itemvalue="Python.Ejemplos" />
         <item itemvalue="Python.Env" />
         <item itemvalue="Python.mapa" />
@@ -479,13 +478,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533897952248</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Añadido .txt con info para subir cosas desde intelIj">
-      <created>1549130345001</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1549130345001</updated>
     </task>
     <task id="LOCAL-00007" summary="Ejercicios y ejemplos del tema 3">
       <created>1549134869290</created>
@@ -823,7 +815,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567765735721</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Me quiero morir">
+      <created>1567774769915</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1567774769916</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -844,7 +843,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5008183" side_tool="true" weight="0.24330357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.90180033" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="0" width="1366" height="728" id="Run" order="2" sideWeight="0.4985119" weight="0.5204583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40589198" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -900,7 +899,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Quinta práctica IA" />
     <MESSAGE value="Archivos para la quinta práctica de IA" />
     <MESSAGE value="Proyecto base Wappo" />
     <MESSAGE value="Wappo.py modificado" />
@@ -925,7 +923,8 @@
     <MESSAGE value="Añadida mejora en la elección del nivel del mapa a resolver." />
     <MESSAGE value="Nueva modificación del proyecto de IA para adaptarlo al tema del PDF" />
     <MESSAGE value="Corrección final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección final" />
+    <MESSAGE value="Me quiero morir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Me quiero morir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1300,13 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/Ejemplos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1317,36 +1309,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="99" column="23" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Help.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="102">
           <caret line="8" column="55" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="55" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -1354,10 +1319,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/wappo-copia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="99" column="23" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto IA/Env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
+        <state relative-caret-position="374">
           <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/mapa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/Ejemplos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto IA/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="43" selection-start-line="43" selection-end-line="56" selection-end-column="25" />
         </state>
       </provider>
     </entry>

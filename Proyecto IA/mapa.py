@@ -25,11 +25,16 @@ mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
                          [1, 1, 1, 2, 2, 4, 0, 0, 0, 0],
                          [1, 1, 1, 1, 2, 2, 0, 0, 0, 0]])
 
+print("\nTamaño horizontal")
+print(mapa_ejemplo.tamaño_hor())
+
+print("\nTamaño vertical")
+print(mapa_ejemplo.tamaño_ver())
+
 def classMap(mapa):
     #Al seleccionar la casilla inicial, se lee de arriba hacia abajo y de izquierda a derecha.
     #einicial = (5,0) # Casilla 5-0
     #efinal = (5,0)
-    # TODO: Falta tratar que los valores que se añaden en ambos lados no sean mayores que los tamaños del mapa
     print("\033[94m")
     xinicial = input("Introduce the x value (your position to begin)")
     yinicial = input("Introduce the y value (your position to begin)")
@@ -37,25 +42,33 @@ def classMap(mapa):
     yfinal = input("Introduce the x value (the y goal position)")
     inicial = False
     final = False
+    einicial = []
+    efinal = []
     try:
-        xinicialn = int(xinicial)
-        yinicialn = int(yinicial)
-        xfinaln = int(xfinal)
-        yfinaln = int(yfinal)
+        xinicial = int(xinicial)
+        yinicial = int(yinicial)
+        xfinal = int(xfinal)
+        yfinal = int(yfinal)
         inicial = True
         final = True
         einicial = (int(xinicial), int(yinicial))
         efinal = (int(xfinal), int(yfinal))
 
+        if (xinicial > int(mapa_ejemplo.tamaño_hor())) or (xinicial < 0) or (xfinal > mapa_ejemplo.tamaño_hor()) or (
+                xfinal < 0) or (yinicial > mapa_ejemplo.tamaño_hor()) or (yinicial < 0) or (
+                yfinal > mapa_ejemplo.tamaño_hor()) or (yfinal < 0):
+            print("\x1b[1;31;41m")
+            print("\x1b[1;31;48m Se han introducido valores que se encuentran fuera del mapa y se va a terminar la ejecución")
+            print("\x1b[1;31;41m")
+            exit()
+
     except ValueError:
         print("\x1b[1;31;41m")
-        print("\x1b[1;31;48m Wops! Se ha encontrado una excepción en la introducción de valores. Se le va a pedir introducir los números de nuevo")
+        print("\x1b[1;31;48m Wops! Se ha encontrado una excepción en la introducción de valores. El proceso ha cancelado la ejecución")
         print("\x1b[1;31;41m")
         print("\033[0m")
+        # exit()
 
-    if(xinicial > mapa.tamaño_hor or xinicial < 0 or xfinal > mapa.tamaño_hor or xfinal < 0 or yinicial > mapa.tamaño_hor or yinicial < 0 or yfinal > mapa.tamaño_hor or yfinal < 0):
-        print("Se han introducido valores incorrectos y se va a terminar la ejecución")
-        exit()
 
     if(inicial and final):
         # Acción "Moverse a la derecha"
@@ -109,20 +122,3 @@ def classMap(mapa):
         print("b_optima_nueva.buscar[problema]")
         print(b_optima_nueva.buscar(problema))
         print("\n")
-
-
-# bool = True
-# i = 0
-# while bool:
-#     if i == 0:
-#         i= i + 1
-#         image = Image.open("mapa.png")
-#         image.show()
-#         classMap(mapa_ejemplo)
-#     else:
-#         continuar = input("¿Desea probar otras posiciones para la resolución del mapa? (S/N)")
-#         if continuar == "S":
-#             classMap(mapa_ejemplo)
-#         elif continuar == "N":
-#             bool = False
-#             break
