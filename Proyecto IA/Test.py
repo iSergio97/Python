@@ -15,7 +15,13 @@ mapa_ejemplo = Mapa([[1, 1, 1, 1, 1, 1, 1, 0, 0, 1],
 
 
 print("\033[94m")
-elección = int(input("Elija si quiere elegir el mapa de ejemplo (introduzca el valor 1) o introducir uno a mano (introduzca cualquier otro valor)"))
+
+try:
+    elección = int(input(
+        "Elija si quiere elegir el mapa de ejemplo (introduzca el valor 1) o introducir uno a mano (introduzca cualquier otro valor)"))
+except ValueError:
+    print("Se ha introducido un valor erróneo. El proceso va a terminar su ejecución")
+    exit()
 
 if(elección == 1):
     fila = []

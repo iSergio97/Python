@@ -10,13 +10,12 @@ env = Env()
 qtable = np.random.rand(env.stateCount, env.actionCount).tolist()
 
 # hyperparameters
-epochs = 50
+epochs = 75
 gamma = 0.1
 epsilon = 0.08
 decay = 0.1
 
 # training loop
-# TODO: Modificar el código de Env.py para que se añada el coste en cada iteración. Investigar sobre el tema de mantener el coste en la posición si se va hacia arriba (no estoy seguro de que sea necesario)
 for i in range(epochs):
     state, reward, done, cost = env.reset()
     steps = 0

@@ -9,7 +9,7 @@ class Env():
         self.posX = 0
         self.posY = 0
         # self.endX = int(input("Introduzca el valor de la posición final X "))
-        self.endX = 2
+        self.endX = 0
         # self.endY = int(input("Introduzca el valor de la posición final Y "))
         self.endY = 2
         self.actions = [0, 1, 2, 3]
@@ -20,7 +20,11 @@ class Env():
         for i in range(self.height):
             for j in range(self.width):
                 a = input("El coste de la posición (" + str(i) + ", " + str(j) + "):")
-                b = int(a)
+                try:
+                    b = int(a)
+                except ValueError:
+                    print("Se ha introducido un valor no aceptado")
+                    exit()
                 fila.append(b)
             self.mapa.append(fila)
             fila = []
@@ -28,10 +32,14 @@ class Env():
         self.cost = self.mapa[self.posX][self.posY]
 
     def reset(self):
-        # self.posX = int(input("Introduzca el valor de la posición inicial X "))
-        self.posX = 0
-        # self.posY = int(input("Introduzca el valor de la posición inicial Y "))
-        self.posY = 0
+        try:
+            self.posX = int(input("Introduzca el valor de la posición inicial X "))
+            # self.posX = 0
+            self.posY = int(input("Introduzca el valor de la posición inicial Y "))
+            # self.posY = 0
+        except ValueError:
+            print("Se ha introducido un valor no aceptado")
+            exit()
         self.done = False
         self.cost = 0
         # posx, posy, done
@@ -65,8 +73,10 @@ class Env():
             for j in range(self.width):
                 if self.posY == i and self.posX == j:
                     print("O", end='')
+                    self.cost += self.mapa[i][j]
                 elif self.endY == i and self.endX == j:
                     print("T", end='')
                 else:
                     print(".", end='')
             print("")
+        print("\nCoste actual: " + str(self.cost))
