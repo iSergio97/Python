@@ -2,34 +2,29 @@ import numpy as np
 
 class Env():
     def __init__(self):
-        # self.height = int(input("Introduzca la altura "))
-        self.height = 3
-        # self.width = int(input("Introduzca la anchura "))
-        self.width = 3
-        self.posX = 0
-        self.posY = 0
-        # self.endX = int(input("Introduzca el valor de la posición final X "))
-        self.endX = 0
-        # self.endY = int(input("Introduzca el valor de la posición final Y "))
-        self.endY = 2
-        self.actions = [0, 1, 2, 3]
-        self.stateCount = self.height*self.width
-        self.actionCount = len(self.actions)
-        fila = []
-        self.mapa = []
-        for i in range(self.height):
-            for j in range(self.width):
-                a = input("El coste de la posición (" + str(i) + ", " + str(j) + "):")
-                try:
-                    b = int(a)
-                except ValueError:
-                    print("Se ha introducido un valor no aceptado")
-                    exit()
-                fila.append(b)
-            self.mapa.append(fila)
-            fila = []
 
-        self.cost = self.mapa[self.posX][self.posY]
+        try:
+            self.height = int(input("Introduzca la altura "))
+            # self.height = 3
+            self.width = int(input("Introduzca la anchura "))
+            self.width = 3
+            self.posX = 0
+            self.posY = 0
+            self.endX = int(input("Introduzca el valor de la posición final X "))
+            # self.endX = 2
+            self.endY = int(input("Introduzca el valor de la posición final Y "))
+            # self.endY = 2
+            self.actions = [0, 1, 2, 3]
+            self.stateCount = self.height * self.width
+            self.actionCount = len(self.actions)
+            if (self.posX < 0 or self.posY < 0 or self.posX > self.height or self.posY > self.width or
+                    self.endX < 0 or self.endY < 0 or self.endX > self.height or self.endY > self.width or self.width < 0 or self.height < 0):
+                print("Se han introducido valores que están fuera del mapa.")
+                exit()
+        except ValueError:
+            print("Se ha introducido un valor no aceptado")
+            exit()
+
 
     def reset(self):
         try:
@@ -41,9 +36,13 @@ class Env():
             print("Se ha introducido un valor no aceptado")
             exit()
         self.done = False
-        self.cost = 0
+
+        if(self.posX < 0 or self.posY < 0 or self.posX > self.height or self.posY > self.width or
+            self.endX < 0 or self.endY < 0 or self.endX > self.height or self.endY > self.width or self.width < 0 or self.height < 0):
+            print("Se han introducido valores que están fuera del mapa.")
+            exit()
         # posx, posy, done
-        return 0, 0, False, 0
+        return 0, 0, False
 
     # take action
     def step(self, action):
@@ -60,8 +59,7 @@ class Env():
         # mapping (x,y) position to number between 0 and 5x5-1=24
         nextState = self.width*self.posY + self.posX
         reward = 1 if done else 0
-        cost = self.cost + self.mapa[self.posX][self.posY]
-        return nextState, reward, done, cost
+        return nextState, reward, done
 
     # return a random action
     def randomAction(self):
@@ -73,10 +71,8 @@ class Env():
             for j in range(self.width):
                 if self.posY == i and self.posX == j:
                     print("O", end='')
-                    self.cost += self.mapa[i][j]
                 elif self.endY == i and self.endX == j:
                     print("T", end='')
                 else:
                     print(".", end='')
             print("")
-        print("\nCoste actual: " + str(self.cost))

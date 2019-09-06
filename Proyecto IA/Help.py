@@ -1,7 +1,6 @@
 from Env import Env
 import numpy as np
 import time
-import os
 
 # create environment
 env = Env()
@@ -10,18 +9,17 @@ env = Env()
 qtable = np.random.rand(env.stateCount, env.actionCount).tolist()
 
 # hyperparameters
-epochs = 75
+epochs = 50
 gamma = 0.1
 epsilon = 0.08
 decay = 0.1
 
 # training loop
 for i in range(epochs):
-    state, reward, done, cost = env.reset()
+    state, reward, done = env.reset()
     steps = 0
 
     while not done:
-        os.system('clear')
         print("epoch #", i+1, "/", epochs)
         env.render()
         time.sleep(0.05)
@@ -37,7 +35,7 @@ for i in range(epochs):
             action = qtable[state].index(max(qtable[state]))
 
         # take action
-        next_state, reward, done, cost = env.step(action)
+        next_state, reward, done= env.step(action)
 
         # update qtable value with Bellman equation
         qtable[state][action] = reward + gamma * max(qtable[next_state])
@@ -48,5 +46,4 @@ for i in range(epochs):
     epsilon -= decay*epsilon
 
     print("\nDone in", steps, "steps".format(steps))
-    print("\nWith a cost " + str(cost))
     time.sleep(0.8)

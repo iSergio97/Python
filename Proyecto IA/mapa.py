@@ -53,6 +53,9 @@ def classMap(mapa):
         print("\x1b[1;31;41m")
         print("\033[0m")
 
+    if(xinicial > mapa.tamaño_hor or xinicial < 0 or xfinal > mapa.tamaño_hor or xfinal < 0 or yinicial > mapa.tamaño_hor or yinicial < 0 or yfinal > mapa.tamaño_hor or yfinal < 0):
+        print("Se han introducido valores incorrectos y se va a terminar la ejecución")
+        exit()
 
     if(inicial and final):
         # Acción "Moverse a la derecha"
